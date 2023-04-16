@@ -1,0 +1,12 @@
+//
+//  Constants.swift
+//  ReZeme
+//
+//  Created by Shakhzod on 01/03/23.
+//
+
+import UIKit
+
+
+let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
+let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
