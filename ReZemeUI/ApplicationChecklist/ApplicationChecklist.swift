@@ -30,9 +30,11 @@ struct ApplicationChecklist: View {
                 
                 
                 RequestedDocCard(step: $step) { pressedStep in
-                    step += 1
-                    navigate.toggle()
-                    isActiveSubmitBtn = step >= 3 && isTermConformed
+                    if step < 4 {
+                        step += 1
+                        navigate.toggle()
+                        isActiveSubmitBtn = step >= 3 && isTermConformed
+                    }
                 }
                     .padding(.horizontal,20)
                     .padding(.top, 20)
@@ -61,11 +63,11 @@ struct ApplicationChecklist: View {
             
             NavigationLink(isActive: $navigate) {
                 switch step {
-                case 1: Text("Plaid")
-                case 2: Text("empleid")
-                case 3: Text("w2")
                 case 4: CreditCheckView()
-                default: Text("error")
+                default:  VStack {
+                    Image("no_applications")
+                    Text("Plaid view")
+                }
                 }
             } label: {
                 EmptyView()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @State var popView: Bool = false
     
     var body: some View {
         ScrollView() {
@@ -29,11 +29,15 @@ struct HomeView: View {
                 ForEach(0...3, id: \.self) { i in
                     agentsCell()
                         .onTapGesture {
-                            presentationMode.wrappedValue.dismiss()
+                            popView.toggle()
                         }
                 }
             }
-            
+            NavigationLink(isActive: $popView) {
+                ApplicationChecklist()
+            } label: {
+                EmptyView()
+            }
         }
     }
 }
