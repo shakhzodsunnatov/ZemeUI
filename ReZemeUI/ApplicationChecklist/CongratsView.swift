@@ -6,35 +6,45 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct CongratsView: View {
     
-    
+    @State var isPuchased = false
     var body: some View {
         NavigationNavBar(title: "Congrats!", withBeckBtn: false) {
-            VStack(spacing:0) {
-                
-                VStack(spacing: 0) {
+            ZStack {
+                VStack(spacing:0) {
                     
-                    VStack {
-                        imageComponent()
-
-                        streetNames
+                    VStack(spacing: 0) {
                         
-                        wishTitles
+                        VStack {
+                            imageComponent()
+
+                            streetNames.padding(.leading,-20)
+                            
+                            wishTitles
+                        }
+                        .padding(16)
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadowCustom()
+                        .padding(20)
+                        
                     }
-                    .padding(16)
-                    .background(Color.white)
-                    .cornerRadius(8)
-                    .shadowCustom()
-                    .padding(20)
                     
-                }
-                
-                Spacer()
-                
-                NavigationLink(
-                    destination: { ContentView() }) {
+                    Spacer()
+                    
+                    NavigationLink {
+                        CustomNavBar(
+                            content: { HomeView()},
+                            title: "Chat",
+                            style: .newSearchWithTitle,
+                            type: .buyer
+                        )
+                        .edgesIgnoringSafeArea(.bottom)
+                        .navigationBarBackButtonHidden()
+                    } label: {
                         Text("Go Home")
                             .semibold18
                             .foregroundColor(.white)
@@ -45,10 +55,31 @@ struct CongratsView: View {
                                     .fill(Color.blueGradient.toLinearGradient)
                             )
                             .padding(.horizontal, 76)
+                            .padding(.bottom,20)
                     }
 
+                }
+                
+                if isPuchased {
+                    GeometryReader { geo in
+                        SpriteView(scene: ParticleScene(size: geo.size), options: [.allowsTransparency])
+                    }
+                }
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .onAppear{
+                withAnimation(.linear) {
+                    isPuchased.toggle()
+                }
+                
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 4) {
+                    withAnimation(.spring()) {
+                        isPuchased.toggle()
+                    }
+                }
             }
         }
+        
     }
 }
 

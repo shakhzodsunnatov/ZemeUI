@@ -15,8 +15,8 @@ struct ApplicationChecklist: View {
     
     @State var step = 0
     @State var isTermConformed = false
-    @State var isActiveSubmitBtn = true
-    
+    @State var isActiveSubmitBtn = false
+    @State var navigate = false
     
     //MARK: - body
     
@@ -30,15 +30,17 @@ struct ApplicationChecklist: View {
                 
                 
                 RequestedDocCard(step: $step) { pressedStep in
-                    
+                    step += 1
+                    navigate.toggle()
+                    isActiveSubmitBtn = step >= 3 && isTermConformed
                 }
                     .padding(.horizontal,20)
                     .padding(.top, 20)
                 
-                
-                conformCheckBox($isTermConformed)
-                    .padding(.horizontal, 20)
-                    .padding(.top, 16)
+                SimpleTextCheckView(title: "I’ve confirmed that everything is accurate") { t in
+                    isTermConformed = t
+                    isActiveSubmitBtn = step >= 4 && isTermConformed
+                }
                 
                 
                 uploadReviewButtons {
@@ -47,16 +49,28 @@ struct ApplicationChecklist: View {
                     // Review Button pressed action
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 25)
 
                 
-                submitButton(isActive: $isTermConformed) {
+                submitButton(isActive: $isActiveSubmitBtn) {
                     
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 17)
+                .padding(.top, 12)
             }
             .frame(width: SCREEN_WIDTH)
+            
+            NavigationLink(isActive: $navigate) {
+                switch step {
+                case 1: Text("Plaid")
+                case 2: Text("empleid")
+                case 3: Text("w2")
+                case 4: CreditCheckView()
+                default: Text("error")
+                }
+            } label: {
+                EmptyView()
+            }
+
         }
     }
 }
@@ -110,28 +124,6 @@ extension ApplicationChecklist {
             .ignoresSafeArea(edges: .top)
     }
     
-    private func conformCheckBox(_ isConformed: Binding<Bool>) -> some View {
-        Button(action: {
-            isConformed.wrappedValue.toggle()
-        }) {
-            HStack(spacing: 9) {
-                
-                Image(systemName: isConformed.wrappedValue ? "checkmark.circle" : "circle")
-                    .resizable()
-                    .scaledToFill()
-                    .font(.title.weight(.light))
-                    .foregroundColor(.darkBlue)
-                    .frame(width: 20, height: 20)
-                
-                Text("I’ve confirmed that everything is accurate")
-                    .foregroundColor(.black)
-                    .regular14
-                
-                Spacer()
-            }
-        }
-    }
-    
     private func uploadReviewButtons(upload: @escaping ()->Void, review: @escaping ()-> Void) -> some View {
         HStack(spacing: 17) {
             
@@ -162,7 +154,7 @@ extension ApplicationChecklist {
     }
     
     private func submitButton(isActive: Binding<Bool>, action: @escaping ()-> Void) -> some View {
-        NavigationLink(destination: CreditCheckView()) {
+        NavigationLink(destination: CongratsView()) {
             Text("Submit Application")
                 .semibold16
                 .foregroundColor(.white)

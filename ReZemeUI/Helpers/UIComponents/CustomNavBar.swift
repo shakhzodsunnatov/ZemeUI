@@ -81,6 +81,9 @@ struct CustomNavBar<Content: View>: View {
                     case .newTitleAndIcon:
                         
                         agentTitleAndIcon()
+                        
+                    case .newSearchWithTitle:
+                        filterWithTitle()
                     }
                     
                 }
@@ -97,7 +100,7 @@ struct CustomNavBar<Content: View>: View {
                     Color.clear
                     content
                 }
-                .offset(y:-2)
+                .offset(y:-5)
                 .padding(.top,3)
             }
             .edgesIgnoringSafeArea(.top)
@@ -284,14 +287,11 @@ extension CustomNavBar {
             Button {
                 
             } label: {
-                AsyncImage(
-                    url: "/sa",
-                    placeHolderState: .circle,
-                    placeHolderFor: .AGENT
-                )
-                .background(Color.white)
-                .frame(width: 40,height: 40)
-                .cornerRadius(20)
+                Image("person")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40,height: 40)
+                    .cornerRadius(20)
             }
         }
         .padding(.horizontal)
@@ -312,16 +312,13 @@ extension CustomNavBar {
                 Spacer()
                 
                 Button {
-                    
+
                 } label: {
-                    AsyncImage(
-                        url: "/asd",
-                        placeHolderState: .circle,
-                        placeHolderFor: .AGENT
-                    )
-                    .background(Color.white)
-                    .frame(width: 40,height: 40)
-                    .cornerRadius(20)
+                    Image("person")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40,height: 40)
+                        .cornerRadius(20)
                 }
             }
             .padding(.horizontal,20)
@@ -330,6 +327,34 @@ extension CustomNavBar {
                 .foregroundColor(.white)
                 .semibold22
                 .padding(.top, 10)
+        }
+       
+    }
+    
+    func filterWithTitle() -> some View {
+        VStack {
+            Text(title)
+                .foregroundColor(.white)
+                .semibold22
+                .padding(.top, 10)
+            
+            HStack {
+                HStack {
+                    Image("placeholderLocationIcon")
+                        .renderingMode(.template)
+                        .foregroundColor(.blue)
+                    
+                    TextField("Search", text: $search)
+                        .light16
+                        .foregroundColor(Color.black)
+                }
+                .frame(height: 50)
+                .padding(.horizontal,18)
+                .background(Color.white)
+                .cornerRadius(16)
+            }
+            .padding(.horizontal)
+            .padding(.top,15)
         }
         
     }
