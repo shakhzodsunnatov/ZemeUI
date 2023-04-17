@@ -92,30 +92,76 @@ extension AddingInviteEmailCard {
                 .foregroundColor(Color.primaryBlue)
                 .font(Font.title.weight(.light))
                 .frame(width: 24, height: 24)
+                .padding(.trailing,10)
         }
     }
     
     private func inviteEmailTags(rows: [[Tag]]) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
+        
+        VStack(spacing: 10) {
             
             ForEach(rows, id:\.self) { rows in
                 
-                HStack(spacing: 6) {
-                    
-                    ForEach(rows) { row in
+                ForEach(rows) { row in
+                   
+                    HStack(spacing: 10) {
+                        Image(row.icon)
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(row.color)
+                            .frame(width: 15, height: 15)
                         
                         Text(row.name)
-                            .regular16
-                            .padding(.horizontal,11)
-                            .padding(.vertical, 2)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(Color.lightBlue.opacity(0.15))
-                            )
+                            .regular12
+                        Spacer()
+                        
+                        Text(row.title)
+                            .medium14
+                            .foregroundColor(row.color)
+                        
+                        if row.type != .completed {
+                            if row.type == .send {
+                                Button {
+                                    
+                                } label: {
+                                    Circle()
+                                        .strokeBorder(row.color, lineWidth: 1)
+                                        .background(Circle().fill(.white))
+                                        .frame(width: 20, height: 20)
+                                        .overlay (
+                                            Image("email")
+                                                .resizable()
+                                                .renderingMode(.template)
+                                                .foregroundColor(row.color)
+                                                .frame(width: 13,height: 10)
+                                        )
+                                }
+                            }
+                            
+                            
+                            Button {
+                                
+                            } label: {
+                                Circle()
+                                    .strokeBorder(row.color, lineWidth: 1)
+                                    .background(Circle().fill(.white))
+                                    .frame(width: 20, height: 20)
+                                    .overlay (
+                                        Image("xmark")
+                                            .resizable()
+                                            .renderingMode(.template)
+                                            .foregroundColor(row.color)
+                                            .frame(width: 8,height: 8)
+                                    )
+                            }
+                        }
+                        
+                        
                     }
+                    .padding(10)
+                    .background(row.color.opacity(0.1))
+                    .cornerRadius(8)
                 }
-                .frame(height: 28)
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }

@@ -43,7 +43,7 @@ struct CustomAlert: View {
                     .semibold18
                     .padding(.top, 18)
                 
-                Text("Please confirm that you allow for us to pull your credit for purposes of applying to this property")
+                Text("By checking the  box below, you authorize us to obtain a soft inquiry credit report for the purpose of providing it to brokers, agents, landlords, property managers, and other relevant parties (collectively) associated with the properties you are interested in. This soft inquiry credit report may include information on your credit history, payment records, and other information relevant to your creditworthiness. ")
                     .regular16
                     .multilineTextAlignment(.center)
                     .padding(.top, 7)

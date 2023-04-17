@@ -10,7 +10,7 @@ import SwiftUI
 class ContentViewModel: ObservableObject {
     
     @Published var rows: [[Tag]] = []
-    @Published var tags: [Tag] = []
+    @Published var tags: [Tag] = [Tag(name: "jdoe@mail.com",size: 0,type: .send),Tag(name: "haileyreed@mail.com",size: 0,type: .completed)]
     @Published var emails: [String] = []
     @Published var tagText = ""
     
@@ -60,7 +60,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func addTag(){
-        tags.append(Tag(name: tagText + " • Sent"))
+        tags.append(Tag(name: tagText))
         emails.append(tagText)
         tagText = ""
         getTags()
@@ -77,6 +77,35 @@ struct Tag: Identifiable, Hashable {
     var id = UUID().uuidString
     var name: String
     var size: CGFloat = 0
+    var type: CoApplicant = .inProgress
+    
+    var color: Color {
+         switch type {
+         case .inProgress: return Color.purpleLow
+         case .send: return Color.blue
+         case .completed: return Color.green
+         }
+     }
+    
+    var icon: String {
+         switch type {
+         case .inProgress: return "refresh"
+         case .send: return "send"
+         case .completed: return "checked"
+         }
+     }
+    
+    var title: String {
+         switch type {
+         case .inProgress: return "In Progress"
+         case .send: return "Sent"
+         case .completed: return "Completed"
+         }
+     }
+}
+
+enum CoApplicant {
+    case send, inProgress, completed
 }
 
 extension UIScreen{
