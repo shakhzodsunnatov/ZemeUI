@@ -17,7 +17,16 @@ struct MessageRenter: View {
     @State var isTodoViewOpened = false
     @State var heightOfKeyboard: CGFloat = 0
     @State var scrollToEnd = false
+    @State var showAlert = false
+    @State var showSelectDocView = false
+    @State var showFileUploadView = false
     
+    @State var selectedFiles: [FileModel] = [
+        FileModel(file: "W2 Form 2022", notes: ["Add Notes", "Add Notes 2"]),
+        FileModel(file: "W2 old Form 2020", notes: ["Here old one", "example"])
+    ]
+    
+    let options = ["Take Picture", "Select File", "Choose Photo"]
     
     var body: some View {
         NavigationNavBar(title: "Message Agent") {
@@ -50,6 +59,9 @@ struct MessageRenter: View {
                                         }
                                     }
                                 }
+                                .onAppear {
+                                    scrollToEnd.toggle()
+                                }
                                 .onTapGesture {
                                     dismissKeyboard()
                                 }
@@ -66,7 +78,9 @@ struct MessageRenter: View {
                                         scrollToEnd.toggle()
                                     },
                                     fileBtnAction: {
-                                        
+                                        DispatchQueue.main.async {
+                                            self.showAlert.toggle()
+                                        }
                                     }
                                 )
                             )
@@ -97,9 +111,50 @@ struct MessageRenter: View {
                 }
             }
         }
+        .actionSheet(isPresented: $showAlert) {
+            ActionSheet(title: Text("Select an option"),
+                        buttons: [
+                            .default(
+                                Text(options[0]), // "Take Picture"
+                                action: { }
+                            ),
+                            .default(
+                                Text(options[1]), // "Select File"
+                                action: {
+                                    self.showAlert.toggle()
+                                    self.showSelectDocView.toggle()
+                                }
+                            ),
+                            .default(
+                                Text(options[2]), // "Choose Photo"
+                                action: { }
+                            ),
+                        ] + [.cancel()])
+        }
+        .selectDocumentTypeView(isActive: $showSelectDocView) { selectedIndex in
+            switch selectedIndex {
+            case 0: break       // Plaid Verified Bank Statements
+            
+            case 1:             // W2 Forms
+                showSelectDocView.toggle()
+                showFileUploadView.toggle()
+            
+            case 2: break       // Employment Verification
+            case 3: break       // Paystubs
+            default: break
+            }
+        }
+        
+        .uploadFileSheetView(
+            isActive: $showFileUploadView,
+            files: $selectedFiles,
+            addFileAction: {},
+            submit: { files in
+                showFileUploadView.toggle()
+            }
+        )
     }
 }
-
 
 //MARK: - UI Components
 
