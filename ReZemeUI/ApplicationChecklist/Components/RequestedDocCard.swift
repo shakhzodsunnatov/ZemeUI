@@ -113,6 +113,7 @@ extension RequestedDocCard {
                             RoundedRectangle(cornerRadius: 8)
                                 .fill(Color.darkBlue.opacity(0.15))
                         )
+                        .opacity(isActive ? 1 : 0.4)
                     
                     Text(title)
                         .foregroundColor(.black)
@@ -120,6 +121,7 @@ extension RequestedDocCard {
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(2)
+                        .opacity(isActive ? 1 : 0.4)
                     
                     Spacer()
                     
@@ -127,10 +129,11 @@ extension RequestedDocCard {
                         .resizable()
                         .scaledToFill()
                         .font(.title.weight(.light))
-                        .foregroundColor(Color.darkBlue)
+                        .foregroundColor(Color.darkBlue.opacity(isActive ? 1 : 0.4))
                         .frame(width: 26, height: 26)
                 }
             }
+            .disabled(!isActive)
         }
     }
     

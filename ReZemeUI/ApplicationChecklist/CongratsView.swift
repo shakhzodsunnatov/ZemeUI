@@ -16,29 +16,20 @@ struct CongratsView: View {
                 
                 VStack(spacing: 0) {
                     
-                    imageComponent()
-                    
-                    streetNames
-                        .frame(maxWidth: .infinity)
-                        .padding(.top,7)
-                    
-                    wishTitles
+                    VStack {
+                        imageComponent()
+
+                        streetNames
+                        
+                        wishTitles
+                    }
+                    .padding(16)
+                    .background(Color.white)
+                    .cornerRadius(8)
+                    .shadowCustom()
+                    .padding(20)
                     
                 }
-                .padding(
-                    EdgeInsets(top: 18,
-                               leading: 17,
-                               bottom: 44,
-                               trailing: 17
-                              )
-                )
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.white)
-                        .glow()
-                )
-                .padding(.horizontal, 20)
-                .padding(.top, 27)
                 
                 Spacer()
                 

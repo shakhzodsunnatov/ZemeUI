@@ -44,6 +44,8 @@
 		2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */; };
 		2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */; };
 		2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */; };
+		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
+		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageTool.swift; sourceTree = "<group>"; };
+		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
+		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,8 @@
 		2E78200129EBB07100F3C5A9 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9D7C89E729ECDD2B00DA223D /* Haptic.swift */,
+				9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */,
 				2E78200429EBB0AB00F3C5A9 /* CustomAlert.swift */,
 				2E78200229EBB08000F3C5A9 /* PrimaryTextField.swift */,
 			);
@@ -321,8 +327,10 @@
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
+				9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
+				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
@@ -472,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -487,7 +495,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -505,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -520,7 +528,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

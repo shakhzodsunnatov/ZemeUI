@@ -13,7 +13,7 @@ struct ApplicationChecklist: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State var step = 2
+    @State var step = 0
     @State var isTermConformed = false
     @State var isActiveSubmitBtn = true
     

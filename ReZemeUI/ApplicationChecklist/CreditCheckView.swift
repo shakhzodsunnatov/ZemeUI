@@ -13,6 +13,14 @@ struct CreditCheckView: View {
     @State var nameText = ""
     @State var showAlert = false
     @State var openCongratsView = false
+    @State var calenarMode: Bool = false
+    @State var date = Date()
+    
+    @State var dateAvailable = ""
+    @State var phone = ""
+    @State var firstName = ""
+    @State var lastName = ""
+    @State var middleName = ""
     
     var body: some View {
         NavigationNavBar(title: "Credit Check") {
@@ -29,56 +37,51 @@ struct CreditCheckView: View {
                     
                     VStack(spacing: 20) {
                         
+                        Group {
+                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal First Name",placeHolder: "First Name" ,text: $firstName, textFiledStyle: .simple, emailError:.constant(false))
+                            
+                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal Middle Name",placeHolder: "Middle Name" ,text: $middleName, textFiledStyle: .simple, emailError:.constant(false))
+                            
+                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal Last Name",placeHolder: "Last Name" ,text: $lastName, textFiledStyle: .simple, emailError:.constant(false))
+                            
+                            TextFieldWithIcon(image: "password-check", topTitle: "Social Security Number",placeHolder: "Number" ,text: $phone, textFiledStyle: .simple, emailError:.constant(false))
+                                .keyboardType(.numberPad)
+                                .onChange(of: phone) { newValue in
+                                    self.phone = format(with: "XXX-XX-XXXX", phone: newValue)
+                                }
+                        }
+                        .onTapGesture {
+                            dismissKeyboard()
+                        }
                         
-                        TextField("First Name", text: .constant(""))
-                            .textFieldStyle(
-                                PrimaryTextFieldStyle(
-                                    title: "Legal First Name",
-                                    image: "profile_agent_red",
-                                    error: .constant(false)
-                                )
-                            )
-                            .frame(height: 90)
-                        
-                        TextField("Middle Name", text: .constant(""))
-                            .textFieldStyle(
-                                PrimaryTextFieldStyle(
-                                    title: "Legal Middle Name",
-                                    image: "profile_agent_red",
-                                    error: .constant(false)
-                                )
-                            )
-                            .frame(height: 90)
-                        
-                        TextField("Last Name", text: .constant(""))
-                            .textFieldStyle(
-                                PrimaryTextFieldStyle(
-                                    title: "Legal Last Name",
-                                    image: "profile_agent_red",
-                                    error: .constant(false)
-                                )
-                            )
-                            .frame(height: 90)
-                        
-                        TextField("Number", text: .constant(""))
-                            .textFieldStyle(
-                                PrimaryTextFieldStyle(
-                                    title: "Social Security Number",
-                                    image: "password-check",
-                                    error: .constant(false)
-                                )
-                            )
-                            .frame(height: 90)
-                        
-                        TextField("dd/mm/yyyy", text: $nameText)
-                            .textFieldStyle(
-                                PrimaryTextFieldStyle(
-                                    title: "Date of Birth",
-                                    image: "calendar",
-                                    error: .constant(false)
-                                )
-                            )
-                            .frame(height: 90)
+                        ZStack {
+                            TextFieldWithIcon(image: "calendar", topTitle: "Date of Birth",placeHolder: "yyyy-mm-dd" ,text: $dateAvailable, textFiledStyle: .simple, emailError: .constant(false))
+                                .disabled(true)
+                                .onChange(of: date) { newValue in
+                                    calenarMode.toggle()
+                                    let formatter1 = DateFormatter()
+                                    formatter1.dateFormat = "yyyy-MM-dd"
+                                    self.dateAvailable = formatter1.string(from: newValue)
+                                }.onTapGesture {
+                                    withAnimation(.easeInOut) {
+                                        calenarMode.toggle()
+                                    }
+                                }
+                            if calenarMode {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.white)
+                                    .shadowCustom()
+                                    .onTapGesture {
+                                        withAnimation(.easeInOut) {
+                                            calenarMode.toggle()
+                                        }
+                                    }
+                                DatePicker("select", selection: $date,in: ...Date(), displayedComponents: .date)
+                                    .frame(width: 300 , height: 300)
+                                    .datePickerStyle(.graphical)
+                            }
+                            
+                        }
                         
                     }
                     .padding(EdgeInsets(top: 27, leading: 18, bottom: 25, trailing: 18))
@@ -106,9 +109,7 @@ struct CreditCheckView: View {
                     .padding(.top, 24)
                 }
                 .frame(width: SCREEN_WIDTH)
-                .onTapGesture {
-                    dismissKeyboard()
-                }
+                
                 
                 if showAlert {
                     CustomAlert(presentAlert: $showAlert) {
