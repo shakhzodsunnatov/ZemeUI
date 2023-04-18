@@ -454,7 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E78200E29EBB13200F3C5A9 /* CustomNavBar.swift in Sources */,
 				2EF7741D29EDB2CF00AA7D5C /* SelectDocSheetView.swift in Sources */,
 				2E78201429EBB14800F3C5A9 /* Constants.swift in Sources */,
 				2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */,
@@ -642,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -675,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

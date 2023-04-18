@@ -167,7 +167,9 @@ extension MessageRenter: ChatMeetingProtocol {
     func changeDateAction(_ date: Date) {}
     
     func acceptAction(_ date: Date) {
-        showMeetingTypeAlert.toggle()
+        withAnimation {
+            self.showMeetingTypeAlert.toggle()
+        }
     }
     
     func denyAction(_ date: Date) {}
@@ -206,7 +208,10 @@ extension MessageRenter {
                 Capsule()
                     .stroke(Color.primaryBlue, lineWidth: 1)
             )
-            .background(Color.white)
+            .background(
+                Capsule()
+                    .fill(Color.white)
+            )
         }
     }
     

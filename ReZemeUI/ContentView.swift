@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            NavigationLink(destination: { MessageRenter() }) {
+            NavigationLink(destination: { ApplicationChecklist() }) {
                 Text("Open Application Checklist")
                 .foregroundColor(.white)
                 .padding(15)
@@ -21,6 +21,15 @@ struct ContentView: View {
                 )
             }
             
+            NavigationLink(destination: { MessageRenter() }) {
+                Text("Open Renter Message")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
         }
         .padding()
         .navigationBarHidden(true)

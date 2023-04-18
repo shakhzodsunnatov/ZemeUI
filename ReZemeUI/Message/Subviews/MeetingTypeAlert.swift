@@ -42,7 +42,9 @@ struct MeetingTypeAlert: View {
              
                 Button {
                     submit(isVirtual)
-                    presenterView.toggle()
+                    withAnimation {
+                        self.presenterView.toggle()
+                    }
                 } label: {
                     Text("Submit")
                         .bold18

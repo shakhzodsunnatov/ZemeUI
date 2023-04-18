@@ -40,9 +40,19 @@ extension MeetingAlertView {
                     .background(.thinMaterial)
                     .blur(radius: 10)
                     .disabled(isActive)
+                    .onTapGesture {
+                        withAnimation {
+                            isActive.toggle()
+                        }
+                    }
             } else {
                 content
                     .disabled(isActive)
+                    .onTapGesture {
+                        withAnimation {
+                            isActive.toggle()
+                        }
+                    }
                 
                 VisualEffectView(effect: UIBlurEffect(style: .systemMaterialLight))
                     .edgesIgnoringSafeArea(.all)
