@@ -16,6 +16,8 @@ struct AddingInviteEmailCard: View {
     @StateObject var viewModel = ContentViewModel()
     @State var isTextFieldActive = false
     
+    
+    
     var delegate: InviteEmailCardDelegate?
     
     var body: some View {
@@ -54,25 +56,36 @@ struct AddingInviteEmailCard: View {
             
             // Email TextFields
             if isTextFieldActive || viewModel.tags == []{
-                TextField("Add another co-applicant email...",
-                          text: $viewModel.tagText,
-                          onCommit: {
-                    viewModel.addTag()
-                    delegate?.getEmails(viewModel.emails)
-                    withAnimation {
-                        self.isTextFieldActive = false
-                    }
-                })
-                .autocorrectionDisabled()
-                .regular14
-                .padding()
-                .frame(height: 58)
-                .padding(.top, 3)
-                .background(
+                
+                ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.white)
-                        .glow()
-                )
+                        .stroke(Color.red,lineWidth: 1)
+                        .frame(height: 70)
+                        .scaleEffect(1.02)
+                        .opacity(viewModel.emailError ? 1 : 0)
+                        .modifier(Shake(animatableData: viewModel.emailError ? 2 : 0))
+                        .padding(.vertical, 5)
+                    
+                    
+                    
+                    TextField("Add another co-applicant email...", text: $viewModel.tagText,onCommit: {
+                        if viewModel.validate() {
+                            viewModel.addTag()
+                            delegate?.getEmails(viewModel.emails)
+                            withAnimation {
+                                self.isTextFieldActive = false
+                            }
+                        }
+                    })
+                    .autocorrectionDisabled()
+                    .regular14
+                    .padding(20)
+                    .background(Color.white)
+                    .cornerRadius(8)
+                    .shadowCustom()
+                    
+                }
+                
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
