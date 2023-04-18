@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            NavigationLink(destination: { ApplicationChecklist() }) {
+            NavigationLink(destination: { MessageRenter() }) {
                 Text("Open Application Checklist")
                 .foregroundColor(.white)
                 .padding(15)
