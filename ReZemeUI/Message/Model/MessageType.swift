@@ -26,5 +26,23 @@ enum MessageType: CaseIterable {
     case reminder(Date)
 }
 
+//MARK: -
+
+extension MessageType: Equatable {
+    static func == (lhs: MessageType, rhs: MessageType) -> Bool {
+        switch (lhs, rhs) {
+        case let (.text(leftText, leftFlag), .text(rightText, rightFlag)):
+            return leftText == rightText && leftFlag == rightFlag
+        case let (.offer(leftOffer), .offer(rightOffer)):
+            return leftOffer == rightOffer
+        case let (.meeting(leftDate), .meeting(rightDate)):
+            return leftDate == rightDate
+        case let (.reminder(leftDate), .reminder(rightDate)):
+            return leftDate == rightDate
+        default:
+            return false
+        }
+    }
+}
 
 

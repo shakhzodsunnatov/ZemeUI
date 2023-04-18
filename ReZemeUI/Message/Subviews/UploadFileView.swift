@@ -17,34 +17,57 @@ struct UploadFileView: View {
     var addFileAction = {}
     var submit: ([FileModel]) -> Void = { _ in}
     
+    @ObservedObject var keyboardHeightHelper = KeyboardHeightHelperForm()
+    @State var heightOfKeyboard: CGFloat = 0
+    
     var body: some View {
-        VStack(spacing: 0) {
-            
-            headerUI(
-                image: "document_ic",
-                name: "W2 Forms",
-                action: closeAction
-            )
-            
-            uploadedFilesUI(
-                files: files,
-                removeAction: { files.remove(at: $0) },
-                updateNote: { files[$1].notes.append($0) }
-            )
-            .padding(.top,27)
-            
-            buttons(
-                addFileAction: addFileAction,
-                submitAction: { submit(files) }
-            )
-            .padding(.top, 23)
-            .padding(.horizontal, 15)
+        ScrollView {
+            VStack(spacing: 0) {
+                
+                headerUI(
+                    image: "document_ic",
+                    name: "W2 Forms",
+                    action: closeAction
+                )
+                
+                uploadedFilesUI(
+                    files: files,
+                    removeAction: { files.remove(at: $0) },
+                    updateNote: { files[$1].notes.append($0) }
+                )
+                .padding(.top,27)
+                
+                buttons(
+                    addFileAction: addFileAction,
+                    submitAction: { submit(files) }
+                )
+                .padding(.top, 23)
+                .padding(.horizontal, 15)
+            }
+            .padding(EdgeInsets(top: 23, leading: 22, bottom: 28, trailing: 22))
+            .background(Color.white)
+            .cornerRadius(radius: 8, corners: [.topLeft, .topRight])
+            .glowHard()
+            .frame(width: SCREEN_WIDTH)
+            .rotationEffect(.degrees(180))
+            .padding(.top,keyboardHeightHelper.keyboardHeight)
+            .onChange(of: keyboardHeightHelper.keyboardHeight) { newValue in
+                DispatchQueue.main.async {
+                       withAnimation {
+                           if newValue <= 20 {
+                               self.heightOfKeyboard = 0
+                           } else {
+                               self.heightOfKeyboard = newValue - 20
+                           }
+                       }
+                   }
+            }
+
         }
-        .padding(EdgeInsets(top: 23, leading: 22, bottom: 28, trailing: 22))
-        .background(Color.white)
-        .cornerRadius(radius: 8, corners: [.topLeft, .topRight])
-        .glowHard()
-        .frame(width: SCREEN_WIDTH)
+        .rotationEffect(.degrees(180))
+        .onTapGesture {
+            dismissKeyboard()
+        }
     }
 }
 
@@ -155,7 +178,7 @@ extension UploadFileView {
             VStack(alignment: .leading, spacing: 0) {
                 
                 HStack {
-                    Text(model.file)
+                    Text(model.name)
                         .medium16
                     
                     Button(action: removeAction) {
@@ -189,8 +212,8 @@ extension UploadFileView {
                         addNode(noteText)
                         DispatchQueue.main.async {
                             self.noteText = ""
+                            dismissKeyboard()
                         }
-                        dismissKeyboard()
                     })
                 .autocorrectionDisabled()
                 .regular14

@@ -12,7 +12,7 @@ struct ReZemeUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                TestView()
+                ContentView()
             }
             .onAppear {
                 ZemeFonts.registerFonts()

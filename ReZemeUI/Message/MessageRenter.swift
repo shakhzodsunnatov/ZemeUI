@@ -17,14 +17,14 @@ struct MessageRenter: View {
     @State var isTodoViewOpened = false
     @State var heightOfKeyboard: CGFloat = 0
     @State var scrollToEnd = false
+    
+    //MARK: - Presenters
     @State var showAlert = false
     @State var showSelectDocView = false
     @State var showFileUploadView = false
+    @State var showMeetingTypeAlert = false
     
-    @State var selectedFiles: [FileModel] = [
-        FileModel(file: "W2 Form 2022", notes: ["Add Notes", "Add Notes 2"]),
-        FileModel(file: "W2 old Form 2020", notes: ["Here old one", "example"])
-    ]
+    //MARK: - Protocols
     
     let options = ["Take Picture", "Select File", "Choose Photo"]
     
@@ -59,9 +59,6 @@ struct MessageRenter: View {
                                         }
                                     }
                                 }
-                                .onAppear {
-                                    scrollToEnd.toggle()
-                                }
                                 .onTapGesture {
                                     dismissKeyboard()
                                 }
@@ -73,12 +70,14 @@ struct MessageRenter: View {
                             .textFieldStyle(
                                 ChatTextFiledStyle(
                                     sendBtnAction: {
+                                        guard !textMessage.isEmpty else { return }
                                         viewModel.sendText(textMessage)
                                         textMessage = ""
                                         scrollToEnd.toggle()
                                     },
                                     fileBtnAction: {
                                         DispatchQueue.main.async {
+                                            self.dismissKeyboard()
                                             self.showAlert.toggle()
                                         }
                                     }
@@ -147,14 +146,33 @@ struct MessageRenter: View {
         
         .uploadFileSheetView(
             isActive: $showFileUploadView,
-            files: $selectedFiles,
             addFileAction: {},
             submit: { files in
+                
+                print(files.map({ $0.name })) // you can get here the base64 encode fileStr which you might send to server
                 showFileUploadView.toggle()
             }
         )
+        
+        .meetingTypeAlert(isActive: $showMeetingTypeAlert) { isVirtual in
+            print("IsVirtual \(isVirtual)")
+        }
     }
 }
+
+
+//MARK: - ChatMeetingProtocol - PROTOCOL
+
+extension MessageRenter: ChatMeetingProtocol {
+    func changeDateAction(_ date: Date) {}
+    
+    func acceptAction(_ date: Date) {
+        showMeetingTypeAlert.toggle()
+    }
+    
+    func denyAction(_ date: Date) {}
+}
+
 
 //MARK: - UI Components
 
@@ -167,7 +185,7 @@ extension MessageRenter {
                 Spacer()
                 
                 Text("View To-DOs")
-                    .semibold18
+                    .semibold14
                     .foregroundColor(.primaryBlue)
                     .padding(.leading, 15)
                 
@@ -181,8 +199,8 @@ extension MessageRenter {
                 
                 
             }
-            .padding(.vertical,10)
             .padding(.horizontal, 15)
+            .frame(height: 42)
             .frame(maxWidth: .infinity)
             .background(
                 Capsule()
@@ -196,7 +214,7 @@ extension MessageRenter {
         VStack(spacing: 20) {
             
             ForEach((0..<chats.count), id: \.self) { index in
-                ChatItem(messageType: chats[index])
+                ChatItem(messageType: chats[index], meetingChatDelegate: self)
             }
             
         }

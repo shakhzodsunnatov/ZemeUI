@@ -19,4 +19,6 @@ struct OfferChatModel {
     }
 }
 
+extension OfferChatModel: Equatable {}
+
 //https://images.coolhouseplans.com/plans/44207/44207-b600.jpg

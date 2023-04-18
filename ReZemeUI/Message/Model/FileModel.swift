@@ -8,6 +8,7 @@
 import Foundation
 
 struct FileModel {
-    var file: String
-    var notes: [String]
+    var name: String = ""
+    var fileStr: String = ""
+    var notes: [String] = []
 }

@@ -12,6 +12,9 @@ struct MeetingChat: View {
     //MARK: - PROPERTIES
     
     let date: Date
+    let changeDateAction: (Date)-> Void
+    let acceptAction: (Date) -> Void
+    let denyAction: (Date) -> Void
     
     var body: some View {
         VStack(spacing: 20) {
@@ -22,15 +25,15 @@ struct MeetingChat: View {
             
             HStack(spacing: 0) {
                 
-                changeDateButton { /* TODO: change btn action here */ }
+                changeDateButton(action: { changeDateAction(date) } )
                 
                 Spacer(minLength: 0)
                 
-                acceptButton { /* TODO: accept btn action here */ }
+                acceptButton(action: { acceptAction(date) } )
                 
                 Spacer(minLength: 0)
                 
-                denyButton { /* TODO: deny btn action here */ }
+                denyButton(action: { denyAction(date) } )
             }
         }
         .padding(.vertical, 15)
@@ -116,7 +119,12 @@ extension MeetingChat {
 
 struct MeetingChat_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingChat(date: Date())
+        MeetingChat(
+            date: Date(),
+            changeDateAction: {_ in},
+            acceptAction: {_ in},
+            denyAction: {_ in}
+        )
             .frame(height: 50)
     }
 }

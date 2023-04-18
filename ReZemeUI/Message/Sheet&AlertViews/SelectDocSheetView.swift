@@ -15,6 +15,7 @@ struct SelectDocSheetView: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
             content
+                .disabled(isActive)
             
             GeometryReader { geo in
                 VStack {

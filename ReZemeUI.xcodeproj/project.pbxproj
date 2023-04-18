@@ -46,6 +46,9 @@
 		2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */; };
 		2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */; };
 		2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */; };
+		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
+		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
+		2EDDF8AA29EE438D00A07574 /* ChatActionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */; };
 		2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73529EC1D49005AD516 /* MessageRenter.swift */; };
 		2EEED74229EC1D49005AD516 /* OfferChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73729EC1D49005AD516 /* OfferChat.swift */; };
 		2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73829EC1D49005AD516 /* MeetingChat.swift */; };
@@ -63,7 +66,6 @@
 		2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7741E29EDB58200AA7D5C /* UploadFileView.swift */; };
 		2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */; };
 		2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742229EDC86300AA7D5C /* FileModel.swift */; };
-		2EF7742529EDCE9300AA7D5C /* InputDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742429EDCE9300AA7D5C /* InputDocument.swift */; };
 		2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,9 @@
 		2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageTool.swift; sourceTree = "<group>"; };
+		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
+		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatActionProtocols.swift; sourceTree = "<group>"; };
 		2EEED73529EC1D49005AD516 /* MessageRenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRenter.swift; sourceTree = "<group>"; };
 		2EEED73729EC1D49005AD516 /* OfferChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferChat.swift; sourceTree = "<group>"; };
 		2EEED73829EC1D49005AD516 /* MeetingChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingChat.swift; sourceTree = "<group>"; };
@@ -125,7 +130,6 @@
 		2EF7741E29EDB58200AA7D5C /* UploadFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileView.swift; sourceTree = "<group>"; };
 		2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileSheetView.swift; sourceTree = "<group>"; };
 		2EF7742229EDC86300AA7D5C /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
-		2EF7742429EDCE9300AA7D5C /* InputDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDocument.swift; sourceTree = "<group>"; };
 		2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTypeAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +149,7 @@
 			children = (
 				2E3264EE29EDA165000E3435 /* SelectDocumentTypeView.swift */,
 				2EF7741E29EDB58200AA7D5C /* UploadFileView.swift */,
-				2EF7742429EDCE9300AA7D5C /* InputDocument.swift */,
+				2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -174,6 +178,7 @@
 				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				2EEED73429EC1D49005AD516 /* Message */,
 				2E781FE629EBAE0100F3C5A9 /* Helpers */,
+				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E781FCD29EBAD0900F3C5A9 /* Preview Content */,
 			);
@@ -293,6 +298,14 @@
 			path = ImageManager;
 			sourceTree = "<group>";
 		};
+		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
+			isa = PBXGroup;
+			children = (
+				2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */,
+			);
+			path = NotChangableJustForHelp;
+			sourceTree = "<group>";
+		};
 		2EEED73429EC1D49005AD516 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +337,7 @@
 		2EEED73E29EC1D49005AD516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */,
 				2EEED73F29EC1D49005AD516 /* OfferChatModel.swift */,
 				2EEED74029EC1D49005AD516 /* MessageType.swift */,
 				2EF7742229EDC86300AA7D5C /* FileModel.swift */,
@@ -336,7 +350,7 @@
 			children = (
 				2EF7741C29EDB2CF00AA7D5C /* SelectDocSheetView.swift */,
 				2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */,
-				2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */,
+				2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */,
 			);
 			path = "Sheet&AlertViews";
 			sourceTree = "<group>";
@@ -431,9 +445,9 @@
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
-				2EF7742529EDCE9300AA7D5C /* InputDocument.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
+				2EDDF8AA29EE438D00A07574 /* ChatActionProtocols.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
@@ -444,6 +458,7 @@
 				2E781FE329EBADC700F3C5A9 /* ApplicationChecklist.swift in Sources */,
 				2EEED74229EC1D49005AD516 /* OfferChat.swift in Sources */,
 				2E78201029EBB13200F3C5A9 /* NavigationLazy.swift in Sources */,
+				2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */,
 				2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */,
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
@@ -462,6 +477,7 @@
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
+				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,
 				2E78200D29EBB13200F3C5A9 /* NavigationNavBar.swift in Sources */,

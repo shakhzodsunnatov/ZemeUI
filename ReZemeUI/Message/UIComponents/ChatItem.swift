@@ -12,6 +12,7 @@ struct ChatItem: View {
     //MARK: - PROPERTIES
     let messageType: MessageType
     
+    let meetingChatDelegate: ChatMeetingProtocol?
     
     var body: some View {
         
@@ -31,7 +32,18 @@ struct ChatItem: View {
             
         case .meeting(let date):
             
-            MeetingChat(date: date)
+            MeetingChat(
+                date: date,
+                changeDateAction: {
+                    meetingChatDelegate?.changeDateAction($0)
+                },
+                acceptAction: {
+                    meetingChatDelegate?.acceptAction($0)
+                },
+                denyAction: {
+                    meetingChatDelegate?.denyAction($0)
+                }
+            )
             
         case .reminder(let date):
             
@@ -40,10 +52,13 @@ struct ChatItem: View {
     }
 }
 
-
+extension View {
+    
+//    func conformDelegate<Content>(_ :)
+}
 
 struct ChatItem_Previews: PreviewProvider {
     static var previews: some View {
-        ChatItem(messageType: .text("Some message", false))
+        ChatItem(messageType: .text("Some message", false), meetingChatDelegate: self as? ChatMeetingProtocol)
     }
 }
