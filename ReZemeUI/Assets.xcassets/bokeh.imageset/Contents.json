@@ -1,11 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "beds.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
       "filename" : "Rectangle.png",
       "idiom" : "universal",
       "scale" : "1x"

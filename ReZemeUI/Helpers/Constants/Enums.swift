@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 enum HeaderStyle {
-    case title, filteredtitle, filteredinput, filteredstackedinput, customimagetitle, newAgentMainFilter, newTitleAndIcon
+    case title, filteredtitle, filteredinput, filteredstackedinput, customimagetitle, newAgentMainFilter, newTitleAndIcon, newSearchWithTitle
 }
 
 enum HeaderType {
