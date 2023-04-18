@@ -21,6 +21,15 @@ struct ContentView: View {
                 )
             }
             
+            NavigationLink(destination: { MessageRenter() }) {
+                Text("Open Renter Message")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
         }
         .padding()
         .navigationBarHidden(true)
