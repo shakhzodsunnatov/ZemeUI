@@ -13,9 +13,25 @@ class ContentViewModel: ObservableObject {
     @Published var tags: [Tag] = [Tag(name: "jdoe@mail.com",size: 0,type: .send),Tag(name: "haileyreed@mail.com",size: 0,type: .completed)]
     @Published var emails: [String] = []
     @Published var tagText = ""
+    @Published var emailError: Bool = false
     
     init(){
         getTags()
+    }
+    
+    func validate() -> Bool {
+        // Reset any previous errors
+        self.emailError = self.tagText.isEmpty
+        
+        
+        
+        // Check for valid email address using regular expression
+        let emailRegex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        
+        emailError = !emailPredicate.evaluate(with: self.tagText.uppercased())
+        
+        return [emailError].allSatisfy({ !$0 })
     }
     
     func getTags(){

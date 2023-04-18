@@ -17,7 +17,7 @@ struct HomeView: View {
                 Text("Property Manager")
                     .semibold18
                     .multilineTextAlignment(.leading)
-                    .padding(.leading,20)
+                    .padding([.leading,.top],20)
                 ForEach(0...1, id: \.self) { i in
                     propertyCell()
                 }
@@ -33,6 +33,7 @@ struct HomeView: View {
                         }
                 }
             }
+            
             NavigationLink(isActive: $popView) {
                 ApplicationChecklist()
             } label: {
