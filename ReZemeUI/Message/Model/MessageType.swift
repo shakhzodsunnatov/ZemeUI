@@ -12,8 +12,8 @@ enum MessageType: CaseIterable {
     
     static var allCases: [MessageType] {
         return [
-            .text("Some Message", true),
-            .text("Some Message", false),
+            .text("Hey Jake ✋ I just sent a proposal. Please check it. Also I am sending a meeting date.", true),
+            .text("Thanks! Let me check.", false),
             .offer(offerModelMock),
             .meeting(Date()),
             .reminder(Date())

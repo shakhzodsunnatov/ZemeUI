@@ -47,7 +47,14 @@
 		2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
-		2EDDF8AA29EE438D00A07574 /* ChatActionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */; };
+		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
+		2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218529EF6553005D13A7 /* MessageAgent.swift */; };
+		2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */; };
+		2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */; };
+		2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218D29EF6A05005D13A7 /* AgentChatItem.swift */; };
+		2EEB21E929EF6FF2005D13A7 /* AgentChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB21E829EF6FF2005D13A7 /* AgentChatTypesProtocol.swift */; };
+		2EEB21EB29EF72A5005D13A7 /* AgentMeetingChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB21EA29EF72A5005D13A7 /* AgentMeetingChat.swift */; };
+		2EEB21ED29EF7410005D13A7 /* AgentAlarmChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB21EC29EF7410005D13A7 /* AgentAlarmChat.swift */; };
 		2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73529EC1D49005AD516 /* MessageRenter.swift */; };
 		2EEED74229EC1D49005AD516 /* OfferChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73729EC1D49005AD516 /* OfferChat.swift */; };
 		2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEED73829EC1D49005AD516 /* MeetingChat.swift */; };
@@ -118,7 +125,14 @@
 		2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageTool.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatActionProtocols.swift; sourceTree = "<group>"; };
+		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
+		2EEB218529EF6553005D13A7 /* MessageAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgent.swift; sourceTree = "<group>"; };
+		2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgentViewModel.swift; sourceTree = "<group>"; };
+		2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentOfferChat.swift; sourceTree = "<group>"; };
+		2EEB218D29EF6A05005D13A7 /* AgentChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentChatItem.swift; sourceTree = "<group>"; };
+		2EEB21E829EF6FF2005D13A7 /* AgentChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentChatTypesProtocol.swift; sourceTree = "<group>"; };
+		2EEB21EA29EF72A5005D13A7 /* AgentMeetingChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentMeetingChat.swift; sourceTree = "<group>"; };
+		2EEB21EC29EF7410005D13A7 /* AgentAlarmChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentAlarmChat.swift; sourceTree = "<group>"; };
 		2EEED73529EC1D49005AD516 /* MessageRenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRenter.swift; sourceTree = "<group>"; };
 		2EEED73729EC1D49005AD516 /* OfferChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferChat.swift; sourceTree = "<group>"; };
 		2EEED73829EC1D49005AD516 /* MeetingChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingChat.swift; sourceTree = "<group>"; };
@@ -191,7 +205,8 @@
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				2EEED73429EC1D49005AD516 /* Message */,
-				2E781FE629EBAE0100F3C5A9 /* Helpers */,
+				2EEB218429EF6503005D13A7 /* AgentMessage */,
+				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				9D85A07429ED7C40004FEAF3 /* MyParticle.sks */,
@@ -323,8 +338,39 @@
 			isa = PBXGroup;
 			children = (
 				2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */,
+				2E781FE629EBAE0100F3C5A9 /* Helpers */,
 			);
 			path = NotChangableJustForHelp;
+			sourceTree = "<group>";
+		};
+		2EEB218429EF6503005D13A7 /* AgentMessage */ = {
+			isa = PBXGroup;
+			children = (
+				2EEB218529EF6553005D13A7 /* MessageAgent.swift */,
+				2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */,
+				2EEB218929EF67F6005D13A7 /* UIComponents */,
+				2EEB21E729EF6FD1005D13A7 /* Model */,
+			);
+			path = AgentMessage;
+			sourceTree = "<group>";
+		};
+		2EEB218929EF67F6005D13A7 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */,
+				2EEB218D29EF6A05005D13A7 /* AgentChatItem.swift */,
+				2EEB21EC29EF7410005D13A7 /* AgentAlarmChat.swift */,
+				2EEB21EA29EF72A5005D13A7 /* AgentMeetingChat.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		2EEB21E729EF6FD1005D13A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EEB21E829EF6FF2005D13A7 /* AgentChatTypesProtocol.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2EEED73429EC1D49005AD516 /* Message */ = {
@@ -336,7 +382,6 @@
 				2EF7741B29EDB27600AA7D5C /* Sheet&AlertViews */,
 				2EEED73629EC1D49005AD516 /* UIComponents */,
 				2EEED73E29EC1D49005AD516 /* Model */,
-				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -358,7 +403,7 @@
 		2EEED73E29EC1D49005AD516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EDDF8A929EE438D00A07574 /* ChatActionProtocols.swift */,
+				2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */,
 				2EEED73F29EC1D49005AD516 /* OfferChatModel.swift */,
 				2EEED74029EC1D49005AD516 /* MessageType.swift */,
 				2EF7742229EDC86300AA7D5C /* FileModel.swift */,
@@ -468,9 +513,12 @@
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
-				2EDDF8AA29EE438D00A07574 /* ChatActionProtocols.swift in Sources */,
+				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
+				2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */,
 				9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */,
+				2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
+				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
@@ -483,6 +531,7 @@
 				2E781FE329EBADC700F3C5A9 /* ApplicationChecklist.swift in Sources */,
 				2EEED74229EC1D49005AD516 /* OfferChat.swift in Sources */,
 				2E78201029EBB13200F3C5A9 /* NavigationLazy.swift in Sources */,
+				2EEB21E929EF6FF2005D13A7 /* AgentChatTypesProtocol.swift in Sources */,
 				2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */,
 				2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */,
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
@@ -491,6 +540,9 @@
 				2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */,
 				2E78200F29EBB13200F3C5A9 /* NavigationCustomModifier.swift in Sources */,
 				2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */,
+				2EEB21EB29EF72A5005D13A7 /* AgentMeetingChat.swift in Sources */,
+				2EEB21ED29EF7410005D13A7 /* AgentAlarmChat.swift in Sources */,
+				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
 				2E78201F29EBB2C600F3C5A9 /* ImageLoader.swift in Sources */,
 				2E781FE129EBADC700F3C5A9 /* AddingInviteEmailCard.swift in Sources */,
 				2EEED74429EC1D49005AD516 /* AlarmChat.swift in Sources */,
@@ -656,7 +708,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -689,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

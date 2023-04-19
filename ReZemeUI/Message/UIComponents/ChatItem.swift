@@ -12,7 +12,7 @@ struct ChatItem: View {
     //MARK: - PROPERTIES
     let messageType: MessageType
     
-    let meetingChatDelegate: ChatMeetingProtocol?
+    let meetingChatDelegate: RenterChatMeetingProtocol?
     
     var body: some View {
         
@@ -59,6 +59,6 @@ extension View {
 
 struct ChatItem_Previews: PreviewProvider {
     static var previews: some View {
-        ChatItem(messageType: .text("Some message", false), meetingChatDelegate: self as? ChatMeetingProtocol)
+        ChatItem(messageType: .text("Some message", false), meetingChatDelegate: self as? RenterChatMeetingProtocol)
     }
 }

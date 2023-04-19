@@ -23,6 +23,13 @@ enum UserType { //TODO: - remove and change with Account type enum
 enum AccountType: String {
     case RENTER
     case AGENT
+    
+    var color: Color {
+        switch self {
+        case .RENTER: return Color.darkBlue
+        case .AGENT: return Color.secondaryPurple
+        }
+    }
 }
 
 enum Method: String {
