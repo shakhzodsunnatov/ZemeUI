@@ -3,4 +3,54 @@
    uuid = "4B330D14-7D94-403A-A8DA-A5107F8CDA2F"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "418284F9-9390-4138-B3A8-BFA7E4971E9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReZemeUI/Message/MessageRenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "418284F9-9390-4138-B3A8-BFA7E4971E9D - f0671d94434685fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Array&lt;ReZemeUI.FileModel&gt;) -&gt; () in ReZemeUI.MessageRenter.body.getter : some"
+                  moduleName = "ReZemeUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davronusmanov_1/Desktop/ZemeUIDebug/ReZemeUI/Message/MessageRenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "418284F9-9390-4138-B3A8-BFA7E4971E9D - 8dbc9bc19dbcaeec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ReZemeUI.FileModel) -&gt; Swift.String in closure #5 (Swift.Array&lt;ReZemeUI.FileModel&gt;) -&gt; () in ReZemeUI.MessageRenter.body.getter : some"
+                  moduleName = "ReZemeUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davronusmanov_1/Desktop/ZemeUIDebug/ReZemeUI/Message/MessageRenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -9,23 +9,14 @@ import SwiftUI
 
 struct RequestedDocCard: View {
     
-    private let titles = [
-        "Plaid Verified Bank Statement",
-        "Employment Verification",
-        "W2 Form",
-        "Credit Check"
-    ]
-    
-    private let images = [
-        "bank_ic",
-        "people_ic",
-        "document_ic",
-        "speed_ic"
-    ]
-    
+    @Binding var models: [RequestDocumentDM] 
+    @Binding var textFiled: String
     @Binding var step: Int
     
+    @State var activeTextField: Bool = false
+    
     var tappedStep: (Int) -> Void = {_ in}
+    var deleteStep: (Int) -> Void = {_ in}
     
     var body: some View {
         VStack(alignment: .leading,spacing: 12) {
@@ -41,16 +32,18 @@ struct RequestedDocCard: View {
             
             VStack(alignment: .leading, spacing: 30) {
                 
-                ForEach((0..<titles.count), id: \.self) { index in
+                ForEach((0..<models.count), id: \.self) { index in
                     
                     createStepButton(
                         number: index+1,
-                        image: images[index],
-                        title: titles[index],
+                        image: models[index].title,
+                        title: models[index].images,
                         isActive: index <= step
                     )
                     {
                         tappedStep(index)
+                    } deletebtnAction: {
+                        deleteStep(index)
                     }
                     
                 }
@@ -92,7 +85,7 @@ struct RequestedDocCard: View {
 
 extension RequestedDocCard {
     
-    private func createStepButton(number: Int, image: String, title: String, isActive: Bool, btnAction action: @escaping ()->Void) -> some View {
+    private func createStepButton(number: Int, image: String, title: String, isActive: Bool, btnAction action: @escaping ()->Void, deletebtnAction deleteaction: @escaping ()->Void) -> some View {
         HStack(spacing: 13) {
             
             Image(systemName: isActive ? "checkmark.circle.fill" : "\(number).circle")
@@ -102,7 +95,7 @@ extension RequestedDocCard {
                 .frame(width: 20, height: 20)
                 .background(Color.white)
             
-            Button(action: action) {
+            
                 HStack(spacing: 13) {
                     Image(image)
                         .resizable()
@@ -122,17 +115,37 @@ extension RequestedDocCard {
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(2)
                         .opacity(isActive ? 1 : 0.4)
+//                        .disabled(activeTextField)
                     
                     Spacer()
-                    
-                    Image(systemName: "chevron.right.circle")
-                        .resizable()
-                        .scaledToFill()
-                        .font(.title.weight(.light))
-                        .foregroundColor(Color.darkBlue.opacity(isActive ? 1 : 0.4))
-                        .frame(width: 26, height: 26)
+                    HStack(spacing: 12) {
+                        
+                        Button {
+                            deleteaction()
+                        } label: {
+                            Image(systemName: "trash")
+                                .renderingMode(.template)
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.red)
+                                .cornerRadius(15)
+                                .opacity(isActive ? 1 : 0.4)
+                        }
+
+                        
+                        Button(action: action) {
+                        Image(systemName: "chevron.right.circle")
+                            .resizable()
+                            .scaledToFill()
+                            .font(.title.weight(.light))
+                            .foregroundColor(Color.darkBlue.opacity(isActive ? 1 : 0.4))
+                            .frame(width: 26, height: 26)
+                    }
                 }
             }
+                .onTapGesture(count: 2) {
+                    activeTextField = false
+                }
             .disabled(!isActive)
         }
     }
@@ -154,11 +167,16 @@ extension RequestedDocCard {
     }
 }
 
-struct RequestedDocCard_Previews: PreviewProvider {
-    static var previews: some View {
-        RequestedDocCard(step: .constant(2)) { index in
-            // index is tapped step index
-        }
-        .padding(.horizontal, 20)
-    }
+//struct RequestedDocCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RequestedDocCard(models: .constant([.init(images: "", title: "dsfghjk")]), step: .constant(2)) { index in
+//            // index is tapped step index
+//        }
+//        .padding(.horizontal, 20)
+//    }
+//}
+
+struct RequestDocumentDM {
+    var images: String
+   @State var title: String
 }

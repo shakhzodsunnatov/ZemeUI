@@ -74,6 +74,7 @@
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */; };
 		9D85A07529ED7C40004FEAF3 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D85A07429ED7C40004FEAF3 /* MyParticle.sks */; };
+		9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		9D85A07429ED7C40004FEAF3 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidVerifiedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				2E781FD829EBADC700F3C5A9 /* CongratsView.swift */,
 				9D2694C329EDEBF600AA6272 /* HomeView.swift */,
 				2E781FD929EBADC700F3C5A9 /* Components */,
+				9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */,
 			);
 			path = ApplicationChecklist;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
 				2E78200029EBB05800F3C5A9 /* ColorGradient.swift in Sources */,
+				9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */,
 				2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */,
 				2E78200F29EBB13200F3C5A9 /* NavigationCustomModifier.swift in Sources */,
 				2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */,
@@ -641,7 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -674,7 +678,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

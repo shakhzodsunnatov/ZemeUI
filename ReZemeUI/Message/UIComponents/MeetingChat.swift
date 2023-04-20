@@ -11,21 +11,22 @@ struct MeetingChat: View {
     
     //MARK: - PROPERTIES
     
-    let date: Date
+    var date: Date
+    @State var today = Date()
     let changeDateAction: (Date)-> Void
     let acceptAction: (Date) -> Void
     let denyAction: (Date) -> Void
-    
+    @State var mode:Bool = false
     var body: some View {
+        
         VStack(spacing: 20) {
-
+            
             headerTime
             
             //TODO: - Custom Divider
-            
             HStack(spacing: 0) {
                 
-                changeDateButton(action: { changeDateAction(date) } )
+                changeDateButton(action: { mode.toggle() } )
                 
                 Spacer(minLength: 0)
                 
@@ -35,6 +36,25 @@ struct MeetingChat: View {
                 
                 denyButton(action: { denyAction(date) } )
             }
+            
+            
+                if mode {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.white)
+                            .shadowCustom()
+                            .onTapGesture {
+                                withAnimation(.easeInOut) {
+                                    mode.toggle()
+                                }
+                            }
+                        DatePicker("select", selection: $today,in: Date()..., displayedComponents: .date)
+                            .frame(width: 300 , height: 300)
+                            .datePickerStyle(.graphical)
+                            .zIndex(1)
+                    }
+                    
+                }
         }
         .padding(.vertical, 15)
         .padding(.horizontal, 13)
@@ -52,21 +72,25 @@ extension MeetingChat {
     
     private var headerTime: some View {
         HStack(spacing: 7) {
-
+            
             Image("calendar")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
-
+            
             Text("Meeting Date")
                 .foregroundColor(Color.textGray)
                 .medium16
-
+            
             Spacer()
-
-            Text(date, style: .date)
+            
+            Text(self.today.setCurrentDate())
                 .medium16
-
+                .foregroundColor(.blue)
+                .onChange(of: self.today) { newValue in
+                    mode.toggle()
+                }
+            
         }
     }
     
@@ -88,16 +112,16 @@ extension MeetingChat {
     private func acceptButton(action: @escaping ()-> Void) -> some View {
         Button(action: action) {
             
-        Text("Accept")
-            .foregroundColor(.white)
-            .semibold14
-            .padding(.horizontal, 15)
-            .frame(height: 36)
-            .frame(width: (SCREEN_WIDTH-92)/3.2)
-            .background(
-                Capsule()
-                    .fill(Color.blueGradient.toLinearGradient)
-            )
+            Text("Accept")
+                .foregroundColor(.white)
+                .semibold14
+                .padding(.horizontal, 15)
+                .frame(height: 36)
+                .frame(width: (SCREEN_WIDTH-92)/3.2)
+                .background(
+                    Capsule()
+                        .fill(Color.blueGradient.toLinearGradient)
+                )
         }
     }
     
@@ -115,6 +139,9 @@ extension MeetingChat {
                 )
         }
     }
+    
+    
+    
 }
 
 struct MeetingChat_Previews: PreviewProvider {
@@ -125,6 +152,33 @@ struct MeetingChat_Previews: PreviewProvider {
             acceptAction: {_ in},
             denyAction: {_ in}
         )
-            .frame(height: 50)
+        .frame(height: 50)
+    }
+}
+
+extension Date {
+     func setCurrentDate() -> String {
+        //          let date = Date()
+        // Use this to add st, nd, th, to the day
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .ordinal
+        numberFormatter.locale = Locale.current
+        
+        //Set other sections as preferred
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMM"
+        
+        // Works well for adding suffix
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        
+        let dayString = dayFormatter.string(from: self)
+        let monthString = monthFormatter.string(from: self)
+        
+        // Add the suffix to the day
+        let dayNumber = NSNumber(value: Int(dayString)!)
+        let day = numberFormatter.string(from: dayNumber)!
+        
+        return "\(monthString) \(day)"
     }
 }
