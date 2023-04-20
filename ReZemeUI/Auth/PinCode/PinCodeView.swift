@@ -28,6 +28,7 @@ struct PinCodeView: View {
                         
                         Text("Enter the code that was sent to your number ending in 2214")
                             .regular12
+                            .fixedSize(horizontal: false, vertical: true)
                         
                         lineDivider
                         .padding(.top, 13)
@@ -56,7 +57,7 @@ struct PinCodeView: View {
                         }
 
                         
-                        Image("phoneNumber_ic")
+                        Image("pinCode_ic")
                             .resizable()
                             .scaledToFit()
                             .frame(maxWidth: .infinity)

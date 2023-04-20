@@ -22,7 +22,6 @@ struct ApplicationChecklist: View {
     
     @State var trl = ""
     
-    @Binding var isActive: Bool
     @State var files: [FileModel] = []
     var addFileAction: ()->Void = {}
     var submit: ([FileModel])-> Void = { _ in}
@@ -36,6 +35,8 @@ struct ApplicationChecklist: View {
         .init(images: "W2 Form", title: "document_ic"),
         .init(images: "Credit Check",title: "speed_ic"),
     ]
+    
+    
     //MARK: - body
     
     var body: some View {
@@ -299,9 +300,9 @@ extension ApplicationChecklist {
         }
     }
 }
-//
-//struct ApplicationChecklist_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ApplicationChecklist()
-//    }
-//}
+
+struct ApplicationChecklist_Previews: PreviewProvider {
+    static var previews: some View {
+        ApplicationChecklist()
+    }
+}

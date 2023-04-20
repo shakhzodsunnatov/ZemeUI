@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             
-            NavigationLink(destination: { ApplicationChecklist(isActive: .constant(true)) }) {
+            NavigationLink(destination: { ApplicationChecklist() }) {
                 Text("Open Application Checklist")
                 .foregroundColor(.white)
                 .padding(15)

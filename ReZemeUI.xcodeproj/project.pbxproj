@@ -45,6 +45,7 @@
 		2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */; };
 		2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */; };
 		2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */; };
+		2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0229F12E330029FDBD /* ActionButton.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -128,6 +129,7 @@
 		2E78201B29EBB2C600F3C5A9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageTool.swift; sourceTree = "<group>"; };
+		2E84CE0229F12E330029FDBD /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -217,6 +219,8 @@
 				2EEED73429EC1D49005AD516 /* Message */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
 				2EE41D6B29F0B69E00E4B878 /* Auth */,
+				2E84CDFE29F12CF70029FDBD /* Setting */,
+				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
@@ -284,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				2E781FFF29EBB05800F3C5A9 /* ColorGradient.swift */,
-				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
 				2E781FED29EBAF0000F3C5A9 /* Color.swift */,
 			);
 			path = Colors;
@@ -344,6 +347,38 @@
 				2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */,
 			);
 			path = ImageManager;
+			sourceTree = "<group>";
+		};
+		2E84CDFE29F12CF70029FDBD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		2E84CDFF29F12D160029FDBD /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2E84CE0029F12D230029FDBD /* Merged */,
+				2E84CE0129F12D300029FDBD /* New */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		2E84CE0029F12D230029FDBD /* Merged */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Merged;
+			sourceTree = "<group>";
+		};
+		2E84CE0129F12D300029FDBD /* New */ = {
+			isa = PBXGroup;
+			children = (
+				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
+				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
+			);
+			path = New;
 			sourceTree = "<group>";
 		};
 		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
@@ -587,6 +622,7 @@
 				2EEB21EB29EF72A5005D13A7 /* AgentMeetingChat.swift in Sources */,
 				2EEB21ED29EF7410005D13A7 /* AgentAlarmChat.swift in Sources */,
 				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
+				2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */,
 				2E78201F29EBB2C600F3C5A9 /* ImageLoader.swift in Sources */,
 				2E781FE129EBADC700F3C5A9 /* AddingInviteEmailCard.swift in Sources */,
 				2EEED74429EC1D49005AD516 /* AlarmChat.swift in Sources */,
@@ -737,7 +773,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -770,7 +806,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
