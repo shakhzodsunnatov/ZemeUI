@@ -1,5 +1,5 @@
 //
-//  PhoneNumberView.swift
+//  PinCodeView.swift
 //  ReZemeUI
 //
 //  Created by Shakhzod on 20/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PhoneNumberView: View {
+struct PinCodeView: View {
     
     //MARK: - PROPERTIES
     
@@ -22,10 +22,12 @@ struct PhoneNumberView: View {
                 
                     VStack(alignment: .leading, spacing: 0) {
                         
-                        Text("Enter Phone Number")
+                        Text("Enter Verification Code")
                             .foregroundColor(.darkBlue)
                             .semibold18
                         
+                        Text("Enter the code that was sent to your number ending in 2214")
+                            .regular12
                         
                         lineDivider
                         .padding(.top, 13)
@@ -33,19 +35,26 @@ struct PhoneNumberView: View {
                         
                         VStack(alignment: .leading) {
                             
-                            textFieldHeader
-                            
-                            phoneTextField(phone: $phoneNumber)
+                            PinCodeTextField { pinCode in
+                                // Here
+                                if pinCode.count == 6 {
+                                    dismissKeyboard()
+                                }
+                            }
                             
                         }
-                        .padding(.top, 19)
+                        .padding(.top, 31)
                         
                         
-                        Text("We will send a verification to code to this number ")
-                            .regular12
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 19)
+                        Button {
+                            // Resend logic
+                        } label: {
+                            Text("Resend Code")
+                                .medium12
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.top, 18)
+                        }
+
                         
                         Image("phoneNumber_ic")
                             .resizable()
@@ -77,7 +86,9 @@ struct PhoneNumberView: View {
                     
                     Color.clear
                     
-                    NavigationLink(destination: {PinCodeView()}, label: {
+                    Button {
+                        // Continue Button action
+                    } label: {
                         Text("Continue")
                             .bold18
                             .foregroundColor(.white)
@@ -87,10 +98,7 @@ struct PhoneNumberView: View {
                                 Capsule()
                                     .fill(Color.blueGradient.toLinearGradient)
                             )
-                            .opacity(phoneNumber.count == 11 ? 1 : 0.3)
-                            .disabled(phoneNumber.count != 11)
-                            .animation(.easeIn)
-                    })
+                    }
                     .padding(.horizontal, 76)
                 }
             }
@@ -105,7 +113,7 @@ struct PhoneNumberView: View {
 
 //MARK: - UI
 
-extension PhoneNumberView {
+extension PinCodeView {
     
     private func topHeaderView(geo: GeometryProxy) -> some View {
         ZStack(alignment: .top) {
@@ -152,56 +160,9 @@ extension PhoneNumberView {
         }
     }
     
-    private var textFieldHeader: some View {
-        HStack(spacing: 7) {
-            
-            Image(systemName: "phone")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.darkBlue)
-                .frame(width: 18, height: 18)
-            
-            Text("Phone Number")
-                .regular14
-        }
-
-    }
-    
-    private func phoneTextField(phone: Binding<String>) -> some View {
-        HStack(spacing: 11) {
-            
-            Text("+1")
-            
-            Divider()
-            
-            TextField(format(with: "XXX-XXX-XXX", phone: "0000000000"), text: phone)
-                .autocorrectionDisabled()
-                .keyboardType(.numberPad)
-                .onChange(of: phoneNumber) { newValue in
-                    phoneNumber = format(with: "XXX-XXX-XXX", phone: newValue)
-                    
-                    if phoneNumber.count == 11 {
-                        dismissKeyboard()
-                    }
-                }
-                
-            Spacer()
-        }
-        .medium16
-        .padding(.vertical, 10)
-        .padding(.horizontal, 21)
-        .frame(height: 58)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.white)
-                .glow()
-        )
-    }
 }
-
-struct PhoneNumberView_Previews: PreviewProvider {
+struct PinCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneNumberView()
+        PinCodeView()
     }
 }

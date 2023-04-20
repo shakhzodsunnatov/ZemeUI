@@ -42,7 +42,7 @@ struct ContentView: View {
             }
             
             NavigationLink(destination: { PhoneNumberView() }) {
-                Text("Open Agent Message")
+                Text("Phone Number")
                 .foregroundColor(.white)
                 .padding(15)
                 .background(

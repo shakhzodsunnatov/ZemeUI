@@ -49,6 +49,9 @@
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
 		2EE41D6D29F0B6F200E4B878 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */; };
+		2EE41D6F29F0C62300E4B878 /* PinCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE41D6E29F0C62300E4B878 /* PinCodeTextField.swift */; };
+		2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE41D7029F0C86E00E4B878 /* PinViewModel.swift */; };
+		2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE41D7429F0CB4700E4B878 /* PinCodeView.swift */; };
 		2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218529EF6553005D13A7 /* MessageAgent.swift */; };
 		2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */; };
 		2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */; };
@@ -128,6 +131,9 @@
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
 		2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		2EE41D6E29F0C62300E4B878 /* PinCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeTextField.swift; sourceTree = "<group>"; };
+		2EE41D7029F0C86E00E4B878 /* PinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewModel.swift; sourceTree = "<group>"; };
+		2EE41D7429F0CB4700E4B878 /* PinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		2EEB218529EF6553005D13A7 /* MessageAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgent.swift; sourceTree = "<group>"; };
 		2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgentViewModel.swift; sourceTree = "<group>"; };
 		2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentOfferChat.swift; sourceTree = "<group>"; };
@@ -350,8 +356,27 @@
 			isa = PBXGroup;
 			children = (
 				2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */,
+				2EE41D7229F0CA6300E4B878 /* PinCode */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		2EE41D7229F0CA6300E4B878 /* PinCode */ = {
+			isa = PBXGroup;
+			children = (
+				2EE41D7329F0CB2300E4B878 /* UIComponents */,
+				2EE41D7429F0CB4700E4B878 /* PinCodeView.swift */,
+			);
+			path = PinCode;
+			sourceTree = "<group>";
+		};
+		2EE41D7329F0CB2300E4B878 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2EE41D7029F0C86E00E4B878 /* PinViewModel.swift */,
+				2EE41D6E29F0C62300E4B878 /* PinCodeTextField.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		2EEB218429EF6503005D13A7 /* AgentMessage */ = {
@@ -522,6 +547,7 @@
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
+				2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
@@ -529,6 +555,7 @@
 				9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */,
 				2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
+				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
@@ -546,6 +573,7 @@
 				2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */,
 				2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */,
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
+				2EE41D6F29F0C62300E4B878 /* PinCodeTextField.swift in Sources */,
 				2EE41D6D29F0B6F200E4B878 /* PhoneNumberView.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
 				2E78200029EBB05800F3C5A9 /* ColorGradient.swift in Sources */,
