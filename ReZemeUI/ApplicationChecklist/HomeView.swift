@@ -35,7 +35,7 @@ struct HomeView: View {
             }
             
             NavigationLink(isActive: $popView) {
-                ApplicationChecklist()
+                ApplicationChecklist(isActive: .constant(true))
             } label: {
                 EmptyView()
             }

@@ -10,7 +10,7 @@ import SwiftUI
 struct OfferChat: View {
     
     //MARK: - PROPERTIES
-    let model: OfferChatModel
+    var model: OfferChatModel
     
     let acceptAction = {}
     let denyAction = {}
@@ -38,7 +38,7 @@ struct OfferChat: View {
                         
                         Spacer()
                         
-                        Text(model.date, style: .date)
+                        Text(self.model.date.setCurrentDate())
                     }
                     .semibold16
                     .foregroundColor(.darkBlue)

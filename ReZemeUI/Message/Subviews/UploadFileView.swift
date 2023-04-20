@@ -17,18 +17,21 @@ struct UploadFileView: View {
     var addFileAction = {}
     var submit: ([FileModel]) -> Void = { _ in}
     
+    var test: Bool = false
+    
     @ObservedObject var keyboardHeightHelper = KeyboardHeightHelperForm()
     @State var heightOfKeyboard: CGFloat = 0
     
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                
-                headerUI(
-                    image: "document_ic",
-                    name: "W2 Forms",
-                    action: closeAction
-                )
+                if !test {
+                    headerUI(
+                        image: "document_ic",
+                        name: "W2 Forms",
+                        action: closeAction
+                    )
+                }
                 
                 uploadedFilesUI(
                     files: files,
@@ -37,12 +40,59 @@ struct UploadFileView: View {
                 )
                 .padding(.top,27)
                 
-                buttons(
-                    addFileAction: addFileAction,
-                    submitAction: { submit(files) }
-                )
-                .padding(.top, 23)
-                .padding(.horizontal, 15)
+                if !test {
+                    buttons(
+                        addFileAction: addFileAction,
+                        submitAction: { submit(files) }
+                    )
+                    .padding(.top, 23)
+                    .padding(.horizontal, 15)
+                } else {
+                    Button {
+                        addFileAction()
+                        submit(files)
+                    } label: {
+                        VStack{
+                            HStack {
+                                Image("edit")
+                                    .resizable()
+                                    .frame(width: 18, height: 18)
+                                
+                                Text("Add Photos")
+                                    .regular14
+                                
+                                Spacer()
+                            }
+                            .padding(.horizontal,15)
+                           
+                            HStack {
+                                Spacer()
+                                VStack(spacing: 3) {
+                                    
+                                    Text("Tap to upload a photo")
+                                        .medium16
+                                    
+                                    
+                                    Text("You can add multiple photos")
+                                        .medium12
+                                    
+                                }
+                                Spacer()
+                            }
+                            .padding(.vertical,35)
+                            .background(Color.purpleLow.opacity(0.1))
+                            .overlay(
+                               RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.purpleLow, style: StrokeStyle(lineWidth: 1, dash: [3]))
+                            )
+                            .padding(.horizontal,16)
+                                    
+                                    
+                        }
+                    }
+                    .foregroundColor(.black)
+                }
+               
             }
             .padding(EdgeInsets(top: 23, leading: 22, bottom: 28, trailing: 22))
             .background(Color.white)
