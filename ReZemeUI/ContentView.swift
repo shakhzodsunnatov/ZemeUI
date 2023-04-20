@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ScrollView {
             
             NavigationLink(destination: { ApplicationChecklist(isActive: .constant(true)) }) {
                 Text("Open Application Checklist")
@@ -23,6 +23,26 @@ struct ContentView: View {
             
             NavigationLink(destination: { MessageRenter() }) {
                 Text("Open Renter Message")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
+            NavigationLink(destination: { MessageAgent() }) {
+                Text("Open Agent Message")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
+            NavigationLink(destination: { PhoneNumberView() }) {
+                Text("Phone Number")
                 .foregroundColor(.white)
                 .padding(15)
                 .background(

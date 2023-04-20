@@ -1,20 +1,21 @@
 //
-//  MessageRenter.swift
-//  ReZeme
+//  MessageAgent.swift
+//  ReZemeUI
 //
-//  Created by Shakhzod on 23/03/23.
+//  Created by Shakhzod on 19/04/23.
 //
 
 import SwiftUI
 
-struct MessageRenter: View {
+struct MessageAgent: View {
+    
+    //MARK: - PROPETIES
     
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var keyboardHeightHelper = KeyboardHeightHelper()
-    @StateObject var viewModel = MessageRenterViewModel()
+    @StateObject var viewModel = MessageAgentViewModel()
     
     @State var textMessage = ""
-    @State var isTodoViewOpened = false
     @State var heightOfKeyboard: CGFloat = 0
     @State var scrollToEnd = false
     
@@ -29,7 +30,7 @@ struct MessageRenter: View {
     let options = ["Take Picture", "Select File", "Choose Photo"]
     
     var body: some View {
-        NavigationNavBar(title: "Message Agent") {
+        NavigationNavBar(title: "Message Agent", type: .AGENT) {
             GeometryReader { geo in
                 ZStack(alignment: .top) {
                     
@@ -38,14 +39,13 @@ struct MessageRenter: View {
                         VStack(spacing:0) {
                             
                             ScrollViewReader { scrollViewProxy in
-                                
                                 ScrollView(.vertical, showsIndicators: false) {
                                     
                                     Text("Today")
                                         .medium14
                                         .foregroundColor(.textGray)
                                         .padding(.vertical,9)
-                                        .padding(.top, 85)
+                                        .padding(.top, 75)
                                     
                                     chatItems(viewModel.messages)
                                         .padding(.horizontal, 20)
@@ -83,7 +83,7 @@ struct MessageRenter: View {
                                     }
                                 )
                             )
-                            .padding(.horizontal, 20)
+                            .padding(.horizontal, 18)
                             .offset(y: -max(heightOfKeyboard - geo.safeAreaInsets.bottom, geo.safeAreaInsets.bottom))
                             .onChange(of: self.keyboardHeightHelper.keyboardHeight) { newValue in
                                 DispatchQueue.main.async {
@@ -102,11 +102,10 @@ struct MessageRenter: View {
                     .background(Color.white)
                     .ignoresSafeArea()
                     
-                    viewToDo(openCloseValue: $isTodoViewOpened) {
-                        isTodoViewOpened.toggle()
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top,9)
+                    proposalButtons(
+                        rent: {},
+                        meeting: {}
+                    )
                 }
             }
         }
@@ -161,79 +160,100 @@ struct MessageRenter: View {
 }
 
 
-//MARK: - ChatMeetingProtocol - PROTOCOL
+//MARK: - AgentChatTypesProtocol - PROTOCOL
 
-extension MessageRenter: RenterChatMeetingProtocol {
-    func changeDateAction(_ date: Date) {}
+extension MessageAgent: AgentChatTypesProtocol {
     
-    func acceptAction(_ date: Date) {
-        withAnimation {
-            self.showMeetingTypeAlert.toggle()
-        }
-    }
+    //MARK: - Offer
     
-    func denyAction(_ date: Date) {}
+    func deleteOffer(_ offer: OfferChatModel) {}
+    
+    func changeOffer(_ offer: OfferChatModel) {}
+    
+    //MARK: - Meeting
+    
+    func changeMeetingDate(_ date: Date) {}
+    
+    func deleteMeetingDate(_ date: Date) {}
+    
+    //MARK: - Reminder
+    
+    func sendReminder() {}
+    
 }
 
 
 //MARK: - UI Components
 
-extension MessageRenter {
-    
-    private func viewToDo(openCloseValue value: Binding<Bool>, action:@escaping ()->Void) -> some View {
-        Button(action: action) {
-            HStack {
-                
-                Spacer()
-                
-                Text("View To-DOs")
-                    .semibold14
-                    .foregroundColor(.primaryBlue)
-                    .padding(.leading, 15)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.down")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.primaryBlue)
-                    .frame(width: 20, height: 20)
-                
-                
-            }
-            .padding(.horizontal, 15)
-            .frame(height: 42)
-            .frame(maxWidth: .infinity)
-            .background(
-                Capsule()
-                    .stroke(Color.primaryBlue, lineWidth: 1)
-            )
-            .background(
-                Capsule()
-                    .fill(Color.white)
-            )
-        }
-    }
+extension MessageAgent {
     
     private func chatItems(_ chats: [MessageType]) -> some View {
         VStack(spacing: 20) {
             
             ForEach((0..<chats.count), id: \.self) { index in
-                ChatItem(messageType: chats[index], meetingChatDelegate: self)
+                AgentChatItem(
+                    messageType: chats[index],
+                    chatDelegates: self
+                )
+            }
+        }
+    }
+    
+    private func proposalButtons(rent: @escaping ()-> Void, meeting: @escaping ()->Void ) -> some View {
+        HStack(spacing: 11) {
+            
+            Button(action: rent) {
+                HStack(spacing: 6) {
+                    Image(systemName: "dollarsign.circle")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Rent Proposal")
+                        .foregroundColor(.darkBlue)
+                        .semibold14
+                }
+                .frame(height: 36)
+                .frame(maxWidth: .infinity)
+                .background(
+                    Capsule()
+                        .stroke(Color.darkBlue)
+                )
             }
             
+            Button(action: meeting) {
+                HStack(spacing: 6) {
+                    Image("calendar_white")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Meeting Proposal")
+                        .semibold14
+                }
+                .foregroundColor(.white)
+                .frame(height: 36)
+                .frame(maxWidth: .infinity)
+                .background(
+                    Capsule()
+                        .fill(Color.blueGradient.toLinearGradient)
+                )
+            }
         }
+        .padding(18)
+        .background(Color.white)
+        .glow()
     }
 }
 
-extension MessageRenter {
+extension MessageAgent {
     func dismissKeyboard() {
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.endEditing(true)
     }
 }
 
-struct MessageRenter_Previews: PreviewProvider {
+struct MessageAgent_Previews: PreviewProvider {
     static var previews: some View {
-        MessageRenter()
+        MessageAgent()
     }
 }
