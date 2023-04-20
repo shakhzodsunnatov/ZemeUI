@@ -29,9 +29,9 @@ struct CreditCheckView: View {
                     VStack(spacing: 20) {
                         
                         Group {
-                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal First Name",placeHolder: "First Name" ,text: $vm.firstnameText, textFiledStyle: .simple, emailError: $vm.firstnamecheck)
+                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal First Name",placeHolder: "First Name" ,text: $vm.firstnameText, textFiledStyle: .simple, emailError: .constant(false))
                             
-                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal Middle Name",placeHolder: "Middle Name" ,text: $vm.middlenameText, textFiledStyle: .simple, emailError: $vm.middlenamecheck)
+                            TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal Middle Name",placeHolder: "Middle Name" ,text: $vm.middlenameText, textFiledStyle: .simple, emailError: .constant(false))
                             
                             TextFieldWithIcon(image: "profile_agent_red", topTitle: "Legal Last Name",placeHolder: "Last Name" ,text: $vm.lastnameText, textFiledStyle: .simple, emailError: $vm.lastnamecheck)
                             

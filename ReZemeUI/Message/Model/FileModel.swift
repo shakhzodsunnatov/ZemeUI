@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FileModel {
+struct FileModel: Hashable {
     var name: String = ""
     var fileStr: String = ""
     var notes: [String] = []

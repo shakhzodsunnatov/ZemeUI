@@ -12,30 +12,19 @@ struct ApplicationChecklist: View {
     //MARK: - PROPERTIES
     @State var showAlert = false
     let options = ["Take Picture", "Select File", "Choose Photo"]
-    @Environment(\.presentationMode) var presentationMode
     
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var viewModel = ApplicationChecklistVM()
     @State var step = 0
-    @State var index = 0
+    
     @State var isTermConformed = false
     @State var isActiveSubmitBtn = false
     @State var navigate = false
     
     @State var trl = ""
-    
-    @State var files: [FileModel] = []
-    var addFileAction: ()->Void = {}
-    var submit: ([FileModel])-> Void = { _ in}
     @State var isImporting = false
     @State var showAlertt = false
     @State var isConfirmed = false
-    
-    @State var models: [RequestDocumentDM] = [
-        .init(images: "Plaid Verified Bank State", title: "bank_ic"),
-        .init(images: "Employment Verification", title: "people_ic"),
-        .init(images: "W2 Form", title: "document_ic"),
-        .init(images: "Credit Check",title: "speed_ic"),
-    ]
-    
     
     //MARK: - body
     
@@ -48,16 +37,17 @@ struct ApplicationChecklist: View {
                         .padding(.horizontal,20)
                         .padding(.top, 22)
                     
-                    if !models.isEmpty {
-                        RequestedDocCard(models: $models, textFiled: $trl, step: $step, tappedStep: { index in
+                    if !viewModel.models.isEmpty {
+                        RequestedDocCard(models: $viewModel.models, step: $step, tappedStep: { index in
                             if step < 4 {
                                 step += 1
                                 isActiveSubmitBtn = step >= 3 && isTermConformed
                             }
-                            self.index = index
+                            self.viewModel.index = index
                             navigate.toggle()
                         },deleteStep: { index in
-                            models.remove(at: index)
+                            viewModel.models.remove(at: index)
+                            self.viewModel.index = index
                         })
                             .padding(.horizontal,20)
                             .padding(.top, 20)
@@ -71,7 +61,9 @@ struct ApplicationChecklist: View {
                     
                     uploadReviewButtons {
                         showAlert.toggle()
-                        self.models.append(.init(images: "New Documents", title: "document_icon"))
+                        self.viewModel.models.append(.init(images: "New Documents", title: "document_icon", fileAll: []))
+                        
+                       
                     } review: {
                         // Review Button pressed action
                     }
@@ -96,8 +88,6 @@ struct ApplicationChecklist: View {
                                         Text(options[1]), // "Select File"
                                         action: {
                                             self.showAlert = false
-                                            
-    //                                        self.showSelectDocView.toggle()
                                         }
                                     ),
                                     .default(
@@ -179,9 +169,17 @@ struct ApplicationChecklist: View {
             
             
             NavigationLink(isActive: $navigate) {
-                switch index {
-                case 3: CreditCheckView()
-                default:  PlaidVerifiedView(isActive: .constant(false), files: .constant([]),title: models[index].images)
+
+                switch viewModel.models[self.viewModel.index].images {
+                case "Credit Check": CreditCheckView()
+                default:
+                    if viewModel.models.isEmpty {
+                        PlaidVerifiedView(modelforFile: .constant(.init(images: "s", title: "asfs", fileAll: [])))
+                    } else {
+                        let inde = self.viewModel.index
+                        PlaidVerifiedView(modelforFile: $viewModel.models[inde])
+                    }
+                    
                 }
             } label: {
                 EmptyView()
@@ -207,8 +205,8 @@ extension ApplicationChecklist: InviteEmailCardDelegate {
 extension ApplicationChecklist {
     
     private func navBar(geo: GeometryProxy) -> some View {
+        
             HStack {
-                
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
@@ -241,6 +239,7 @@ extension ApplicationChecklist {
     }
     
     private func uploadReviewButtons(upload: @escaping ()->Void, review: @escaping ()-> Void) -> some View {
+        
         HStack(spacing: 17) {
             
             Button(action: upload) {
@@ -305,4 +304,19 @@ struct ApplicationChecklist_Previews: PreviewProvider {
     static var previews: some View {
         ApplicationChecklist()
     }
+}
+
+class ApplicationChecklistVM: ObservableObject {
+    
+    @Published var fileAll: [FileModel] = []
+    @Published var index = 0
+    @Published var models: [RequestDocumentDM] = [
+        .init(images: "Plaid Verified Bank State", title: "bank_ic", fileAll: []),
+        .init(images: "Employment Verification", title: "people_ic", fileAll: []),
+        .init(images: "W2 Form", title: "document_ic", fileAll: []),
+        .init(images: "Credit Check",title: "speed_ic", fileAll: []),
+    ]
+    
+    static var shared = ApplicationChecklistVM()
+    
 }

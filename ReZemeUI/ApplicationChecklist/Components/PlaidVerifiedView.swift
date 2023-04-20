@@ -10,34 +10,69 @@ import UniformTypeIdentifiers
 
 struct PlaidVerifiedView: View {
     
-    @Binding var isActive: Bool
-    @Binding var files: [FileModel]
-    var closeAction = {}
-    var addFileAction = {}
-    var submit: ([FileModel]) -> Void = { _ in}
-    @State var title: String
-    @State var showAlert = false
-    @State var showSelectDocView = false
-    @State var showFileUploadView = false
-    @State var showMeetingTypeAlert = false
+//    @State var files: [FileModel] = []
+    @State var title: String = ""
     @State var isImporting = false
+//    @EnvironmentObject var viewModel: ApplicationChecklistVM
+    
+    @Binding var modelforFile: RequestDocumentDM
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        NavigationNavBar(title: title) {
-            ScrollView(.vertical) {
+        NavigationNavBar(title: modelforFile.images) {
+            ZStack {
                 VStack {
+                    ScrollView(.vertical) {
+                        VStack {
+                            ForEach((0..<modelforFile.fileAll.count), id: \.self) { index in
+                                uploadFile(index: index)
+                            }
+
+                            Button {
+                                isImporting.toggle()
+                            } label: {
+                                VStack{
+                                    HStack {
+                                        Spacer()
+                                        VStack(spacing: 3) {
+                                            
+                                            Text("Tap to upload a photo")
+                                                .medium16
+                                            
+                                            
+                                            Text("You can add multiple photos")
+                                                .medium12
+                                            
+                                        }
+                                        Spacer()
+                                    }
+                                    .padding(.vertical,35)
+                                    .background(Color.purpleLow.opacity(0.1))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color.purpleLow, style: StrokeStyle(lineWidth: 1, dash: [3]))
+                                    )
+                                }
+                                .padding(16)
+                            }
+                            .padding(.top,10)
+                            .foregroundColor(.black)
+                        }
+                    }
                     
-                    UploadFileView(
-                        isActive: $isActive,
-                        files: $files,
-                        closeAction: { isActive = false },
-                        addFileAction: { isImporting = true },
-                        submit: submit, test: true
-                    )
+                    Spacer()
                     
-                    
+                    linkButton(title: "Confirm Information") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    .disabled(modelforFile.fileAll.isEmpty)
+                    .opacity(!modelforFile.fileAll.isEmpty ? 1 : 0.5)
+                    .padding(.horizontal,76)
                 }
                 
             }
+            
         }
         .fileImporter(
             isPresented: $isImporting,
@@ -51,8 +86,6 @@ struct PlaidVerifiedView: View {
             do {
                 guard let selectedFile: URL = try result.get().first else { return }
                 if selectedFile.startAccessingSecurityScopedResource() {
-                    
-//                    guard let input = String(data: try Data(contentsOf: selectedFile), encoding: .utf8) else { return }
                     let pdfName = selectedFile.lastPathComponent
                     
                     switch selectedFile.pathExtension.lowercased() {
@@ -68,8 +101,9 @@ struct PlaidVerifiedView: View {
                             var copyFile = FileModel()
                             copyFile.name = pdfName
                             copyFile.fileStr = base64String
-                            
-                            files.append(copyFile)
+                            withAnimation {
+                                modelforFile.fileAll.append(copyFile)
+                            }
                             
                         } catch {
                             print("Error: \(error.localizedDescription)")
@@ -89,29 +123,63 @@ struct PlaidVerifiedView: View {
                 print(error.localizedDescription)
             }
         }
-//        .uploadFileSheetView(
-//            isActive: $showFileUploadView,
-//            addFileAction: {},
-//            submit: { files in
-//                
-//                print(files.map({ $0.name })) // you can get here the base64 encode fileStr which you might send to server
-//                showFileUploadView.toggle()
-//            }
-//        )
-//        
-//        .meetingTypeAlert(isActive: $showMeetingTypeAlert) { isVirtual in
-//            print("IsVirtual \(isVirtual)")
-//        }
     }
 }
 
 struct PlaidVerifiedView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaidVerifiedView(isActive: .constant(false), files: .constant([]), title: "s")
+        PlaidVerifiedView(title: "s", modelforFile: .constant(.init(images: "2324", title: "232134", fileAll: [])))
     }
 }
 
 extension PlaidVerifiedView {
+    
+    func linkButton(title: String,action: @escaping () -> Void) -> some View {
+        
+        Button(action: action) {
+            ZStack {
+                Color.blueGradient.toLinearGradient
+                
+                Text(title)
+                    .foregroundColor(.white)
+                    .bold18
+            }
+            .frame(height: 60)
+            .cornerRadius(30)
+        }
+    }
+    
+    func uploadFile(index: Int) -> some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button {
+                    modelforFile.fileAll.remove(at: index)
+                } label: {
+                    Image(systemName: "xmark")
+                        .frame(width: 10, height: 10)
+                }
+                .padding([.horizontal,.top])
+            }
+            HStack(spacing: 10) {
+                Image("document_icon")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                
+                
+                Text(modelforFile.fileAll[index].name)
+                    .bold14
+               
+                Spacer()
+            }
+            .padding(10)
+        }
+        .background(Color.white)
+        .padding(.horizontal,16)
+        .cornerRadius(10)
+        .shadowCustom()
+        .padding(.top,10)
+    }
     
     private func uploadedFilesUI(
         files: [FileModel],
