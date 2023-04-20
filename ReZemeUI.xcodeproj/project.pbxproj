@@ -48,6 +48,7 @@
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
+		2EE41D6D29F0B6F200E4B878 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */; };
 		2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218529EF6553005D13A7 /* MessageAgent.swift */; };
 		2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */; };
 		2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */; };
@@ -126,6 +127,7 @@
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
+		2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		2EEB218529EF6553005D13A7 /* MessageAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgent.swift; sourceTree = "<group>"; };
 		2EEB218729EF65F5005D13A7 /* MessageAgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAgentViewModel.swift; sourceTree = "<group>"; };
 		2EEB218B29EF6871005D13A7 /* AgentOfferChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentOfferChat.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				2EEED73429EC1D49005AD516 /* Message */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
+				2EE41D6B29F0B69E00E4B878 /* Auth */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
@@ -341,6 +344,14 @@
 				2E781FE629EBAE0100F3C5A9 /* Helpers */,
 			);
 			path = NotChangableJustForHelp;
+			sourceTree = "<group>";
+		};
+		2EE41D6B29F0B69E00E4B878 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2EE41D6C29F0B6F200E4B878 /* PhoneNumberView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		2EEB218429EF6503005D13A7 /* AgentMessage */ = {
@@ -535,6 +546,7 @@
 				2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */,
 				2E78202029EBB2C600F3C5A9 /* ImagePicker.swift in Sources */,
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
+				2EE41D6D29F0B6F200E4B878 /* PhoneNumberView.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
 				2E78200029EBB05800F3C5A9 /* ColorGradient.swift in Sources */,
 				2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */,
