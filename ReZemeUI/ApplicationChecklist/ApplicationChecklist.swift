@@ -44,10 +44,19 @@ struct ApplicationChecklist: View {
                                 isActiveSubmitBtn = step >= 3 && isTermConformed
                             }
                             self.viewModel.index = index
-                            navigate.toggle()
+                            if !viewModel.models.isEmpty{
+                                navigate.toggle()
+                            }
+                           
                         },deleteStep: { index in
-                            viewModel.models.remove(at: index)
                             self.viewModel.index = index
+                            viewModel.models.remove(at: index)
+                            if self.viewModel.models.count != 1 || self.viewModel.index != 0{
+                                self.viewModel.index = index - 1
+                            } else{
+                                self.viewModel.index = index
+                            }
+                            
                         })
                             .padding(.horizontal,20)
                             .padding(.top, 20)
@@ -167,24 +176,20 @@ struct ApplicationChecklist: View {
             
             
             
-            
-            NavigationLink(isActive: $navigate) {
+            if !viewModel.models.isEmpty {
+                NavigationLink(isActive: $navigate) {
 
-                switch viewModel.models[self.viewModel.index].images {
-                case "Credit Check": CreditCheckView()
-                default:
-                    if viewModel.models.isEmpty {
-                        PlaidVerifiedView(modelforFile: .constant(.init(images: "s", title: "asfs", fileAll: [])))
-                    } else {
-                        let inde = self.viewModel.index
-                        PlaidVerifiedView(modelforFile: $viewModel.models[inde])
+                    switch viewModel.models[self.viewModel.index].images {
+                    case "Credit Check": CreditCheckView()
+                    default:
+                            let inde = self.viewModel.index
+                            PlaidVerifiedView(modelforFile: $viewModel.models[inde])
+
                     }
-                    
+                } label: {
+                    EmptyView()
                 }
-            } label: {
-                EmptyView()
             }
-
         }
     }
 }

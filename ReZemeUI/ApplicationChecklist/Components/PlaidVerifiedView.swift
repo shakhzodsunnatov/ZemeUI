@@ -9,12 +9,9 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct PlaidVerifiedView: View {
-    
-//    @State var files: [FileModel] = []
+
     @State var title: String = ""
     @State var isImporting = false
-//    @EnvironmentObject var viewModel: ApplicationChecklistVM
-    
     @Binding var modelforFile: RequestDocumentDM
     
     @Environment(\.presentationMode) var presentationMode
