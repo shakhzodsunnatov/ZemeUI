@@ -87,19 +87,9 @@ struct PinCodeView: View {
                     
                     Color.clear
                     
-                    Button {
+                    ActionButton("Continue", action: {
                         // Continue Button action
-                    } label: {
-                        Text("Continue")
-                            .bold18
-                            .foregroundColor(.white)
-                            .frame(height: 60)
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                Capsule()
-                                    .fill(Color.blueGradient.toLinearGradient)
-                            )
-                    }
+                    })
                     .padding(.horizontal, 76)
                 }
             }

@@ -402,8 +402,8 @@
 		2EE41D7229F0CA6300E4B878 /* PinCode */ = {
 			isa = PBXGroup;
 			children = (
-				2EE41D7329F0CB2300E4B878 /* UIComponents */,
 				2EE41D7429F0CB4700E4B878 /* PinCodeView.swift */,
+				2EE41D7329F0CB2300E4B878 /* UIComponents */,
 			);
 			path = PinCode;
 			sourceTree = "<group>";
