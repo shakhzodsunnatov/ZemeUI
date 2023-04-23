@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RequestedDocCard: View {
     
-    @Binding var models: [RequestDocumentDM] 
+    @Binding var models: [RequestDocumentDM]
 //    @Binding var textFiled: String
     @Binding var step: Int
     
@@ -176,8 +176,11 @@ extension RequestedDocCard {
 //    }
 //}
 
-struct RequestDocumentDM {
+struct RequestDocumentDM: Equatable {
     var images: String
     var title: String
     var fileAll: [FileModel]
+    var imagesArray: [UIImage]
+    var addPhoto: Bool = false
+    var activate: Bool = false
 }
