@@ -27,7 +27,7 @@ struct AlarmChat: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            //TODO: - Custom divider here
+            LineView()
             
             Button(action: closeBtnAction) {
                 Text("Close")

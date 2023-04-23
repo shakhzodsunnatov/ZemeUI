@@ -44,7 +44,7 @@ extension Color {
     
     static let gradientStartColor = Color("gradientStartColor")
     static let gradientStopColor = Color("gradientStopColor")
-    
+    static let babyBlue = Color("babyBlue")
 }
 
 extension Color {

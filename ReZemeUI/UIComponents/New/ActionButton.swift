@@ -29,6 +29,7 @@ import SwiftUI
      var isActiveCondition: ()->Bool
      var action: ()->Void = {}
 
+     @State var isActiveAnimation = false
 
      init(
          _ text: String,
@@ -64,10 +65,15 @@ import SwiftUI
                  )
                  .opacity(isActive ? 1 : 0.6)
                  .opacity(isActiveCondition() ? 1 : 0.6)
-                 .animation(.easeIn)
+                 .animation(isActiveAnimation ? .easeIn : nil)
          }
          .disabled(!onlyLayer)
          .disabled(!isActiveCondition())
+         .onAppear {
+             DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                 isActiveAnimation = true
+             }
+         }
      }
  }
 
