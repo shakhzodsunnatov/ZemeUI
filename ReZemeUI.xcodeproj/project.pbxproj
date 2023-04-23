@@ -12,6 +12,7 @@
 		2E4BEE1E29F5973B005CD69D /* SupportRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1D29F5973B005CD69D /* SupportRenter.swift */; };
 		2E4BEE2029F5A4C0005CD69D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1F29F5A4C0005CD69D /* LineView.swift */; };
 		2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */; };
+		2E6578DD29F5C77E00E53F07 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E6578DC29F5C77E00E53F07 /* MyParticle.sks */; };
 		2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */; };
 		2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC929EBAD0700F3C5A9 /* ContentView.swift */; };
 		2E781FCC29EBAD0900F3C5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */; };
@@ -91,7 +92,6 @@
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */; };
-		9D85A07529ED7C40004FEAF3 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D85A07429ED7C40004FEAF3 /* MyParticle.sks */; };
 		9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +101,7 @@
 		2E4BEE1D29F5973B005CD69D /* SupportRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportRenter.swift; sourceTree = "<group>"; };
 		2E4BEE1F29F5A4C0005CD69D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsView.swift; sourceTree = "<group>"; };
+		2E6578DC29F5C77E00E53F07 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		2E781FC429EBAD0700F3C5A9 /* ReZemeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReZemeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReZemeUIApp.swift; sourceTree = "<group>"; };
 		2E781FC929EBAD0700F3C5A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,7 +182,6 @@
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
-		9D85A07429ED7C40004FEAF3 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidVerifiedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,9 +251,9 @@
 				2E4BEE1C29F59725005CD69D /* Support */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
+				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
-				9D85A07429ED7C40004FEAF3 /* MyParticle.sks */,
 				2E781FCD29EBAD0900F3C5A9 /* Preview Content */,
 			);
 			path = ReZemeUI;
@@ -275,7 +275,6 @@
 				9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */,
 				2E781FD829EBADC700F3C5A9 /* CongratsView.swift */,
 				9D2694C329EDEBF600AA6272 /* HomeView.swift */,
-				9D85A07429ED7C40004FEAF3 /* MyParticle.sks */,
 				2E781FD929EBADC700F3C5A9 /* Components */,
 			);
 			path = ApplicationChecklist;
@@ -406,7 +405,6 @@
 		2E84CE0129F12D300029FDBD /* New */ = {
 			isa = PBXGroup;
 			children = (
-				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
@@ -598,7 +596,7 @@
 				2E781FFC29EBAF1F00F3C5A9 /* Poppins-SemiBold.ttf in Resources */,
 				2E781FF929EBAF1F00F3C5A9 /* Poppins-ExtraBold.ttf in Resources */,
 				2E781FF829EBAF1F00F3C5A9 /* Poppins-Medium.ttf in Resources */,
-				9D85A07529ED7C40004FEAF3 /* MyParticle.sks in Resources */,
+				2E6578DD29F5C77E00E53F07 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
