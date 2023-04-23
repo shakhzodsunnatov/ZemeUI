@@ -14,7 +14,7 @@ struct ExpandingCell: View {
     var type: AccountType
     var views: [AnyView]
     
-    init(text: String, image: UIImage? = nil, type: AccountType, views: [any View] = []) {
+    init(text: String, image: UIImage? = nil, type: AccountType = .AGENT, views: [any View] = []) {
         self.text = text
         self.image = image
         self.type = type
@@ -41,7 +41,6 @@ struct ExpandingCell: View {
                             .frame(minHeight: 40)
                     }
                 }
-                .animation(.easeIn)
                 .padding(.top,15)
             }
             
