@@ -130,6 +130,7 @@ struct MessageRenter: View {
                             ),
                         ] + [.cancel()])
         }
+        
         .selectDocumentTypeView(isActive: $showSelectDocView) { selectedIndex in
             switch selectedIndex {
             case 0: break       // Plaid Verified Bank Statements

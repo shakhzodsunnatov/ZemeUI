@@ -48,6 +48,9 @@ struct OfferChat: View {
                 
             }
             
+            LineView()
+                .padding(.top, 14)
+            
             acceptDenyButtons(
                 accept: acceptAction,
                 deny: denyAction

@@ -51,6 +51,26 @@ struct ContentView: View {
                 )
             }
             
+            NavigationLink(destination: { SettingsRenter() }) {
+                Text("Settings")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
+            NavigationLink(destination: { SupportRenter() }) {
+                Text("Support")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
         }
         .padding()
         .navigationBarHidden(true)

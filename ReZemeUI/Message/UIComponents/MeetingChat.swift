@@ -23,7 +23,8 @@ struct MeetingChat: View {
             
             headerTime
             
-            //TODO: - Custom Divider
+            LineView()
+            
             HStack(spacing: 0) {
                 
                 changeDateButton(action: { mode.toggle() } )
@@ -96,7 +97,7 @@ extension MeetingChat {
     
     private func changeDateButton(action: @escaping ()-> Void) -> some View {
         Button(action: action) {
-            Text("Change Date")
+            Text("Change")
                 .foregroundColor(.darkBlue)
                 .semibold14
                 .padding(.horizontal, 15)
