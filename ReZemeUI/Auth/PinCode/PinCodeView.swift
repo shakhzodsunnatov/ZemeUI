@@ -84,7 +84,6 @@ struct PinCodeView: View {
                 
                 
                 ZStack(alignment: .bottom) {
-                    
                     Color.clear
                     
                     ActionButton("Continue", action: {

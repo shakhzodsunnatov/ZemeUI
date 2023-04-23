@@ -50,6 +50,7 @@ struct ContentView: View {
                         .fill(Color.lightBlue)
                 )
             }
+            
         }
         .padding()
         .navigationBarHidden(true)

@@ -24,6 +24,7 @@ extension Color {
     static let purpleLow = Color("gradientPurpleLow")
     static let blueGradient = ColorGradient(Color("gradientBlueHigh"),
                                               Color("gradientBlueLow"))
+
     
     static let blueGradientNew = ColorGradient(Color("gradientBlueHigh"),
                                             Color("gradientBlueLow"))
