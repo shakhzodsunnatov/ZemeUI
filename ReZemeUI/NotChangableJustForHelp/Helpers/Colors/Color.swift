@@ -22,8 +22,9 @@ extension Color {
     static let failure = Color("red")//, bundle: .module)
     static let success = Color("green")//, bundle: .module)
     static let purpleLow = Color("gradientPurpleLow")
-    static let blueGradient = ColorGradient(Color("gradientBlueLow"),
-                                            Color("gradientBlueHigh"))
+    static let blueGradient = ColorGradient(Color("gradientBlueHigh"),
+                                              Color("gradientBlueLow"))
+
     
     static let blueGradientNew = ColorGradient(Color("gradientBlueHigh"),
                                             Color("gradientBlueLow"))

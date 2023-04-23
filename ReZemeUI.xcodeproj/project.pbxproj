@@ -46,6 +46,9 @@
 		2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */; };
 		2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */; };
 		2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0229F12E330029FDBD /* ActionButton.swift */; };
+		2E84CE0529F548470029FDBD /* SettingsRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0429F548470029FDBD /* SettingsRenter.swift */; };
+		2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */; };
+		2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -130,6 +133,9 @@
 		2E78201C29EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		2E78201D29EBB2C600F3C5A9 /* AsyncImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageTool.swift; sourceTree = "<group>"; };
 		2E84CE0229F12E330029FDBD /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		2E84CE0429F548470029FDBD /* SettingsRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRenter.swift; sourceTree = "<group>"; };
+		2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingCell.swift; sourceTree = "<group>"; };
+		2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMaker.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -351,6 +357,7 @@
 		2E84CDFE29F12CF70029FDBD /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				2E84CE0429F548470029FDBD /* SettingsRenter.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -377,6 +384,8 @@
 				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
+				2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */,
+				2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -402,8 +411,8 @@
 		2EE41D7229F0CA6300E4B878 /* PinCode */ = {
 			isa = PBXGroup;
 			children = (
-				2EE41D7329F0CB2300E4B878 /* UIComponents */,
 				2EE41D7429F0CB4700E4B878 /* PinCodeView.swift */,
+				2EE41D7329F0CB2300E4B878 /* UIComponents */,
 			);
 			path = PinCode;
 			sourceTree = "<group>";
@@ -595,8 +604,10 @@
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
+				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
+				2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */,
 				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
@@ -613,6 +624,7 @@
 				2E781FEF29EBAF0000F3C5A9 /* Color.swift in Sources */,
 				2EE41D6F29F0C62300E4B878 /* PinCodeTextField.swift in Sources */,
 				2EE41D6D29F0B6F200E4B878 /* PhoneNumberView.swift in Sources */,
+				2E84CE0529F548470029FDBD /* SettingsRenter.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
 				2E78200029EBB05800F3C5A9 /* ColorGradient.swift in Sources */,
 				9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */,

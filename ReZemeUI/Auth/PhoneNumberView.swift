@@ -77,19 +77,12 @@ struct PhoneNumberView: View {
                     
                     Color.clear
                     
-                    NavigationLink(destination: {PinCodeView()}, label: {
-                        Text("Continue")
-                            .bold18
-                            .foregroundColor(.white)
-                            .frame(height: 60)
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                Capsule()
-                                    .fill(Color.blueGradient.toLinearGradient)
-                            )
-                            .opacity(phoneNumber.count == 11 ? 1 : 0.3)
-                            .disabled(phoneNumber.count != 11)
-                            .animation(.easeIn)
+                    NavigationLink(destination: { PinCodeView() }, label: {
+                        ActionButton(
+                            "Continue",
+                            onlyLayer: false,
+                            isActiveCondition: { phoneNumber.count == 11 }
+                        )
                     })
                     .padding(.horizontal, 76)
                 }
