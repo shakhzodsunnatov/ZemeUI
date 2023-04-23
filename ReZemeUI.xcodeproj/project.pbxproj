@@ -229,7 +229,6 @@
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
-				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				9D85A07429ED7C40004FEAF3 /* MyParticle.sks */,
 				2E781FCD29EBAD0900F3C5A9 /* Preview Content */,
 			);
@@ -382,6 +381,7 @@
 		2E84CE0129F12D300029FDBD /* New */ = {
 			isa = PBXGroup;
 			children = (
+				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
 				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
 				2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */,
