@@ -11,31 +11,22 @@ struct ApplicationChecklist: View {
     
     //MARK: - PROPERTIES
     @State var showAlert = false
-    let options = ["Take Picture", "Select File", "Choose Photo"]
-    @Environment(\.presentationMode) var presentationMode
+    let options = ["Select File", "Choose Photo"]
     
-    @State var step = 0
-    @State var index = 0
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var viewModel = ApplicationChecklistVM()
+    //    @State var step = 0
+    
     @State var isTermConformed = false
     @State var isActiveSubmitBtn = false
     @State var navigate = false
     
     @State var trl = ""
-    
-    @State var files: [FileModel] = []
-    var addFileAction: ()->Void = {}
-    var submit: ([FileModel])-> Void = { _ in}
     @State var isImporting = false
     @State var showAlertt = false
     @State var isConfirmed = false
-    
-    @State var models: [RequestDocumentDM] = [
-        .init(images: "Plaid Verified Bank State", title: "bank_ic"),
-        .init(images: "Employment Verification", title: "people_ic"),
-        .init(images: "W2 Form", title: "document_ic"),
-        .init(images: "Credit Check",title: "speed_ic"),
-    ]
-    
+    @State var addNewModel = false
+    @State var addPhotoEnableForNew = false
     
     //MARK: - body
     
@@ -48,35 +39,43 @@ struct ApplicationChecklist: View {
                         .padding(.horizontal,20)
                         .padding(.top, 22)
                     
-                    if !models.isEmpty {
-                        RequestedDocCard(models: $models, textFiled: $trl, step: $step, tappedStep: { index in
-                            if step < 4 {
-                                step += 1
-                                isActiveSubmitBtn = step >= 3 && isTermConformed
-                            }
-                            self.index = index
+                    if !viewModel.models.isEmpty {
+                        RequestedDocCard(models: $viewModel.models, step: $viewModel.step, tappedStep: { index in
+                            viewModel.step += 1
+                            isActiveSubmitBtn = !viewModel.models.isEmpty && isTermConformed
+                            self.viewModel.index = index
+                            self.addNewModel = false
                             navigate.toggle()
+                            
                         },deleteStep: { index in
-                            models.remove(at: index)
+                            self.viewModel.index = index
+                            viewModel.models.remove(at: index)
+                            self.viewModel.index = index
+                            isActiveSubmitBtn = !viewModel.models.isEmpty && isTermConformed
+                            
                         })
-                            .padding(.horizontal,20)
-                            .padding(.top, 20)
+                        .padding(.horizontal,20)
+                        .padding(.top, 20)
+                        .onChange(of: self.viewModel.models) { newValue in
+                            self.viewModel.models = newValue.sorted { $0.activate && !$1.activate }
+                        }
                     }
+                    
                     
                     SimpleTextCheckView(title: "I’ve confirmed that everything is accurate") { t in
                         isTermConformed = t
-                        isActiveSubmitBtn = step >= 4 && isTermConformed
+                        isActiveSubmitBtn = !viewModel.models.isEmpty && isTermConformed
                     }
                     
                     
                     uploadReviewButtons {
                         showAlert.toggle()
-                        self.models.append(.init(images: "New Documents", title: "document_icon"))
+                        
                     } review: {
                         // Review Button pressed action
                     }
                     .padding(.horizontal, 20)
-
+                    
                     
                     submitButton(isActive: $isActiveSubmitBtn) {
                         
@@ -89,20 +88,24 @@ struct ApplicationChecklist: View {
                     ActionSheet(title: Text("Select an option"),
                                 buttons: [
                                     .default(
-                                        Text(options[0]), // "Take Picture"
-                                        action: { self.showAlert = false }
-                                    ),
-                                    .default(
-                                        Text(options[1]), // "Select File"
+                                        Text(options[0]), // "Select File"
                                         action: {
-                                            self.showAlert = false
-                                            
-    //                                        self.showSelectDocView.toggle()
+                                            showAlert = false
+                                            self.viewModel.index = viewModel.models.count
+                                            self.addNewModel = true
+                                            self.addPhotoEnableForNew = false
+                                            navigate.toggle()
                                         }
                                     ),
                                     .default(
-                                        Text(options[2]), // "Choose Photo"
-                                        action: { self.showAlert = false }
+                                        Text(options[1]), // "Choose Photo"
+                                        action: {
+                                            showAlert = false
+                                            self.viewModel.index = viewModel.models.count
+                                            self.addNewModel = true
+                                            self.addPhotoEnableForNew = true
+                                            navigate.toggle()
+                                        }
                                     ),
                                 ] + [.cancel()])
                 }
@@ -114,7 +117,7 @@ struct ApplicationChecklist: View {
                         Color.black.opacity(0.35)
                             .blur(radius: 4)
                             .edgesIgnoringSafeArea(.all)
-
+                        
                         ZStack(alignment: .topTrailing) {
                             
                             VStack(spacing: 0) {
@@ -130,7 +133,7 @@ struct ApplicationChecklist: View {
                                         RoundedRectangle(cornerRadius: 8)
                                             .fill(Color.secondaryPurple.opacity(0.15))
                                     )
-                                    
+                                
                                 Text("Notice!")
                                     .semibold18
                                     .padding(.top, 18)
@@ -175,18 +178,13 @@ struct ApplicationChecklist: View {
                 }
             }
             
-            
-            
-            
             NavigationLink(isActive: $navigate) {
-                switch index {
-                case 3: CreditCheckView()
-                default:  PlaidVerifiedView(isActive: .constant(false), files: .constant([]),title: models[index].images)
-                }
+                PlaidVerifiedView(addNewModel: $addNewModel, addFileEnable: $addPhotoEnableForNew)
+                    .environmentObject(viewModel)
             } label: {
                 EmptyView()
             }
-
+            
         }
     }
 }
@@ -195,7 +193,7 @@ struct ApplicationChecklist: View {
 //MARK: - InviteEmailCardDelegate
 
 extension ApplicationChecklist: InviteEmailCardDelegate {
-
+    
     func getEmails(_ emails: [String]) {
         debugPrint("Emails \(emails)")
     }
@@ -207,40 +205,41 @@ extension ApplicationChecklist: InviteEmailCardDelegate {
 extension ApplicationChecklist {
     
     private func navBar(geo: GeometryProxy) -> some View {
-            HStack {
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "arrow.left")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.white)
-                        .font(Font.title.weight(.medium))
-                        .frame(width: 26, height: 26)
-                }
-                .padding(.leading, 17)
-                
-                Spacer()
-                
-                Text("Application Checklist")
-                    .semibold22
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.trailing, 43)
-                
-            }
-            .padding(.top, geo.safeAreaInsets.top)
-            .padding(.bottom, 25)
-            .frame(width: SCREEN_WIDTH)
-            .background(
-                Image("top-background")
+        
+        HStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "arrow.left")
                     .resizable()
-            )
-            .ignoresSafeArea(edges: .top)
+                    .scaledToFit()
+                    .foregroundColor(.white)
+                    .font(Font.title.weight(.medium))
+                    .frame(width: 26, height: 26)
+            }
+            .padding(.leading, 17)
+            
+            Spacer()
+            
+            Text("Application Checklist")
+                .semibold22
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.trailing, 43)
+            
+        }
+        .padding(.top, geo.safeAreaInsets.top)
+        .padding(.bottom, 25)
+        .frame(width: SCREEN_WIDTH)
+        .background(
+            Image("top-background")
+                .resizable()
+        )
+        .ignoresSafeArea(edges: .top)
     }
     
     private func uploadReviewButtons(upload: @escaping ()->Void, review: @escaping ()-> Void) -> some View {
+        
         HStack(spacing: 17) {
             
             Button(action: upload) {
@@ -290,7 +289,7 @@ extension ApplicationChecklist {
         Button(action: action) {
             ZStack {
                 Color.blueGradient.toLinearGradient
-                    
+                
                 Text(title)
                     .foregroundColor(.white)
                     .bold18
@@ -299,10 +298,28 @@ extension ApplicationChecklist {
             .cornerRadius(30)
         }
     }
+    
+    
 }
 
 struct ApplicationChecklist_Previews: PreviewProvider {
     static var previews: some View {
         ApplicationChecklist()
     }
+}
+
+class ApplicationChecklistVM: ObservableObject {
+    
+    @Published var fileAll: [FileModel] = []
+    @Published var index = 0
+    @Published var step = 0
+    @Published var models: [RequestDocumentDM] = [
+        .init(images: "Plaid Verified Bank State", title: "bank_ic", fileAll: [], imagesArray: [],activate: true),
+        .init(images: "Employment Verification", title: "people_ic", fileAll: [], imagesArray: []),
+        .init(images: "W2 Form", title: "document_ic", fileAll: [], imagesArray: []),
+        .init(images: "Credit Check",title: "speed_ic", fileAll: [], imagesArray: []),
+    ]
+    
+    static var shared = ApplicationChecklistVM()
+    
 }
