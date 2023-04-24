@@ -81,6 +81,39 @@ struct ContentView: View {
                 )
             }
             
+            NavigationLink(destination: { QRView() }) {
+                Text("Share Property")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
+            NavigationLink(destination: {
+                AgentMainView()
+            }) {
+                Text("Agent FilterView")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
+            
+            NavigationLink(destination: {
+                AgentApplicationsView()
+            }) {
+                Text("Agent Applications")
+                .foregroundColor(.white)
+                .padding(15)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.lightBlue)
+                )
+            }
         }
         .padding()
         .navigationBarHidden(true)

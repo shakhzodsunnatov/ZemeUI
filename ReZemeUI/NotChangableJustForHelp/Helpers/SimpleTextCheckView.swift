@@ -51,3 +51,49 @@ struct SimpleTextCheckView_Previews: PreviewProvider {
         }
     }
 }
+
+struct FileterCheckView: View {
+    
+    @Binding var isSelected: Bool
+    var title: String
+    var type: UserType = .buyer
+    var action: (Bool)-> Void
+    
+    var body: some View {
+        Button(action: {
+            isSelected.toggle()
+            action(isSelected)
+        }) {
+            HStack(spacing: 0) {
+                RoundedRectangle(cornerRadius: 6)
+                    .stroke(type != .buyer ? Color.purpleLow : Color.blue, lineWidth: 1)
+                    .frame(width: 20, height: 20)
+                    .padding([.vertical,.trailing],12)
+                    .overlay(
+                        Image(systemName: "checkmark" )
+                            .resizable()
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(type != .buyer ? Color.purpleLow : Color.blue)
+                            .opacity(isSelected ? 1 : 0)
+                            .padding([.vertical,.trailing],12)
+                    )
+                
+                Text(title)
+                    .foregroundColor(Color.black)
+                    .lineLimit(2)
+                    .medium16
+                
+                Spacer()
+            }
+//            .padding(.leading,16)
+        }
+    }
+}
+
+struct FileterCheckView_Previews: PreviewProvider {
+    static var previews: some View {
+        FileterCheckView(isSelected: .constant(false), title:"Place holder" ) { i in
+            
+        }
+    }
+}
