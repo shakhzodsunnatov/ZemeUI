@@ -104,6 +104,8 @@
 		9DB1A85B29F698EF0045D9BD /* ApplicationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A85A29F698EF0045D9BD /* ApplicationsListView.swift */; };
 		9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A85C29F699450045D9BD /* ApplicationProgress.swift */; };
 		9DB1A85F29F699640045D9BD /* ItemShortInfoView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A85E29F699640045D9BD /* ItemShortInfoView copy.swift */; };
+		9DB1A86229F6A1670045D9BD /* AgentSpecificApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A86129F6A1670045D9BD /* AgentSpecificApplicationView.swift */; };
+		9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A86429F6F6320045D9BD /* HomeChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +207,8 @@
 		9DB1A85A29F698EF0045D9BD /* ApplicationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsListView.swift; sourceTree = "<group>"; };
 		9DB1A85C29F699450045D9BD /* ApplicationProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationProgress.swift; sourceTree = "<group>"; };
 		9DB1A85E29F699640045D9BD /* ItemShortInfoView copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemShortInfoView copy.swift"; sourceTree = "<group>"; };
+		9DB1A86129F6A1670045D9BD /* AgentSpecificApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentSpecificApplicationView.swift; sourceTree = "<group>"; };
+		9DB1A86429F6F6320045D9BD /* HomeChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +272,7 @@
 				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				9DB1A84529F659490045D9BD /* QR */,
 				9DB1A85729F698AF0045D9BD /* AgentApplications */,
+				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
 				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
 				2EEED73429EC1D49005AD516 /* Message */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
@@ -602,6 +607,15 @@
 			path = AgentApplications;
 			sourceTree = "<group>";
 		};
+		9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */ = {
+			isa = PBXGroup;
+			children = (
+				9DB1A86129F6A1670045D9BD /* AgentSpecificApplicationView.swift */,
+				9DB1A86429F6F6320045D9BD /* HomeChart.swift */,
+			);
+			path = AgentSpecificApplication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,6 +716,7 @@
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
 				9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */,
 				2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */,
+				9DB1A86229F6A1670045D9BD /* AgentSpecificApplicationView.swift in Sources */,
 				9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */,
 				2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */,
 				9DB1A85029F692AE0045D9BD /* ItemImageBottomTextView .swift in Sources */,
@@ -762,6 +777,7 @@
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
+				9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,
 				9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */,

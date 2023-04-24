@@ -16,7 +16,7 @@ struct ApplicationProgress: View {
     private let titles = [
         "In Process",
         "Accepted",
-        "Contract Signed \nRoommate missing",
+        "Contract Signed",
         "Move In"
     ]
     

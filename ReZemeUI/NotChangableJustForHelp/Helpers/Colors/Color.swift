@@ -34,8 +34,8 @@ extension Color {
     static let buttonBlueGradient = LinearGradient(gradient: Gradient(colors: [Color("gradientBlueLow"), Color("gradientBlueHigh")]), startPoint: .leading, endPoint: .bottom)
     static let blankGradient = LinearGradient(gradient: Gradient(colors: [.white]), startPoint: .leading, endPoint: .bottom)
     
-//    static let chart = ChartStyle(backgroundColor: .white,
-//                                  foregroundColor: Color.blueGradient, cornerRadius: 4.0)
+    static let chart = ChartStyle(backgroundColor: .white,
+                                  foregroundColor: Color.blueGradient, cornerRadius: 4.0)
     static let mainBgColor = Color(hex: 0xFBFBFC, opacity: 1.0)
     static let textGray =  Color("textGray")
     static let lightGrayBG = Color("lightGrayBG")

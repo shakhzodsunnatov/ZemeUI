@@ -44,8 +44,17 @@ extension ColorGradient {
 }
 
 extension ColorGradient {
-//    public static let orangeBright = ColorGradient(ChartColors.orangeBright)
+    public static let orangeBright = ColorGradient(ChartColors.orangeBright)
     public static let redBlack = ColorGradient(.red, .black)
     public static let greenRed = ColorGradient(.green, .red)
     public static let whiteBlack = ColorGradient(.white, .black)
+}
+
+public enum ChartColors {
+    // Orange
+    public static let orangeBright = Color(hexString: "#FF782C")
+    public static let orangeDark = Color(hexString: "#EC2301")
+
+    public static let legendColor: Color = Color(hexString: "#E8E7EA")
+    public static let indicatorKnob: Color = Color(hexString: "#FF57A6")
 }

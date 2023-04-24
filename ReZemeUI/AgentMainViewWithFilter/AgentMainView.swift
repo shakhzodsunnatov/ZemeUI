@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AgentMainView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
     @State var filter: Bool = false
     
     @State var filter1: Bool = false
@@ -27,6 +29,9 @@ struct AgentMainView: View {
                     ScrollView(.vertical,showsIndicators: false) {
                         ForEach(0..<2, id: \.self) { property in
                             AgentPropertyItemView(property: mockProperty, push: .constant(false), properID: .constant(1))
+                                .onTapGesture {
+                                    presentationMode.wrappedValue.dismiss()
+                                }
                         }
                     }
                     if filter {
