@@ -10,3 +10,11 @@ import UIKit
 
 let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
+
+var dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .medium
+    dateFormatter.timeStyle = .none
+    dateFormatter.dateFormat = "MMM d"
+    return dateFormatter
+}()

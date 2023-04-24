@@ -39,7 +39,7 @@ struct AgentOfferChat: View {
                         
                         Spacer()
                         
-                        Text(model.date, style: .date)
+                        Text(dateFormatter.string(from: model.date))
                     }
                     .semibold16
                     .foregroundColor(.darkBlue)

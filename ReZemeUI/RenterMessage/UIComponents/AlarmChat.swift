@@ -22,7 +22,7 @@ struct AlarmChat: View {
                     .scaledToFit()
                     .frame(width: 20)
                 
-                Text("Virtual meeting is coming up on \(Text(date, style: .date)).")
+                Text("Virtual meeting is coming up on \(dateFormatter.string(from: date)).")
                     .medium14
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -52,6 +52,6 @@ struct AlarmChat: View {
 
 struct AlarmChat_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmChat(date: Date()) { }
+        AlarmChat(date: Date(), closeBtnAction: {})
     }
 }

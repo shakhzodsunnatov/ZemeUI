@@ -14,8 +14,6 @@ struct PlaidVerifiedView: View {
     @State var isImporting = false
     @State var isShowPhotoLibrary = false
     
-//    @Binding var modelforFile: RequestDocumentDM
-    
     @Binding var addNewModel: Bool
     @Binding var addFileEnable: Bool
     
@@ -484,3 +482,6 @@ struct UploadFileItem: View {
         }
     }
 }
+
+
+

@@ -11,7 +11,7 @@ struct PinCodeView: View {
     
     //MARK: - PROPERTIES
     
-    @State var phoneNumber = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -26,7 +26,7 @@ struct PinCodeView: View {
                             .foregroundColor(.darkBlue)
                             .semibold18
                         
-                        Text("Enter the code that was sent to your number ending in 2214")
+                        Text("Enter the code that was sent to your number ending in \(String(viewModel.phone.suffix(4)))")
                             .regular12
                             .fixedSize(horizontal: false, vertical: true)
                         
@@ -44,7 +44,7 @@ struct PinCodeView: View {
                             }
                             
                         }
-                        .padding(.top, 31)
+                        .padding(.top, 13)
                         
                         
                         Button {
@@ -153,6 +153,8 @@ extension PinCodeView {
 }
 struct PinCodeView_Previews: PreviewProvider {
     static var previews: some View {
+        PhoneNumberView()
         PinCodeView()
+            .environmentObject(AuthViewModel())
     }
 }
