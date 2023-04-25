@@ -79,6 +79,7 @@ struct ExpandingCell: View {
         .onAppear{
             isActive = isOpened
         }
+        .padding(10)
     }
 }
 
@@ -130,6 +131,14 @@ struct ExpandingCell_Previews: PreviewProvider {
             views: [ SomeExView() ,  SomeExView(), SomeExView() ,  SomeExView() ]
         )
         .padding(.horizontal, 20)
+        
+        ExpandingCellForApp(
+            text: "Edit Profile",
+            image: UIImage(named: "notification"),
+            type: .AGENT,
+            views: [ SomeExView() ,  SomeExView(),SomeExView() ,  SomeExView() ]
+        )
+        .padding(.horizontal, 20)
     }
 }
 
@@ -150,6 +159,111 @@ struct SomeExView: View {
         }
         .frame(height: 40)
         
+    }
+    
+}
+
+struct ExpandingCellForApp: View {
+    
+    var text: String
+    var image: UIImage?
+    var type: AccountType
+    var withLine: Bool
+    var isOpened: Bool
+    var views: [AnyView]
+    
+    init(
+        text: String,
+        image: UIImage? = nil,
+        type: AccountType = .AGENT,
+        withLine: Bool = true,
+        isOpened: Bool = false,
+        views: [any View] = []
+    ) {
+        self.text = text
+        self.image = image
+        self.type = type
+        self.withLine = withLine
+        self.isOpened = isOpened
+        self.views = views.map({ AnyView($0) })
+    }
+    
+    @State var isActive = false
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            
+            headerCell
+                .makeButton {
+                    withAnimation {
+                        isActive.toggle()
+                    }
+                }
+            
+            if withLine {
+                LineView()
+                    .padding(.horizontal, 20)
+                    .opacity(isActive ? 1 : 0)
+                    .padding(.top, 7)
+            }
+            
+            if isActive {
+                VStack(spacing: 0) {
+                    ForEach((0..<views.count), id: \.self) { index in
+                        views[index]
+                            .frame(minHeight: 40)
+                        
+                        if withLine && views.count-1 != index {
+                            LineView()
+                                .padding(.horizontal, 20)
+                                .opacity(isActive ? 1 : 0)
+                                .frame(height: 1)
+                        }
+                    }
+                    .padding(.bottom, 13)
+                }
+                .padding(.top,15)
+            }
+            
+        }
+        .padding(EdgeInsets(top: 7, leading: 8, bottom: withLine ? 0:7, trailing: 20))
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.white)
+                .glowEasy()
+        )
+        .onAppear{
+            isActive = isOpened
+        }
+    }
+}
+
+extension ExpandingCellForApp {
+    
+    private var headerCell: some View {
+        HStack(spacing: 17) {
+            
+            Text(text)
+                .semibold16
+                .foregroundColor(Color.darkBlue)
+                .padding(10)
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.purpleLow)
+                .frame(width: 19, height: 12)
+                .rotationEffect(.degrees(isActive ? 90:0))
+                .background(
+                Circle()
+                    .fill(Color.purpleLow.opacity(0.1))
+                    .frame(width: 30,height: 30)
+                    
+                )
+        }
+        .frame(minHeight: 52)
     }
     
 }

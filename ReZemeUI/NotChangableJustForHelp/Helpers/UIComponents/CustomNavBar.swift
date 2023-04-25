@@ -266,7 +266,7 @@ extension CustomNavBar {
                         .frame(width: 50, height: 50)
                         .overlay(
                             Button {
-                                
+                                 action()
                             } label: {
                                 Image("filter")
                                     .renderingMode(.template)

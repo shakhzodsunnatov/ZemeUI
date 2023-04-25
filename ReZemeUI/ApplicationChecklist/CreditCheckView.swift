@@ -168,11 +168,6 @@ struct CreditCheckView: View {
                         
                     }
                 }
-//                NavigationLink(
-//                    isActive: $vm.showAlert,
-//                    destination: { CustomAlert(presentAlert: $vm.showAlert) }
-//                ) { EmptyView() }
-//                    .navigationBarHidden(true)
             }
         }
     }
