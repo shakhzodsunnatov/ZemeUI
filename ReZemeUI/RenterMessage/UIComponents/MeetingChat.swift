@@ -54,7 +54,6 @@ struct MeetingChat: View {
                             .datePickerStyle(.graphical)
                             .zIndex(1)
                     }
-                    
                 }
         }
         .padding(.vertical, 15)

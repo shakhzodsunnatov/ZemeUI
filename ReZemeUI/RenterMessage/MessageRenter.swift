@@ -16,6 +16,7 @@ struct MessageRenter: View {
     @State var textMessage = ""
     @State var isTodoViewOpened = false
     @State var heightOfKeyboard: CGFloat = 0
+    @State var keyboardShowed = true
     @State var scrollToEnd = false
     
     //MARK: - Presenters
@@ -34,7 +35,7 @@ struct MessageRenter: View {
                 ZStack(alignment: .top) {
                     
                     ZStack(alignment: .bottom) {
-                    
+                        
                         VStack(spacing:0) {
                             
                             ScrollViewReader { scrollViewProxy in
@@ -59,9 +60,7 @@ struct MessageRenter: View {
                                         }
                                     }
                                 }
-                                .onTapGesture {
-                                    dismissKeyboard()
-                                }
+                                .addRemoveOnTapGester({ !keyboardShowed })
                             }
                         }
                         
@@ -74,11 +73,12 @@ struct MessageRenter: View {
                                         viewModel.sendText(textMessage)
                                         textMessage = ""
                                         scrollToEnd.toggle()
+                                        dismissKeyboard()
                                     },
                                     fileBtnAction: {
                                         DispatchQueue.main.async {
-                                            self.dismissKeyboard()
-                                            self.showAlert.toggle()
+                                            dismissKeyboard()
+                                            showAlert.toggle()
                                         }
                                     }
                                 )
@@ -87,16 +87,18 @@ struct MessageRenter: View {
                             .offset(y: -max(heightOfKeyboard - geo.safeAreaInsets.bottom, geo.safeAreaInsets.bottom))
                             .onChange(of: self.keyboardHeightHelper.keyboardHeight) { newValue in
                                 DispatchQueue.main.async {
-                                       withAnimation {
-                                           if newValue <= 20 {
-                                               self.heightOfKeyboard = geo.safeAreaInsets.bottom
-                                               self.scrollToEnd.toggle()
-                                           } else {
-                                               self.heightOfKeyboard = newValue - 20
-                                               self.scrollToEnd.toggle()
-                                           }
-                                       }
-                                   }
+                                    withAnimation {
+                                        if newValue <= 20 {
+                                            heightOfKeyboard = geo.safeAreaInsets.bottom
+                                            scrollToEnd.toggle()
+                                            keyboardShowed = true
+                                        } else {
+                                            heightOfKeyboard = newValue - 20
+                                            scrollToEnd.toggle()
+                                            keyboardShowed = false
+                                        }
+                                    }
+                                }
                             }
                     }
                     .background(Color.white)
@@ -134,11 +136,11 @@ struct MessageRenter: View {
         .selectDocumentTypeView(isActive: $showSelectDocView) { selectedIndex in
             switch selectedIndex {
             case 0: break       // Plaid Verified Bank Statements
-            
+                
             case 1:             // W2 Forms
                 showSelectDocView.toggle()
                 showFileUploadView.toggle()
-            
+                
             case 2: break       // Employment Verification
             case 3: break       // Paystubs
             default: break
@@ -227,11 +229,33 @@ extension MessageRenter {
     }
 }
 
-extension MessageRenter {
+
+extension View {
+    func addRemoveOnTapGester(_ value: ()->Bool) -> some View {
+        modifier(
+            HideKeyboard(isKeyBoardShows: .constant(value()))
+        )
+    }
+}
+
+struct HideKeyboard: ViewModifier {
+    @Binding var isKeyBoardShows: Bool
+    func body(content: Content) -> some View {
+        if isKeyBoardShows {
+            content
+                .onTapGesture {
+                    dismissKeyboard()
+                }
+        } else {
+            content
+        }
+    }
+    
     func dismissKeyboard() {
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.endEditing(true)
     }
 }
+
 
 struct MessageRenter_Previews: PreviewProvider {
     static var previews: some View {

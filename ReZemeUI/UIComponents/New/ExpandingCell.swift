@@ -128,7 +128,7 @@ struct ExpandingCell_Previews: PreviewProvider {
             text: "Edit Profile",
             image: UIImage(named: "notification"),
             type: .AGENT,
-            views: [ SomeExView() ,  SomeExView(),SomeExView() ,  SomeExView() ]
+            views: [ SomeExView() ,  SomeExView(), SomeExView() ,  SomeExView() ]
         )
         .padding(.horizontal, 20)
         

@@ -167,14 +167,12 @@ extension RequestedDocCard {
     }
 }
 
-//struct RequestedDocCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RequestedDocCard(models: .constant([.init(images: "", title: "dsfghjk")]), step: .constant(2)) { index in
-//            // index is tapped step index
-//        }
-//        .padding(.horizontal, 20)
-//    }
-//}
+struct RequestedDocCard_Previews: PreviewProvider {
+    static var previews: some View {
+        RequestedDocCard(models: .constant([]), step: .constant(5))
+        .padding(.horizontal, 20)
+    }
+}
 
 struct RequestDocumentDM: Equatable {
     var images: String

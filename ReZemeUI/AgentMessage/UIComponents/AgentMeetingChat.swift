@@ -54,7 +54,7 @@ extension AgentMeetingChat {
 
             Spacer()
 
-            Text(date, style: .date)
+            Text(dateFormatter.string(from: date))
                 .medium16
 
         }

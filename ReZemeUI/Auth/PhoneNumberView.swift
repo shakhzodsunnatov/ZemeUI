@@ -11,7 +11,7 @@ struct PhoneNumberView: View {
     
     //MARK: - PROPERTIES
     
-    @State var phoneNumber = ""
+    @StateObject var viewModel = AuthViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -35,7 +35,7 @@ struct PhoneNumberView: View {
                             
                             textFieldHeader
                             
-                            phoneTextField(phone: $phoneNumber)
+                            phoneTextField(phone: $viewModel.phone)
                             
                         }
                         .padding(.top, 19)
@@ -77,11 +77,14 @@ struct PhoneNumberView: View {
                     
                     Color.clear
                     
-                    NavigationLink(destination: { PinCodeView() }, label: {
+                    NavigationLink(destination: {
+                        PinCodeView()
+                            .environmentObject(viewModel)
+                    }, label: {
                         ActionButton(
                             "Continue",
                             onlyLayer: false,
-                            isActiveCondition: { phoneNumber.count == 11 }
+                            isActiveCondition: { viewModel.phone.count == 12 }
                         )
                     })
                     .padding(.horizontal, 76)
@@ -170,10 +173,10 @@ extension PhoneNumberView {
             TextField(format(with: "XXX-XXX-XXX", phone: "0000000000"), text: phone)
                 .autocorrectionDisabled()
                 .keyboardType(.numberPad)
-                .onChange(of: phoneNumber) { newValue in
-                    phoneNumber = format(with: "XXX-XXX-XXX", phone: newValue)
+                .onChange(of: viewModel.phone) { newValue in
+                    viewModel.phone = format(with: "XXX-XXX-XXXX", phone: newValue)
                     
-                    if phoneNumber.count == 11 {
+                    if viewModel.phone.count == 12 {
                         dismissKeyboard()
                     }
                 }
