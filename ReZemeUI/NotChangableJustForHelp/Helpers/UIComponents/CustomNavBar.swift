@@ -100,7 +100,7 @@ struct CustomNavBar<Content: View>: View {
                     Color.clear
                     content
                 }
-                .offset(y:-5)
+                .offset(y:-2)
                 .padding(.top,3)
             }
             .edgesIgnoringSafeArea(.top)

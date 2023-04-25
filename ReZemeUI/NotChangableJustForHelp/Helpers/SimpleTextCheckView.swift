@@ -65,6 +65,7 @@ struct FileterCheckView: View {
             action(isSelected)
         }) {
             HStack(spacing: 0) {
+                
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(type != .buyer ? Color.purpleLow : Color.blue, lineWidth: 1)
                     .frame(width: 20, height: 20)
@@ -82,10 +83,7 @@ struct FileterCheckView: View {
                     .foregroundColor(Color.black)
                     .lineLimit(2)
                     .medium16
-                
-                Spacer()
             }
-//            .padding(.leading,16)
         }
     }
 }

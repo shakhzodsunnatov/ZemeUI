@@ -60,7 +60,6 @@ struct AgentSpecificApplicationView: View {
                     }
                     .padding(.bottom,100)
                 }
-                .offset(y:3)
                 
             },
             title: "Application #1",
@@ -72,11 +71,6 @@ struct AgentSpecificApplicationView: View {
     }
 }
 
-struct AgentSpecificApplicationView_Previews: PreviewProvider {
-    static var previews: some View {
-        AgentSpecificApplicationView()
-    }
-}
 
 extension AgentSpecificApplicationView {
     
@@ -146,6 +140,8 @@ extension AgentSpecificApplicationView {
             
             
             sliderView(title: "Income", subtitle: "Min. Income: $155k ", agent: true)
+                .frame(maxWidth: .infinity)
+                .background(Color.red)
             
             LineView()
                 .padding(.horizontal, 20)
@@ -199,13 +195,14 @@ extension AgentSpecificApplicationView {
                 
             }
         }
-        .padding(.horizontal,15)
+//        .padding(.horizontal,15)
     }
     
     func sliderView(title: String, subtitle:String, agent: Bool) -> some View {
         VStack {
             HStack {
                 VStack(alignment: .leading,spacing: 0) {
+                    
                     Text(title)
                         .semibold16
                         .foregroundColor(.black)
@@ -214,7 +211,9 @@ extension AgentSpecificApplicationView {
                         .medium12
                         .foregroundColor(agent ? .purpleLow : .darkBlue)
                 }
+                
                 Spacer()
+                
                 HStack {
                     Image("tick-square")
                         .renderingMode(.template)
@@ -259,6 +258,7 @@ extension AgentSpecificApplicationView {
                         .offset(x: 200)
                         
                 }
+                
                 HStack(spacing: 30) {
                     Text("720")
                         .foregroundColor(.purpleLow)
@@ -370,3 +370,12 @@ extension AgentSpecificApplicationView {
         
     }
 }
+
+
+struct AgentSpecificApplicationView_Previews: PreviewProvider {
+    static var previews: some View {
+        AgentSpecificApplicationView()
+    }
+}
+
+
