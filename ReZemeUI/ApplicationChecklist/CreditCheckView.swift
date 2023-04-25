@@ -179,39 +179,39 @@ struct CreditCheckView: View {
 
 extension CreditCheckView {
     
-    private func navBar(geo: GeometryProxy) -> some View {
-        HStack {
-            
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.white)
-                    .font(Font.title.weight(.medium))
-                    .frame(width: 26, height: 26)
-            }
-            .padding(.leading, 17)
-            
-            Spacer()
-            
-            Text("Credit Check")
-                .semibold22
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.trailing, 43)
-            
-        }
-        .padding(.top, geo.safeAreaInsets.top)
-        .padding(.bottom, 25)
-        .frame(width: SCREEN_WIDTH)
-        .background(
-            Image("top-background")
-                .resizable()
-        )
-        .ignoresSafeArea(edges: .top)
-    }
+//    private func navBar(geo: GeometryProxy) -> some View {
+//        HStack {
+//            
+//            Button(action: {
+//                presentationMode.wrappedValue.dismiss()
+//            }) {
+//                Image(systemName: "arrow.left")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .foregroundColor(.white)
+//                    .font(Font.title.weight(.medium))
+//                    .frame(width: 26, height: 26)
+//            }
+//            .padding(.leading, 17)
+//            
+//            Spacer()
+//            
+//            Text("Credit Check")
+//                .semibold22
+//                .foregroundColor(.white)
+//                .frame(maxWidth: .infinity)
+//                .padding(.trailing, 43)
+//            
+//        }
+//        .padding(.top, geo.safeAreaInsets.top)
+//        .padding(.bottom, 25)
+//        .frame(width: SCREEN_WIDTH)
+//        .background(
+//            Image("top-background")
+//                .resizable()
+//        )
+//        .ignoresSafeArea(edges: .top)
+//    }
     
     func linkButton(title: String,action: @escaping () -> Void) -> some View {
         

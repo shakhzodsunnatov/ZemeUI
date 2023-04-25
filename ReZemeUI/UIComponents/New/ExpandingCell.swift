@@ -202,9 +202,9 @@ struct ExpandingCellForApp: View {
             
             if withLine {
                 LineView()
-                    .padding(.horizontal, 20)
+//                    .padding(.horizontal, 20)
                     .opacity(isActive ? 1 : 0)
-                    .padding(.top, 7)
+                    .padding(.top, 0)
             }
             
             if isActive {
@@ -226,7 +226,7 @@ struct ExpandingCellForApp: View {
             }
             
         }
-        .padding(EdgeInsets(top: 7, leading: 8, bottom: withLine ? 0:7, trailing: 20))
+        .padding(EdgeInsets(top: 7, leading: 15, bottom: withLine ? 0:7, trailing: 15))
         .background(
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color.white)

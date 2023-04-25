@@ -159,8 +159,8 @@ extension RequestedDocCard {
     
     private func getActiveLineHeight(_ step: Int) -> CGFloat {
         switch step {
-        case 0: return 150
-        case 1: return 70
+        case 0: return 0
+        case 1: return 0
         case 2: return 0
         default: return 0
         }
@@ -169,7 +169,7 @@ extension RequestedDocCard {
 
 struct RequestedDocCard_Previews: PreviewProvider {
     static var previews: some View {
-        RequestedDocCard(models: .constant([]), step: .constant(5))
+        RequestedDocCard(models: .constant([RequestDocumentDM.init(images: "233", title: "1231", fileAll: [], imagesArray: []),RequestDocumentDM.init(images: "233", title: "1231", fileAll: [], imagesArray: []),RequestDocumentDM.init(images: "233", title: "1231", fileAll: [], imagesArray: [])]), step: .constant(5))
         .padding(.horizontal, 20)
     }
 }

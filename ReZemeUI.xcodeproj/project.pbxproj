@@ -94,6 +94,9 @@
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */; };
+		9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */; };
+		9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */; };
+		9D9225DB29F846BA00DF5B77 /* CheckButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225DA29F846BA00DF5B77 /* CheckButtonCustom.swift */; };
 		9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */; };
 		9DB1A84729F659680045D9BD /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A84629F659680045D9BD /* QRView.swift */; };
 		9DB1A84A29F66AEE0045D9BD /* AgentMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A84929F66AEE0045D9BD /* AgentMainView.swift */; };
@@ -199,6 +202,9 @@
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
+		9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfile.swift; sourceTree = "<group>"; };
+		9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfileVM.swift; sourceTree = "<group>"; };
+		9D9225DA29F846BA00DF5B77 /* CheckButtonCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckButtonCustom.swift; sourceTree = "<group>"; };
 		9DB0DB0F29F091BD00EB9283 /* PlaidVerifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidVerifiedView.swift; sourceTree = "<group>"; };
 		9DB1A84629F659680045D9BD /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
 		9DB1A84929F66AEE0045D9BD /* AgentMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentMainView.swift; sourceTree = "<group>"; };
@@ -278,9 +284,9 @@
 				9DB1A85729F698AF0045D9BD /* AgentApplications */,
 				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
 				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
-				2EEED73429EC1D49005AD516 /* Message */,
 				2EEED73429EC1D49005AD516 /* RenterMessage */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
+				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2EE41D6B29F0B69E00E4B878 /* Auth */,
 				2E84CDFE29F12CF70029FDBD /* Setting */,
 				2E4BEE1C29F59725005CD69D /* Support */,
@@ -566,6 +572,16 @@
 			path = "Sheet&AlertViews";
 			sourceTree = "<group>";
 		};
+		9D9225D529F844FD00DF5B77 /* AgentEditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */,
+				9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */,
+				9D9225DA29F846BA00DF5B77 /* CheckButtonCustom.swift */,
+			);
+			path = AgentEditProfile;
+			sourceTree = "<group>";
+		};
 		9DB1A84529F659490045D9BD /* QR */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +731,7 @@
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
+				9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */,
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
 				2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
@@ -771,6 +788,7 @@
 				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
 				2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */,
 				2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */,
+				9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */,
 				2E78201F29EBB2C600F3C5A9 /* ImageLoader.swift in Sources */,
 				2E781FE129EBADC700F3C5A9 /* AddingInviteEmailCard.swift in Sources */,
 				2EEED74429EC1D49005AD516 /* AlarmChat.swift in Sources */,
@@ -792,6 +810,7 @@
 				9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */,
 				2E78200D29EBB13200F3C5A9 /* NavigationNavBar.swift in Sources */,
 				2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */,
+				9D9225DB29F846BA00DF5B77 /* CheckButtonCustom.swift in Sources */,
 				2E78200529EBB0AB00F3C5A9 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -922,7 +941,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -937,7 +956,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -955,7 +974,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -970,7 +989,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -151,31 +151,7 @@ extension SupportRenter {
         }
     }
     
-    struct TextEditorWithPlaceholders: View {
-        @Binding var text: String
-        @Binding var placeHolder: String
-        var body: some View {
-            ZStack(alignment: .leading) {
-                if text.isEmpty {
-                    VStack {
-                        Text(placeHolder)
-                            .foregroundColor(.gray)
-                            .padding(.top, 10)
-                            .padding(.leading, 6)
-                        //                            .opacity(0.1)
-                        Spacer()
-                    }
-                }
-                
-                VStack {
-                    TextEditor(text: $text)
-                        .frame(minHeight: 150, maxHeight: 300)
-                        .opacity(text.isEmpty ? 0.7 : 1)
-                    Spacer()
-                }
-            }
-        }
-    }
+    
 }
 
 struct SupportRenter_Previews: PreviewProvider {
@@ -184,5 +160,30 @@ struct SupportRenter_Previews: PreviewProvider {
     }
 }
 
+struct TextEditorWithPlaceholders: View {
+    @Binding var text: String
+    @Binding var placeHolder: String
+    var body: some View {
+        ZStack(alignment: .leading) {
+            if text.isEmpty {
+                VStack {
+                    Text(placeHolder)
+                        .foregroundColor(.gray)
+                        .padding(.top, 10)
+                        .padding(.leading, 6)
+                    //                            .opacity(0.1)
+                    Spacer()
+                }
+            }
+            
+            VStack {
+                TextEditor(text: $text)
+                    .frame(minHeight: 150, maxHeight: 300)
+                    .opacity(text.isEmpty ? 0.7 : 1)
+                Spacer()
+            }
+        }
+    }
+}
 
 
