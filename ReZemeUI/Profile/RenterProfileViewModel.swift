@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class EditProfileViewModel: ObservableObject {
+class RenterProfileViewModel: ObservableObject {
     
     //MARK: - PROPERTIES
     

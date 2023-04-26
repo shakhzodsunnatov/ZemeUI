@@ -15,8 +15,8 @@
 		2E4BEE2029F5A4C0005CD69D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1F29F5A4C0005CD69D /* LineView.swift */; };
 		2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */; };
 		2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */; };
-		2E63256C29F7EF12004D5AE1 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */; };
-		2E63256E29F7EF2C004D5AE1 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */; };
+		2E63256C29F7EF12004D5AE1 /* RenterProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */; };
+		2E63256E29F7EF2C004D5AE1 /* RenterProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */; };
 		2E6578DD29F5C77E00E53F07 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E6578DC29F5C77E00E53F07 /* MyParticle.sks */; };
 		2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */; };
 		2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC929EBAD0700F3C5A9 /* ContentView.swift */; };
@@ -127,8 +127,8 @@
 		2E4BEE1F29F5A4C0005CD69D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsView.swift; sourceTree = "<group>"; };
 		2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RounderShadowModifier.swift; sourceTree = "<group>"; };
-		2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
-		2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileEditView.swift; sourceTree = "<group>"; };
+		2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileViewModel.swift; sourceTree = "<group>"; };
 		2E6578DC29F5C77E00E53F07 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		2E781FC429EBAD0700F3C5A9 /* ReZemeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReZemeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReZemeUIApp.swift; sourceTree = "<group>"; };
@@ -271,8 +271,8 @@
 		2E63256A29F7EEBE004D5AE1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */,
-				2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */,
+				2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */,
+				2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -767,7 +767,7 @@
 				2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
 				9DB1A85429F693220045D9BD /* MockData.swift in Sources */,
-				2E63256C29F7EF12004D5AE1 /* EditProfileView.swift in Sources */,
+				2E63256C29F7EF12004D5AE1 /* RenterProfileEditView.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
@@ -828,7 +828,7 @@
 				2EEED74929EC1D49005AD516 /* OfferChatModel.swift in Sources */,
 				2EEED74E29EC1DC3005AD516 /* Formatting.swift in Sources */,
 				2E78201E29EBB2C600F3C5A9 /* ImageCache.swift in Sources */,
-				2E63256E29F7EF2C004D5AE1 /* EditProfileViewModel.swift in Sources */,
+				2E63256E29F7EF2C004D5AE1 /* RenterProfileViewModel.swift in Sources */,
 				2EEED74529EC1D49005AD516 /* ChatTextFiledStyle.swift in Sources */,
 				2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */,
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,

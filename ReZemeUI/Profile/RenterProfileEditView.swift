@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EditProfileView: View {
+struct RenterProfileEditView: View {
     
-    @StateObject var viewModel = EditProfileViewModel()
+    @StateObject var viewModel = RenterProfileViewModel()
     
     var body: some View {
         ScrollView {
@@ -34,7 +34,7 @@ struct EditProfileView: View {
 
 //MARK: - UI Components
 
-extension EditProfileView {
+extension RenterProfileEditView {
     
     private func textFields() -> some View {
         VStack(spacing: 20) {
@@ -121,6 +121,6 @@ extension EditProfileView {
 
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        RenterProfileEditView()
     }
 }
