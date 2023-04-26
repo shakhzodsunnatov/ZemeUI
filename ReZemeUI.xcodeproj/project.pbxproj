@@ -58,8 +58,8 @@
 		2E84CE0529F548470029FDBD /* SettingsRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0429F548470029FDBD /* SettingsRenter.swift */; };
 		2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */; };
 		2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */; };
-		2EB502FC29F8A641006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */; };
-		2EB502FD29F8A641006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */; };
+		2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */; };
+		2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -171,8 +171,8 @@
 		2E84CE0429F548470029FDBD /* SettingsRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRenter.swift; sourceTree = "<group>"; };
 		2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingCell.swift; sourceTree = "<group>"; };
 		2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMaker.swift; sourceTree = "<group>"; };
-		2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
-		2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
+		2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
+		2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 				2E4BEE1C29F59725005CD69D /* Support */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
-				2EB502F929F8A641006FAFE1 /* EmptyViews */,
+				2EB5030529F8A888006FAFE1 /* EmptyViews */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -479,14 +479,13 @@
 			path = New;
 			sourceTree = "<group>";
 		};
-		2EB502F929F8A641006FAFE1 /* EmptyViews */ = {
+		2EB5030529F8A888006FAFE1 /* EmptyViews */ = {
 			isa = PBXGroup;
 			children = (
-				2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */,
-				2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */,
+				2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */,
+				2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */,
 			);
-			name = EmptyViews;
-			path = "../../ReZemeUI 2/ReZemeUI/EmptyViews";
+			path = EmptyViews;
 			sourceTree = "<group>";
 		};
 		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
@@ -757,7 +756,6 @@
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
 				2EEED75029EC1E15005AD516 /* KeyboardHeightHelper.swift in Sources */,
 				2EEED74C29EC1D62005AD516 /* MockDataRenter.swift in Sources */,
-				2EB502FC29F8A641006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
 				9DB1A84E29F6926D0045D9BD /* PropertyModel.swift in Sources */,
 				2EEED74629EC1D49005AD516 /* ClientChat.swift in Sources */,
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
@@ -771,6 +769,7 @@
 				9DB1A85429F693220045D9BD /* MockData.swift in Sources */,
 				2E63256C29F7EF12004D5AE1 /* EditProfileView.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
+				2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
 				9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */,
 				2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */,
@@ -782,7 +781,6 @@
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
-				2EB502FD29F8A641006FAFE1 /* ApplicationsEmptyView.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */,
@@ -849,6 +847,7 @@
 				2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */,
 				9D9225DB29F846BA00DF5B77 /* CheckButtonCustom.swift in Sources */,
 				2E78200529EBB0AB00F3C5A9 /* CustomAlert.swift in Sources */,
+				2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
