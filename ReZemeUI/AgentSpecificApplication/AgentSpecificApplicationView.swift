@@ -14,12 +14,9 @@ struct AgentSpecificApplicationView: View {
         GridItem(.flexible(), spacing: 80 , alignment: .leading)
     ]
     @State var isActive: Bool = false
-    
     @State var income: Bool = false
-    @State var properyApplication: Bool = false
     
     var topTitleArray: [String] = ["Laundromat", "Gym","Doorman", "Dog-110 lbs"]
-    
     var topiconArray: [String] = ["clearmashine", "gym", "polisman", "pet" ]
     
     var titleArray: [String] = [
@@ -64,7 +61,7 @@ struct AgentSpecificApplicationView: View {
                             }
                             .padding(.horizontal,20)
                         }
-                        .padding(.bottom,100)
+                        .padding(.bottom,150)
                     }
                     
                     
@@ -75,16 +72,16 @@ struct AgentSpecificApplicationView: View {
                                 VStack(spacing: 17) {
                                     
                                     linkButton(title: "View Property Application",type: .RENTER) {
-                                        properyApplication.toggle()
+                                        
                                     }
                                     .frame(height: 45)
                                     HStack(spacing: 16) {
                                         
                                         linkButton(title: "Deny", stoke: true) {
-                                            properyApplication.toggle()
+                                            
                                         }
                                         linkButton(title: "Accept",type: .AGENT) {
-                                            properyApplication.toggle()
+                                            
                                         }
                                     }
                                 }
@@ -111,7 +108,7 @@ extension AgentSpecificApplicationView {
             VStack(alignment: .leading) {
                 Image("testHouse")
                     .resizable()
-                    .frame(height: 172)
+                    .frame(height: 120)
                     .scaledToFill()
                     .overlay (
                         VStack {
@@ -219,7 +216,7 @@ extension AgentSpecificApplicationView {
                 
                 HomeChart(data: [121,55,98,52,88,87,65,44,67,22,65,88,45])
                     .frame(height: 200)
-                    .offset(x:-10,y: -10)
+                    .padding(.top,15)
             }
             
             LineView()
@@ -239,7 +236,7 @@ extension AgentSpecificApplicationView {
             }
             
             linkButton(title: "Message Applicant", stoke: true) {
-                properyApplication.toggle()
+               
             }
             .padding(.horizontal,25)
             .padding(.bottom,20)

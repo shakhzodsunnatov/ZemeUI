@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             Group {
                 NavigationLink(destination: { ApplicationChecklist() }) {
                     Text("Open Application Checklist")
@@ -140,9 +140,6 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
-                
-               
-                
             }
             
             Group {
@@ -169,10 +166,50 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+                NavigationLink(destination: {
+                    AgentPhoneNumberView()
+                }) {
+                    Text("Agent Phone number")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    AgentProStatisticView()
+                }) {
+                    Text("Agent Property Statistics")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+               
+                
+                NavigationLink(destination: {
+                    AgentNotificationView()
+                }) {
+                    Text("Agent Notification view")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                
             }
         }
         .padding()
         .navigationBarHidden(true)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

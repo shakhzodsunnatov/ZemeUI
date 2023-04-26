@@ -151,6 +151,7 @@ extension PinCodeView {
     }
     
 }
+
 struct PinCodeView_Previews: PreviewProvider {
     static var previews: some View {
         PhoneNumberView()

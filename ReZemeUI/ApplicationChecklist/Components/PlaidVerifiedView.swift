@@ -27,108 +27,42 @@ struct PlaidVerifiedView: View {
     @EnvironmentObject var viewModel: ApplicationChecklistVM
     
     var body: some View {
-        ZStack {
-        if addNewModel {
-            NavigationNavBar(title: newModel.images) {
-                ZStack {
-                    VStack {
-                        ScrollView(.vertical) {
-                            VStack {
-                                if newModel.fileAll.isEmpty || newModel.imagesArray.isEmpty {
-                                    TextFieldWithIcon(image: "document_icon", topTitle: "Document title", text: $newdocument, textFiledStyle: .simple, emailError:.constant(false))
-                                        .padding(10)
-                                        .background(
-                                            Color.white
-                                                .cornerRadius(8)
-                                                .shadowCustom()
-                                        )
-                                        .padding(20)
-                                        .onChange(of: newdocument) { newValue in
-                                            newModel.images = newValue
-                                        }
-                                }
-                                
-                                if addFileEnable {
-                                    ForEach((0..<newModel.imagesArray.count), id: \.self) { index in
-                                        uploadFileForImage(index: index)
-                                    }
-                                    
-                                    photoSelectButton
-                                        .onChange(of: self.image!) { newValue in
-                                            self.newModel.imagesArray.append(newValue)
-                                        }
-                                } else {
-                                    ForEach((0..<newModel.fileAll.count), id: \.self) { index in
-                                        uploadFile(index: index)
-                                    }
-                                    fileSelectButton
-                                }
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                        linkButton(title: "Confirm Information") {
-                            if addNewModel {
-                                let model:RequestDocumentDM = .init(images: self.newModel.images, title: self.newModel.title, fileAll: self.newModel.fileAll, imagesArray: self.newModel.imagesArray,addPhoto: self.addFileEnable, activate: true)
-                                self.viewModel.models.append(model)
-                                viewModel.step += 1
-                                presentationMode.wrappedValue.dismiss()
-                            } else {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                            
-                            
-                        }
-                        .disabled(newModel.fileAll.isEmpty && newModel.imagesArray.isEmpty)
-                        .opacity(!newModel.fileAll.isEmpty || !newModel.imagesArray.isEmpty ? 1 : 0.5)
-                        .padding(.horizontal,76)
-                    }
-                    
-                }
-                
-            }
-        } else {
-            NavigationNavBar(title: viewModel.models[viewModel.index].images) {
-                ZStack {
-                    VStack {
-                        ScrollView(.vertical) {
-                            VStack {
-                                if viewModel.models[viewModel.index].addPhoto {
-                                    ForEach((0..<viewModel.models[viewModel.index].imagesArray.count), id: \.self) { index in
-                                        uploadFileForImage(index: index)
-                                    }
-                                    
-                                    photoSelectButton
-                                        .onChange(of: self.image!) { newValue in
-                                            self.viewModel.models[viewModel.index].imagesArray.append(newValue)
-                                        }
-                                } else {
-                                    ForEach((0..<viewModel.models[viewModel.index].fileAll.count), id: \.self) { index in
-                                        uploadFile(index: index)
-                                    }
-                                    fileSelectButton
-                                }
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                        linkButton(title: "Confirm Information") {
-                            presentationMode.wrappedValue.dismiss()
-                            
-                        }
-                        .disabled(viewModel.models[viewModel.index].fileAll.isEmpty && viewModel.models[viewModel.index].imagesArray.isEmpty)
-                        .opacity(!viewModel.models[viewModel.index].fileAll.isEmpty || !viewModel.models[viewModel.index].imagesArray.isEmpty ? 1 : 0.5)
-                        .padding(.horizontal,76)
-                    }
-                    
-                }
-                
-            }
-        }
         
-    }
+        VStack {
+            ScrollView(.vertical) {
+                
+                if addNewModel {
+                    fileAddView()
+                } else {
+                    photoAddView()
+                }
+                
+            }
+            
+            Spacer()
+            
+            linkButton(title: "Confirm Information") {
+                if addNewModel {
+                    let model:RequestDocumentDM = .init(images: self.newModel.images, title: self.newModel.title, fileAll: self.newModel.fileAll, imagesArray: self.newModel.imagesArray,addPhoto: self.addFileEnable, activate: true)
+                    
+                    self.viewModel.models.append(model)
+                    
+                    viewModel.step += 1
+                    
+                    presentationMode.wrappedValue.dismiss()
+                    
+                } else {
+                    presentationMode.wrappedValue.dismiss()
+                }
+                
+                
+            }
+            .disabled(addNewModel ? newModel.fileAll.isEmpty && newModel.imagesArray.isEmpty : viewModel.models[viewModel.index].fileAll.isEmpty && viewModel.models[viewModel.index].imagesArray.isEmpty)
+            .opacity(addNewModel ? !newModel.fileAll.isEmpty || !newModel.imagesArray.isEmpty ? 1 : 0.5 : !viewModel.models[viewModel.index].fileAll.isEmpty || !viewModel.models[viewModel.index].imagesArray.isEmpty ? 1 : 0.5)
+            
+            .padding(.horizontal,76)
+        }
+        .navigationRenter(title: newModel.images)
         .sheet(isPresented: $showCaptureView) {
             PhotoCaptureView(capturedImage: self.$image)
         }
@@ -180,7 +114,12 @@ struct PlaidVerifiedView: View {
                             copyFile.name = pdfName
                             copyFile.fileStr = base64String
                             withAnimation {
-                                viewModel.models[viewModel.index].fileAll.append(copyFile)
+                                if addNewModel {
+                                    self.newModel.fileAll.append(copyFile)
+                                } else {
+                                    viewModel.models[viewModel.index].fileAll.append(copyFile)
+                                }
+                                
                             }
                             
                         } catch {
@@ -201,6 +140,9 @@ struct PlaidVerifiedView: View {
                 print(error.localizedDescription)
             }
         }
+        .onTapGesture {
+            UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.endEditing(true)
+        }
     }
 }
 
@@ -211,6 +153,62 @@ struct PlaidVerifiedView_Previews: PreviewProvider {
 }
 
 extension PlaidVerifiedView {
+    
+    func fileAddView() -> some View {
+        VStack {
+            if newModel.fileAll.isEmpty || newModel.imagesArray.isEmpty {
+                TextFieldWithIcon(image: "document_icon", topTitle: "Document title", text: $newdocument, textFiledStyle: .simple, emailError:.constant(false))
+                    .padding(10)
+                    .background(
+                        Color.white
+                            .cornerRadius(8)
+                            .shadowCustom()
+                    )
+                    .padding(20)
+                    .onChange(of: newdocument) { newValue in
+                        newModel.images = newValue
+                    }
+            }
+            
+            if addFileEnable {
+                
+                ForEach((0..<newModel.imagesArray.count), id: \.self) { index in
+                    uploadFileForImage(index: index)
+                }
+                
+                photoSelectButton
+                    .onChange(of: self.image!) { newValue in
+                        self.newModel.imagesArray.append(newValue)
+                    }
+                
+            } else {
+                ForEach((0..<newModel.fileAll.count), id: \.self) { index in
+                    uploadFile(index: index)
+                }
+                fileSelectButton
+            }
+        }
+    }
+    
+    func photoAddView() -> some View {
+        VStack {
+            if viewModel.models[viewModel.index].addPhoto {
+                ForEach((0..<viewModel.models[viewModel.index].imagesArray.count), id: \.self) { index in
+                    uploadFileForImage(index: index)
+                }
+                
+                photoSelectButton
+                    .onChange(of: self.image!) { newValue in
+                        self.viewModel.models[viewModel.index].imagesArray.append(newValue)
+                    }
+            } else {
+                ForEach((0..<viewModel.models[viewModel.index].fileAll.count), id: \.self) { index in
+                    uploadFile(index: index)
+                }
+                fileSelectButton
+            }
+        }
+    }
     
     private var fileSelectButton: some View {
         Button {
@@ -319,7 +317,7 @@ extension PlaidVerifiedView {
                     Text(self.viewModel.models[viewModel.index].fileAll[index].name)
                         .bold14
                 }
-               
+                
                 
                 Spacer()
             }
@@ -362,7 +360,7 @@ extension PlaidVerifiedView {
                         .frame(height: 150)
                         .padding(10)
                 } else {
-
+                    
                     Image(uiImage: viewModel.models[viewModel.index].imagesArray[index])
                         .resizable()
                         .scaledToFill()
@@ -371,7 +369,7 @@ extension PlaidVerifiedView {
                     
                 }
                 
-               
+                
                 
                 Spacer()
             }
