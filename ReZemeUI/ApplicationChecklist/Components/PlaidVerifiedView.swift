@@ -13,7 +13,7 @@ struct PlaidVerifiedView: View {
     @State var title: String = ""
     @State var isImporting = false
     @State var isShowPhotoLibrary = false
-    
+    @State var newdocument: String = ""
     @Binding var addNewModel: Bool
     @Binding var addFileEnable: Bool
     
@@ -31,6 +31,20 @@ struct PlaidVerifiedView: View {
                     VStack {
                         ScrollView(.vertical) {
                             VStack {
+                                if newModel.fileAll.isEmpty || newModel.imagesArray.isEmpty {
+                                    TextFieldWithIcon(image: "document_icon", topTitle: "Document title", text: $newdocument, textFiledStyle: .simple, emailError:.constant(false))
+                                        .padding(10)
+                                        .background(
+                                            Color.white
+                                                .cornerRadius(8)
+                                                .shadowCustom()
+                                        )
+                                        .padding(20)
+                                        .onChange(of: newdocument) { newValue in
+                                            newModel.images = newValue
+                                        }
+                                }
+                                
                                 if addFileEnable {
                                     ForEach((0..<newModel.imagesArray.count), id: \.self) { index in
                                         uploadFileForImage(index: index)
@@ -73,6 +87,9 @@ struct PlaidVerifiedView: View {
             }
             .sheet(isPresented: $isShowPhotoLibrary) {
                 ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            }
+            .onTapGesture {
+                UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.endEditing(true)
             }
             .fileImporter(
                 isPresented: $isImporting,
