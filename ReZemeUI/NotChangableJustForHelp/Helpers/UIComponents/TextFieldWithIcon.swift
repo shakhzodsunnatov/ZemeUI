@@ -27,13 +27,13 @@ struct TextFieldWithIcon: View {
     var body: some View {
         switch textFiledStyle {
         case .simple:
-            VStack(spacing: 11) {
-                VStack {
+            VStack(spacing: 0) {
+                VStack(spacing: 6) {
                     HStack(spacing: 10) {
                         Image(image)
                             .resizable()
                             .renderingMode(.template)
-                            .foregroundColor(.purpleLow)
+                            .foregroundColor(.darkBlue)
                             .scaledToFit()
                             .frame(width: 18, height: 18)
                         

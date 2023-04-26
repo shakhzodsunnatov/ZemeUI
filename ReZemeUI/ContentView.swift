@@ -106,9 +106,9 @@ struct ContentView: View {
                 }
                 
                 NavigationLink(destination: {
-                    AgentApplicationsView()
+                    AgentEditProfile()
                 }) {
-                    Text("Agent Applications")
+                    Text("Agent Edit Profile")
                         .foregroundColor(.white)
                         .padding(15)
                         .background(
@@ -116,6 +116,18 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+//                NavigationLink(destination: {
+//                    AgentApplicationsView()
+//                }) {
+//                    Text("Agent Applications")
+//                        .foregroundColor(.white)
+//                        .padding(15)
+//                        .background(
+//                            RoundedRectangle(cornerRadius: 8)
+//                                .fill(Color.lightBlue)
+//                        )
+//                }
                 
                 NavigationLink(destination: {
                     AgentSpecificApplicationView()
@@ -128,6 +140,9 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+               
+                
             }
             
             Group {

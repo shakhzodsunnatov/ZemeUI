@@ -29,6 +29,7 @@ struct AgentMainView: View {
                     ScrollView(.vertical,showsIndicators: false) {
                         ForEach(0..<2, id: \.self) { property in
                             AgentPropertyItemView(property: mockProperty, push: .constant(false), properID: .constant(1))
+                                .padding(.horizontal,11)
                                 .onTapGesture {
                                     presentationMode.wrappedValue.dismiss()
                                 }
@@ -37,6 +38,7 @@ struct AgentMainView: View {
                     
                     if filter {
                         filterView()
+                            .offset(y:-8)
                     }
                 }
             },
@@ -55,6 +57,7 @@ struct AgentMainView: View {
 extension AgentMainView {
     
     func filterView() -> some View {
+        
         VStack(alignment: .leading, spacing: 0) {
             HStack {
                 
@@ -99,45 +102,58 @@ extension AgentMainView {
                         .foregroundColor(.purpleLow)
                 }
             }
-            
-            Group {
-                FileterCheckView(isSelected: $filter1, title: "Notifications Pending", type: .agent) { t in
+            ScrollView(.vertical,showsIndicators: false) {
+                VStack(alignment: .leading,spacing: 0) {
+                    FileterCheckView(isSelected: $filter1, title: "Notifications Pending", type: .agent) { t in
+                        
+                    }
                     
-                }
-                
-                FileterCheckView(isSelected: $filter2,title: "Messages Pending", type: .agent) { t in
+                    FileterCheckView(isSelected: $filter2,title: "Messages Pending", type: .agent) { t in
+                        
+                    }
                     
-                }
-                
-                FileterCheckView(isSelected: $filter3, title: "New Application", type: .agent) { t in
+                    FileterCheckView(isSelected: $filter3, title: "New Application", type: .agent) { t in
+                        
+                    }
+                    .padding(.top,4)
                     
-                }
-                
-                Text("Sort By")
-                    .semibold18
-                
-                Text("Alphabetical")
-                    .regular14
-                
-                FileterCheckView(isSelected: $filter4,title: "Alphabetical A-Z", type: .agent) { t in
                     
-                }
-                
-                FileterCheckView(isSelected: $filter5, title: "Alphabetical Z-A", type: .agent) { t in
-                    
-                }
-                
-                Text("Date Range")
-                    .regular14
-                
-                FileterCheckView(isSelected: $filter6,title: "Newest to Oldest", type: .agent) { t in
-                    
-                }
-                FileterCheckView(isSelected: $filter7, title: "Oldest to Newest", type: .agent) { t in
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Sort By")
+                            .semibold18
+                        
+                        VStack(alignment: .leading,spacing: 0) {
+                            Text("Alphabetical")
+                                .regular14
+                            
+                            FileterCheckView(isSelected: $filter4,title: "Alphabetical A-Z", type: .agent) { t in
+                                
+                            }
+                            
+                            FileterCheckView(isSelected: $filter5, title: "Alphabetical Z-A", type: .agent) { t in
+                                
+                            }
+                        }
+                        .padding(.top,10)
+                        
+                        VStack(alignment: .leading,spacing: 0) {
+                            Text("Date Range")
+                                .regular14
+                            
+                            FileterCheckView(isSelected: $filter6,title: "Newest to Oldest", type: .agent) { t in
+                                
+                            }
+                            FileterCheckView(isSelected: $filter7, title: "Oldest to Newest", type: .agent) { t in
+                                
+                            }
+                        }
+                        .padding(.top,10)
+                        
+                    }
+                    .padding(.top,10)
                     
                 }
             }
-            .padding(.top, 20)
             
             ActionButton("Apply", action: {
                 withAnimation {
@@ -145,16 +161,17 @@ extension AgentMainView {
                 }
             })
             .padding(.horizontal, 56)
-            .padding(.top, 48)
-            
+            .padding(.top, 38)
+            .padding(.bottom,30)
         }
-        .padding(EdgeInsets(top: 11, leading: 17, bottom: 19, trailing: 50))
+        .padding(EdgeInsets(top: 11, leading: 20, bottom: 19, trailing: 20))
         .background(
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white)
                 .shadowCustom()
         )
         .padding(.horizontal,20)
+        .padding(.bottom,120)
     }
 }
 
