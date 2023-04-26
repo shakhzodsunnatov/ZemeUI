@@ -63,6 +63,8 @@
 		2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */; };
 		2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */; };
 		2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */; };
+		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
+		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -179,6 +181,8 @@
 		2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMaker.swift; sourceTree = "<group>"; };
 		2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
+		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
+		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
 				2EB5030529F8A888006FAFE1 /* EmptyViews */,
+				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -519,6 +524,23 @@
 				2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */,
 			);
 			path = EmptyViews;
+			sourceTree = "<group>";
+		};
+		2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7EEBE29F9A49A00EBE31C /* NeedToRemoveBeforeMerge */,
+				2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */,
+			);
+			path = RenterPropertyDetail;
+			sourceTree = "<group>";
+		};
+		2ED7EEBE29F9A49A00EBE31C /* NeedToRemoveBeforeMerge */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */,
+			);
+			path = NeedToRemoveBeforeMerge;
 			sourceTree = "<group>";
 		};
 		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
@@ -792,6 +814,7 @@
 				9DB1A84E29F6926D0045D9BD /* PropertyModel.swift in Sources */,
 				2EEED74629EC1D49005AD516 /* ClientChat.swift in Sources */,
 				2E303C3929F949CF00C93E20 /* NeighborhoodModel.swift in Sources */,
+				2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */,
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
@@ -857,6 +880,7 @@
 				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
 				2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */,
 				2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */,
+				2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */,
 				9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */,
 				2E78201F29EBB2C600F3C5A9 /* ImageLoader.swift in Sources */,
 				2E781FE129EBADC700F3C5A9 /* AddingInviteEmailCard.swift in Sources */,
