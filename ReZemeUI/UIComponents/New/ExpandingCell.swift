@@ -107,6 +107,7 @@ extension ExpandingCell {
             Text(text)
                 .medium16
                 .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
             
             Spacer()
             
