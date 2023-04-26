@@ -12,12 +12,13 @@ struct RounderShadowModifier: ViewModifier {
     //MARK: - PROPERTIES
     
     var cornerRadius: CGFloat = 8.0
+    var backgroundColor: Color = Color.white
     
     func body(content: Content) -> some View {
         content
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(Color.white)
+                    .fill(backgroundColor)
                     .glowEasy()
             )
     }
@@ -43,8 +44,8 @@ struct RounderShadowModifierNew: ViewModifier {
 
 extension View {
     
-    func roundedShadow(cornerRadius: CGFloat = 8) -> some View {
-        modifier(RounderShadowModifier(cornerRadius: cornerRadius))
+    func roundedShadow(cornerRadius: CGFloat = 8, backgroundColor: Color = Color.white) -> some View {
+        modifier(RounderShadowModifier(cornerRadius: cornerRadius, backgroundColor: backgroundColor))
     }
     
     func roundedShadowNew(cornerRadius: CGFloat = 8) -> some View {
