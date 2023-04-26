@@ -10,10 +10,13 @@ import SwiftUI
 struct AgentSpecificApplicationView: View {
     
     var grid: [GridItem] = [
-        GridItem(.flexible(), spacing: 20 , alignment: .leading),
-        GridItem(.flexible(), spacing: 20 , alignment: .leading)
+        GridItem(.flexible(), spacing: 80 , alignment: .leading),
+        GridItem(.flexible(), spacing: 80 , alignment: .leading)
     ]
     @State var isActive: Bool = false
+    
+    @State var income: Bool = false
+    @State var properyApplication: Bool = false
     
     var topTitleArray: [String] = ["Laundromat", "Gym","Doorman", "Dog-110 lbs"]
     
@@ -43,24 +46,52 @@ struct AgentSpecificApplicationView: View {
     var body: some View {
         CustomNavBar(
             content: {
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading,spacing: 11) {
-
-                        topView()
+                ZStack(alignment: .bottom) {
+                    ScrollView(.vertical, showsIndicators: false) {
                         
-                        ForEach((0..<users.count), id:\.self) { index in
-                            ExpandingCellForApp(
-                                text: "Applicant #\(index+1) • \(users[index])",
-                                views: [
-                                    cellView()
-                                ]
-                            )
+                        VStack(alignment: .leading,spacing: 0) {
+
+                            topView()
+                            
+                            ForEach((0..<users.count), id:\.self) { index in
+                                ExpandingCellForApp(
+                                    text: "Applicant #\(index+1) • \(users[index])",
+                                    views: [
+                                        cellView()
+                                    ]
+                                )
+                                .padding(.bottom,20)
+                            }
+                            .padding(.horizontal,20)
                         }
-                        .padding(.horizontal,20)
+                        .padding(.bottom,100)
                     }
-                    .padding(.bottom,100)
+                    
+                    if properyApplication {
+                        RoundedRectangle(cornerRadius: 0)
+                            .fill(Color.white)
+                            .frame(height: 150)
+                            .overlay(
+                                VStack(spacing: 17) {
+                                    
+                                    linkButton(title: "View Property Application",type: .RENTER) {
+                                        properyApplication.toggle()
+                                    }
+                                    .frame(height: 45)
+                                    HStack(spacing: 16) {
+                                        
+                                        linkButton(title: "Deny", stoke: true) {
+                                            properyApplication.toggle()
+                                        }
+                                        linkButton(title: "Accept",type: .AGENT) {
+                                            properyApplication.toggle()
+                                        }
+                                    }
+                                }
+                                    .padding(EdgeInsets(top: 25, leading: 45, bottom: 18, trailing: 45))
+                            )
+                    }
                 }
-                
             },
             title: "Application #1",
             style: .newTitleAndIcon,
@@ -119,7 +150,7 @@ extension AgentSpecificApplicationView {
     }
     
     func cellView() -> some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 15) {
             
             Text("Applicant priorities")
                 .regular12
@@ -141,44 +172,60 @@ extension AgentSpecificApplicationView {
             
             sliderView(title: "Income", subtitle: "Min. Income: $155k ", agent: true)
                 .frame(maxWidth: .infinity)
-                .background(Color.red)
             
             LineView()
-                .padding(.horizontal, 20)
+                .opacity(0.7)
+                .padding(.vertical,0)
         
             sliderView(title: "Credit Score", subtitle: "Min. Score: 720", agent: false)
             
-            VStack(alignment: .leading, spacing: 10) {
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        Text("Income")
-                            .semibold14
-                            .foregroundColor(.darkBlue)
-                        
-                        Text("Balance")
-                            .regular14
-                            .foregroundColor(.darkBlue)
-                            .padding(.leading,50)
+            
+            
+            VStack(alignment: .leading, spacing: 0) {
+                
+                HStack(spacing: 54) {
+                    Button {
+                        income.toggle()
+                    } label: {
+                        VStack(alignment: .leading,spacing: 0) {
+                            Text("Income")
+                                .semibold14
+                                .foregroundColor(.darkBlue)
+                            
+                            RoundedRectangle(cornerRadius: 1.5)
+                                .fill(Color.darkBlue)
+                                .frame(width: 16, height: 3)
+                                .opacity(!income ? 1 : 0)
+                        }
                     }
-                    HStack {
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(Color.darkBlue)
-                            .frame(width: 16, height: 4)
-                        
+
+                    Button {
+                        income.toggle()
+                    } label: {
+                        VStack(alignment: .leading,spacing: 0) {
+                            Text("Balance")
+                                .semibold14
+                                .foregroundColor(.darkBlue)
+                            
+                            RoundedRectangle(cornerRadius: 1.5)
+                                .fill(Color.darkBlue)
+                                .frame(width: 16, height: 3)
+                                .opacity(income ? 1 : 0)
+                        }
                     }
-                    
-                    
-                    
-                    
                 }
+                .padding(.leading,10)
+                
                 HomeChart(data: [121,55,98,52,88,87,65,44,67,22,65,88,45])
                     .frame(height: 200)
+                    .offset(x:-10,y: -10)
             }
             
             LineView()
-                .padding(.horizontal, 20)
+                .opacity(0.7)
+                .padding(.vertical,0)
             
-            VStack(spacing: 5) {
+            VStack(spacing: 10) {
                 dropdownCell(text: "Documents Submitted")
                 
                 if isActive {
@@ -190,12 +237,12 @@ extension AgentSpecificApplicationView {
                 }
             }
             
-            
-            linkButton(title: "Message Applicant") {
-                
+            linkButton(title: "Message Applicant", stoke: true) {
+                properyApplication.toggle()
             }
+            .padding(.horizontal,25)
+            .padding(.bottom,20)
         }
-//        .padding(.horizontal,15)
     }
     
     func sliderView(title: String, subtitle:String, agent: Bool) -> some View {
@@ -276,20 +323,30 @@ extension AgentSpecificApplicationView {
         .cornerRadius(8)
     }
     
-    
-    func linkButton(title: String,action: @escaping () -> Void) -> some View {
+    func linkButton(title: String,type:AccountType = .AGENT,stoke: Bool = false ,action: @escaping () -> Void) -> some View {
         
         Button(action: action) {
             ZStack {
-                RoundedRectangle(cornerRadius: 23)
-                    .stroke(Color.purpleLow,lineWidth: 1)
-                    .frame(height: 45)
-                    .overlay (
-                        Text(title)
-                            .foregroundColor(.purpleLow)
-                            .semibold16
-                    )
                 
+                if stoke {
+                    RoundedRectangle(cornerRadius: 23)
+                        .stroke(Color.purpleLow,lineWidth: 1)
+                        .frame(height: 45)
+                        .overlay (
+                            Text(title)
+                                .foregroundColor(.purpleLow)
+                                .semibold16
+                        )
+                } else {
+                    RoundedRectangle(cornerRadius: 23)
+                        .fill(type == .AGENT ? Color.purpleGradient.toLinearGradient : Color.blueGradient.toLinearGradient)
+                        .frame(height: 45)
+                        .overlay (
+                            Text(title)
+                                .foregroundColor(.white)
+                                .semibold16
+                        )
+                }
             }
             
         }
@@ -332,7 +389,7 @@ extension AgentSpecificApplicationView {
         Button {
             
         } label: {
-            HStack(spacing: 17) {
+            HStack(spacing: 12) {
                 Image(image)
                     .resizable()
                     .renderingMode(.template)
@@ -349,6 +406,7 @@ extension AgentSpecificApplicationView {
                 Text(title)
                     .medium16
                     .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
                 
                 Spacer()
                 

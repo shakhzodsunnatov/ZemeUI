@@ -85,6 +85,7 @@ struct FileterCheckView: View {
                     .medium16
             }
         }
+        .padding(.leading,2)
     }
 }
 

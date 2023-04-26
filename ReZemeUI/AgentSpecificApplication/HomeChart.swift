@@ -24,7 +24,7 @@ public struct HomeChart: View {
             Text(format(number: Double(max - i * increment)))
                 .regular(size: 12)
                 .foregroundColor(.black)
-                .offset(y: (i == 0 || i == 1) ? -2.5 : 0)
+                .offset(y: (i == 0 || i == 1) ? 0 : 0)
             
             if (i != (max-min)/increment) {
                 Spacer()
