@@ -67,7 +67,7 @@ struct AgentSpecificApplicationView: View {
                         .padding(.bottom,100)
                     }
                     
-                    if properyApplication {
+                    
                         RoundedRectangle(cornerRadius: 0)
                             .fill(Color.white)
                             .frame(height: 150)
@@ -90,8 +90,9 @@ struct AgentSpecificApplicationView: View {
                                 }
                                     .padding(EdgeInsets(top: 25, leading: 45, bottom: 18, trailing: 45))
                             )
-                    }
+                    
                 }
+                .offset(y:1)
             },
             title: "Application #1",
             style: .newTitleAndIcon,
