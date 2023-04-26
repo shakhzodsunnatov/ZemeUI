@@ -36,6 +36,9 @@ extension Color {
     
     static let chart = ChartStyle(backgroundColor: .white,
                                   foregroundColor: Color.blueGradient, cornerRadius: 4.0)
+    
+    static let chartpurple = ChartStyle(backgroundColor: .white,
+                                  foregroundColor: Color.purpleGradient, cornerRadius: 4.0)
     static let mainBgColor = Color(hex: 0xFBFBFC, opacity: 1.0)
     static let textGray =  Color("textGray")
     static let lightGrayBG = Color("lightGrayBG")

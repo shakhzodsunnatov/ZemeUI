@@ -140,9 +140,6 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
-                
-               
-                
             }
             
             Group {
@@ -171,9 +168,9 @@ struct ContentView: View {
                 }
                 
                 NavigationLink(destination: {
-                    RenterProfileEditView()
+                    AgentPhoneNumberView()
                 }) {
-                    Text("Renter Profile Edite View")
+                    Text("Agent Phone number")
                         .foregroundColor(.white)
                         .padding(15)
                         .background(
@@ -181,6 +178,31 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+                NavigationLink(destination: {
+                    AgentProStatisticView()
+                }) {
+                    Text("Agent Property Statistics")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+               
+                NavigationLink(destination: {
+                    AgentNotificationView()
+                }) {
+                    Text("Agent Notification view")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
                 
                 NavigationLink(destination: {
                     RenterPropertyDetailView()
@@ -197,6 +219,7 @@ struct ContentView: View {
         }
         .padding()
         .navigationBarHidden(true)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

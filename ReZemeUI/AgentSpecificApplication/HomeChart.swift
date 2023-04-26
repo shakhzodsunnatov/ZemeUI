@@ -14,6 +14,7 @@ public struct HomeChart: View {
     var min: Int = 1000
     var max: Int = 3500
     var increment: Int = 500
+    var purpleMode: Bool = true
     
     private func format(number: Double) -> String {
         return "$\(number / 1000.00)k"
@@ -49,7 +50,8 @@ public struct HomeChart: View {
                                             .rotated(Angle(degrees: -45))
                                             .frame(width: 20, height: 16)
                                     }
-                                }.padding(.leading, 22.5).padding(.bottom, 8)
+                                }
+                                .padding(.bottom, 8)
                             }
                         }
                         Group {
@@ -66,55 +68,11 @@ public struct HomeChart: View {
                             }
                             .padding(.leading, 5)
                             .padding(.bottom, 35)
-                            .padding(.top, 15)
                         }
-                }.padding().overlay(
-                    // Additional chart information
-                    VStack {
-//                        HStack {
-//                            Spacer()
-//                            
-//                            Group {
-//                                Ellipse()
-//                                    .foregroundColor(.primaryBlue)
-//                                    .frame(width: 4, height: 4)
-//                                Text("YoY Change")
-//                                    .medium(size: 12)
-//                                    .foregroundColor(.darkBackground)
-//                                    .padding(.leading, -3)
-//                                Image(systemName: "arrow.up")
-//                                    .resizable()
-//                                    .frame(width: 7, height: 10)
-//                                    .padding(.trailing, -5)
-//                                    .foregroundColor(.success)
-//                                Text("3.4%")
-//                                    .medium(size: 12)
-//                                    .foregroundColor(.success)
-//                            }
-//
-//                            Group {
-//                                Ellipse()
-//                                    .foregroundColor(.primaryBlue)
-//                                    .frame(width: 4, height: 4)
-//                                Text("YTD Change")
-//                                    .medium(size: 12)
-//                                    .foregroundColor(.darkBackground)
-//                                    .padding(.leading, -3)
-//                                Image(systemName: "arrow.down").resizable()
-//                                    .frame(width: 7, height: 10)
-//                                    .padding(.trailing, -5)
-//                                    .foregroundColor(.failure)
-//                                Text("-1.0%")
-//                                    .medium(size: 12)
-//                                    .foregroundColor(.failure)
-//                            }
-//                        }.padding()
-                        Spacer()
-                    }.padding(.top, -5))
+                }
                 }
                 .data(data)
-                .chartStyle(Color.chart)
-                //.frame(width: geo.size.width - 30, height: geo.size.height / 3)
+                .chartStyle(purpleMode ? Color.chart : Color.chartpurple)
                 
             }
         }

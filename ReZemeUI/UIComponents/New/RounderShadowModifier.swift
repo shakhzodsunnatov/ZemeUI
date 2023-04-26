@@ -24,6 +24,21 @@ struct RounderShadowModifier: ViewModifier {
     }
 }
 
+struct RounderShadowModifierNew: ViewModifier {
+    
+    //MARK: - PROPERTIES
+    
+    var cornerRadius: CGFloat = 8.0
+    
+    func body(content: Content) -> some View {
+        content
+            .background(
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .fill(Color.white)
+                    .shadowCustomNew()
+            )
+    }
+}
 
 //MARK: - View Modify, .roundedShadow()
 
@@ -31,6 +46,10 @@ extension View {
     
     func roundedShadow(cornerRadius: CGFloat = 8, backgroundColor: Color = Color.white) -> some View {
         modifier(RounderShadowModifier(cornerRadius: cornerRadius, backgroundColor: backgroundColor))
+    }
+    
+    func roundedShadowNew(cornerRadius: CGFloat = 8) -> some View {
+        modifier(RounderShadowModifierNew(cornerRadius: cornerRadius))
     }
     
 }
