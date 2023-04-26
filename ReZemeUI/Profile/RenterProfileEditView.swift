@@ -28,6 +28,12 @@ struct RenterProfileEditView: View {
         CheckableModel(title: "Parking", image: "agent_gym"),
         CheckableModel(title: "Parking", image: "roofdeck"),
         CheckableModel(title: "Parking", image: "agent_elevator"),
+        CheckableModel(title: "Parking", image: "agent_pool"),
+        CheckableModel(title: "Parking", image: "Park"),
+        CheckableModel(title: "Parking", image: "agent_doorman"),
+        CheckableModel(title: "Parking", image: "agent_gym"),
+        CheckableModel(title: "Parking", image: "roofdeck"),
+        CheckableModel(title: "Parking", image: "agent_elevator"),
         CheckableModel(title: "Parking", image: "agent_pool")
     ]
     @State var importHameSelectedIDs: [Int] = []
@@ -63,51 +69,51 @@ struct RenterProfileEditView: View {
         ScrollView {
             VStack(spacing: 20) {
                 
-                textFields()
-                    .padding(.top, 22)
-                
-                ExpandableProfileCell("What’s most Important to you in a neighborhood?") {
-                    
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Select in order of importance")
-                            .regular16
-                        
-                        gridNeighborhoodGrid(importance: mockdata)
-                    }
-                    
-                }
-                
-                ExpandableProfileCell("Work Commute Info") {
-                    
-                    VStack(spacing: 0) {
-                        
-                        TextFieldWithIcon(
-                            image: "mapPin_red",
-                            topTitle: "Where do you work?",
-                            placeHolder: "Location" ,
-                            text: $viewModel.workPlace,
-                            textFiledStyle: .simple,
-                            accType: .AGENT,
-                            emailError: .constant(false)
-                        )
-                        .padding(.top, 17)
-                        
-                        iconAndTitleHeader(image: "clock", title: "What is the time you take to get to work?")
-                            .padding(.top,24)
-                        
-                        timePicker(time: $timeCount, type: $timeType)
-                            .padding(.top, 9)
-                        
-                        iconAndTitleHeader(image: "briefcase", title: "How do you get to work?")
-                            .padding(.top, 24)
-                        
-                        ExpandableSimpleCell(options: transportOptions) { transportIndex in
-                            debugPrint("Transport: \(transportOptions[transportIndex])")
-                        }
-                        .padding(.top, 9)
-                    }
-                    
-                }
+//                textFields()
+//                    .padding(.top, 22)
+//
+//                ExpandableProfileCell("What’s most Important to you in a neighborhood?") {
+//
+//                    VStack(alignment: .leading, spacing: 2) {
+//                        Text("Select in order of importance")
+//                            .regular16
+//
+//                        gridNeighborhoodGrid(importance: mockdata)
+//                    }
+//
+//                }
+//
+//                ExpandableProfileCell("Work Commute Info") {
+//
+//                    VStack(spacing: 0) {
+//
+//                        TextFieldWithIcon(
+//                            image: "mapPin_red",
+//                            topTitle: "Where do you work?",
+//                            placeHolder: "Location" ,
+//                            text: $viewModel.workPlace,
+//                            textFiledStyle: .simple,
+//                            accType: .AGENT,
+//                            emailError: .constant(false)
+//                        )
+//                        .padding(.top, 17)
+//
+//                        iconAndTitleHeader(image: "clock", title: "What is the time you take to get to work?")
+//                            .padding(.top,24)
+//
+//                        timePicker(time: $timeCount, type: $timeType)
+//                            .padding(.top, 9)
+//
+//                        iconAndTitleHeader(image: "briefcase", title: "How do you get to work?")
+//                            .padding(.top, 24)
+//
+//                        ExpandableSimpleCell(options: transportOptions) { transportIndex in
+//                            debugPrint("Transport: \(transportOptions[transportIndex])")
+//                        }
+//                        .padding(.top, 9)
+//                    }
+//
+//                }
                 
                 ExpandableProfileCell("What’s most Important in your home?") {
                     VStack(alignment: .leading, spacing: 0) {
@@ -117,52 +123,53 @@ struct RenterProfileEditView: View {
                         
                         importantHomeGrid(array: $importantHomeModels)
                             .padding(.top, 9)
+                            .padding(.horizontal, -18)
                         
                     }
                     .padding(.top, 5)
                 }
                 
-                ExpandableProfileCell("Income and Credit Score") {
-                    VStack(spacing: 24) {
-                        
-                        paymentGridViews(
-                            title: "What’s your approximate yearly household income range?",
-                            values: incomeRanges,
-                            selectedStr: incomeRangesSelectedStr
-                        ) { index in
-                            let selectedValue = incomeRanges[index]
-                            
-                            if incomeRangesSelectedStr.contains(selectedValue) {
-                                incomeRangesSelectedStr.removeAll(where: { $0 == selectedValue })
-                            } else {
-                                incomeRangesSelectedStr.append(selectedValue)
-                            }
-                        }
-                        
-                        paymentGridViews(
-                            title: "What’s your approximate credit score?",
-                            values: creditScore,
-                            selectedStr: creditScoreSelectedStr
-                        ) { index in
-                            let selectedValue = creditScore[index]
-                            
-                            if creditScoreSelectedStr.contains(selectedValue) {
-                                creditScoreSelectedStr.removeAll(where: { $0 == selectedValue })
-                            } else {
-                                creditScoreSelectedStr.append(selectedValue)
-                            }
-                        }
-                        
-                    }
-                    .padding(.top, 11)
-                }
+//                ExpandableProfileCell("Income and Credit Score") {
+//                    VStack(spacing: 24) {
+//
+//                        paymentGridViews(
+//                            title: "What’s your approximate yearly household income range?",
+//                            values: incomeRanges,
+//                            selectedStr: incomeRangesSelectedStr
+//                        ) { index in
+//                            let selectedValue = incomeRanges[index]
+//
+//                            if incomeRangesSelectedStr.contains(selectedValue) {
+//                                incomeRangesSelectedStr.removeAll(where: { $0 == selectedValue })
+//                            } else {
+//                                incomeRangesSelectedStr.append(selectedValue)
+//                            }
+//                        }
+//
+//                        paymentGridViews(
+//                            title: "What’s your approximate credit score?",
+//                            values: creditScore,
+//                            selectedStr: creditScoreSelectedStr
+//                        ) { index in
+//                            let selectedValue = creditScore[index]
+//
+//                            if creditScoreSelectedStr.contains(selectedValue) {
+//                                creditScoreSelectedStr.removeAll(where: { $0 == selectedValue })
+//                            } else {
+//                                creditScoreSelectedStr.append(selectedValue)
+//                            }
+//                        }
+//
+//                    }
+//                    .padding(.top, 11)
+//                }
                 
                 
-                ActionButton("Save", action: {
-                    
-                })
-                .padding(.horizontal,65)
-                .padding(.top,20)
+//                ActionButton("Save", action: {
+//
+//                })
+//                .padding(.horizontal,65)
+//                .padding(.top,20)
             }
         }
         .navigationRenter(
@@ -391,21 +398,27 @@ extension RenterProfileEditView {
     }
     
     private func importantHomeGrid(array models: Binding<[CheckableModel]>) -> some View {
-        LazyVGrid(columns: columns, spacing: 10) {
-            ForEach((0..<models.wrappedValue.count), id: \.self) { index in
-                CheckableImageWithTitle(
-                    model: models[index].wrappedValue,
-                    isSelected: importHameSelectedIDs.contains(index)
-                    
-                ) { isSelected in
-                    if isSelected {
-                        importHameSelectedIDs.append(index)
-                    } else {
-                        importHameSelectedIDs.removeAll(where: {$0 == index })
+        ScrollView(showsIndicators: true) {
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach((0..<models.wrappedValue.count), id: \.self) { index in
+                    CheckableImageWithTitle(
+                        model: models[index].wrappedValue,
+                        isSelected: importHameSelectedIDs.contains(index)
+                        
+                    ) { isSelected in
+                        if isSelected {
+                            importHameSelectedIDs.append(index)
+                        } else {
+                            importHameSelectedIDs.removeAll(where: {$0 == index })
+                        }
                     }
                 }
             }
+            .padding(5)
+            .padding(.horizontal, 18)
         }
+        
+        .frame(height: 150)
     }
     
     private func paymentGridViews(title: String, values: [String], selectedStr: [String], selectedIndex: @escaping (Int)->Void) -> some View {

@@ -191,7 +191,6 @@ struct ContentView: View {
                         )
                 }
                
-                
                 NavigationLink(destination: {
                     AgentNotificationView()
                 }) {
@@ -204,6 +203,18 @@ struct ContentView: View {
                         )
                 }
                 
+                
+                NavigationLink(destination: {
+                    RenterPropertyDetailView()
+                }) {
+                    Text("Renter Property Detail View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
         .padding()
