@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             Group {
                 NavigationLink(destination: { ApplicationChecklist() }) {
                     Text("Open Application Checklist")
@@ -174,6 +174,18 @@ struct ContentView: View {
                     RenterProfileEditView()
                 }) {
                     Text("Renter Profile Edite View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    RenterPropertyDetailView()
+                }) {
+                    Text("Renter Property Detail View")
                         .foregroundColor(.white)
                         .padding(15)
                         .background(
