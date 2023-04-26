@@ -15,5 +15,6 @@ class RenterProfileViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var location = ""
+    @Published var workPlace = ""
     
 }

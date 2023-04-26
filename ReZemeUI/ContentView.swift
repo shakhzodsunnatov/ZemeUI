@@ -169,6 +169,18 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+                NavigationLink(destination: {
+                    RenterProfileEditView()
+                }) {
+                    Text("Renter Profile Edite View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
         .padding()
