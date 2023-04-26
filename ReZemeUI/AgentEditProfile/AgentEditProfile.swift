@@ -127,7 +127,7 @@ extension AgentEditProfile {
             HStack {
                 Spacer()
                 ZStack(alignment: .bottomTrailing) {
-                    Image(uiImage: self.viewModel.image)
+                    Image(uiImage: self.viewModel.image!)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 96,height: 96)

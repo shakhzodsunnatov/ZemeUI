@@ -13,11 +13,13 @@ struct PlaidVerifiedView: View {
     @State var title: String = ""
     @State var isImporting = false
     @State var isShowPhotoLibrary = false
+    @State var showCaptureView = false
+    @State var showAlert = false
     @State var newdocument: String = ""
     @Binding var addNewModel: Bool
     @Binding var addFileEnable: Bool
     
-    @State var image = UIImage(named: "person")!
+    @State var image = UIImage(named: "person")
     
     @State var newModel: RequestDocumentDM = .init(images: "New Documents", title: "document_icon", fileAll: [], imagesArray: [], addPhoto: true)
     
@@ -25,6 +27,7 @@ struct PlaidVerifiedView: View {
     @EnvironmentObject var viewModel: ApplicationChecklistVM
     
     var body: some View {
+        ZStack {
         if addNewModel {
             NavigationNavBar(title: newModel.images) {
                 ZStack {
@@ -51,7 +54,7 @@ struct PlaidVerifiedView: View {
                                     }
                                     
                                     photoSelectButton
-                                        .onChange(of: self.image) { newValue in
+                                        .onChange(of: self.image!) { newValue in
                                             self.newModel.imagesArray.append(newValue)
                                         }
                                 } else {
@@ -74,7 +77,7 @@ struct PlaidVerifiedView: View {
                             } else {
                                 presentationMode.wrappedValue.dismiss()
                             }
-                           
+                            
                             
                         }
                         .disabled(newModel.fileAll.isEmpty && newModel.imagesArray.isEmpty)
@@ -84,61 +87,6 @@ struct PlaidVerifiedView: View {
                     
                 }
                 
-            }
-            .sheet(isPresented: $isShowPhotoLibrary) {
-                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-            }
-            .onTapGesture {
-                UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.endEditing(true)
-            }
-            .fileImporter(
-                isPresented: $isImporting,
-                allowedContentTypes: [
-                    .plainText, .pdf,
-                    UTType(filenameExtension: "doc")!,
-                    UTType(filenameExtension: "docx")!,
-                ],
-                allowsMultipleSelection: false
-            ) { result in
-                do {
-                    guard let selectedFile: URL = try result.get().first else { return }
-                    if selectedFile.startAccessingSecurityScopedResource() {
-                        let pdfName = selectedFile.lastPathComponent
-                        
-                        switch selectedFile.pathExtension.lowercased() {
-                            
-                        case "pdf", "doc", "docx":
-                            
-                            
-                            do {
-                                let data = try Data(contentsOf: selectedFile)
-                                
-                                let base64String = data.base64EncodedString()
-                                
-                                var copyFile = FileModel()
-                                copyFile.name = pdfName
-                                copyFile.fileStr = base64String
-                                withAnimation {
-                                    newModel.fileAll.append(copyFile)
-                                }
-                                
-                            } catch {
-                                print("Error: \(error.localizedDescription)")
-                            }
-                            
-                        default: break
-                        }
-                        
-                        do { selectedFile.stopAccessingSecurityScopedResource() }
-                        
-                    } else {
-                        // Handle denied access
-                    }
-                } catch {
-                    // Handle failure.
-                    print("Unable to read file contents")
-                    print(error.localizedDescription)
-                }
             }
         } else {
             NavigationNavBar(title: viewModel.models[viewModel.index].images) {
@@ -152,7 +100,7 @@ struct PlaidVerifiedView: View {
                                     }
                                     
                                     photoSelectButton
-                                        .onChange(of: self.image) { newValue in
+                                        .onChange(of: self.image!) { newValue in
                                             self.viewModel.models[viewModel.index].imagesArray.append(newValue)
                                         }
                                 } else {
@@ -178,57 +126,79 @@ struct PlaidVerifiedView: View {
                 }
                 
             }
-            .sheet(isPresented: $isShowPhotoLibrary) {
-                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-            }
-            .fileImporter(
-                isPresented: $isImporting,
-                allowedContentTypes: [
-                    .plainText, .pdf,
-                    UTType(filenameExtension: "doc")!,
-                    UTType(filenameExtension: "docx")!,
-                ],
-                allowsMultipleSelection: false
-            ) { result in
-                do {
-                    guard let selectedFile: URL = try result.get().first else { return }
-                    if selectedFile.startAccessingSecurityScopedResource() {
-                        let pdfName = selectedFile.lastPathComponent
-                        
-                        switch selectedFile.pathExtension.lowercased() {
-                            
-                        case "pdf", "doc", "docx":
-                            
-                            
-                            do {
-                                let data = try Data(contentsOf: selectedFile)
-                                
-                                let base64String = data.base64EncodedString()
-                                
-                                var copyFile = FileModel()
-                                copyFile.name = pdfName
-                                copyFile.fileStr = base64String
-                                withAnimation {
-                                    viewModel.models[viewModel.index].fileAll.append(copyFile)
+        }
+        
+    }
+        .sheet(isPresented: $showCaptureView) {
+            PhotoCaptureView(capturedImage: self.$image)
+        }
+        .sheet(isPresented: $isShowPhotoLibrary) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+        }
+        .actionSheet(isPresented: $showAlert) {
+            ActionSheet(title: Text("Select an option"),
+                        buttons: [
+                            .default(
+                                Text("Take Photo"), // "Take Photo"
+                                action: {
+                                    showCaptureView.toggle()
                                 }
-                                
-                            } catch {
-                                print("Error: \(error.localizedDescription)")
+                            ),
+                            .default(
+                                Text("Choose Photo"), // "Choose Photo"
+                                action: {
+                                    isShowPhotoLibrary.toggle()
+                                }
+                            ),
+                        ] + [.cancel()])
+        }
+        .fileImporter(
+            isPresented: $isImporting,
+            allowedContentTypes: [
+                .plainText, .pdf,
+                UTType(filenameExtension: "doc")!,
+                UTType(filenameExtension: "docx")!,
+            ],
+            allowsMultipleSelection: false
+        ) { result in
+            do {
+                guard let selectedFile: URL = try result.get().first else { return }
+                if selectedFile.startAccessingSecurityScopedResource() {
+                    let pdfName = selectedFile.lastPathComponent
+                    
+                    switch selectedFile.pathExtension.lowercased() {
+                        
+                    case "pdf", "doc", "docx":
+                        
+                        
+                        do {
+                            let data = try Data(contentsOf: selectedFile)
+                            
+                            let base64String = data.base64EncodedString()
+                            
+                            var copyFile = FileModel()
+                            copyFile.name = pdfName
+                            copyFile.fileStr = base64String
+                            withAnimation {
+                                viewModel.models[viewModel.index].fileAll.append(copyFile)
                             }
                             
-                        default: break
+                        } catch {
+                            print("Error: \(error.localizedDescription)")
                         }
                         
-                        do { selectedFile.stopAccessingSecurityScopedResource() }
-                        
-                    } else {
-                        // Handle denied access
+                    default: break
                     }
-                } catch {
-                    // Handle failure.
-                    print("Unable to read file contents")
-                    print(error.localizedDescription)
+                    
+                    do { selectedFile.stopAccessingSecurityScopedResource() }
+                    
+                } else {
+                    // Handle denied access
                 }
+            } catch {
+                // Handle failure.
+                print("Unable to read file contents")
+                print(error.localizedDescription)
             }
         }
     }
@@ -276,7 +246,7 @@ extension PlaidVerifiedView {
     
     private var photoSelectButton: some View {
         Button {
-            self.isShowPhotoLibrary = true
+            self.showAlert.toggle()
         } label: {
             VStack{
                 HStack {
