@@ -14,6 +14,9 @@
 		2E4BEE1E29F5973B005CD69D /* SupportRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1D29F5973B005CD69D /* SupportRenter.swift */; };
 		2E4BEE2029F5A4C0005CD69D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1F29F5A4C0005CD69D /* LineView.swift */; };
 		2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */; };
+		2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */; };
+		2E63256C29F7EF12004D5AE1 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */; };
+		2E63256E29F7EF2C004D5AE1 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */; };
 		2E6578DD29F5C77E00E53F07 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E6578DC29F5C77E00E53F07 /* MyParticle.sks */; };
 		2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */; };
 		2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC929EBAD0700F3C5A9 /* ContentView.swift */; };
@@ -87,6 +90,8 @@
 		2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */; };
 		2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742229EDC86300AA7D5C /* FileModel.swift */; };
 		2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */; };
+		2EFAB1EE29F84E0900375EE9 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFAB1ED29F84E0900375EE9 /* ApplicationsEmptyView.swift */; };
+		2EFAB1F029F84FE800375EE9 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFAB1EF29F84FE800375EE9 /* SavedListingsEmptyView.swift */; };
 		9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694BD29EDD28500AA6272 /* SimpleTextCheckView.swift */; };
 		9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */; };
 		9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */; };
@@ -121,6 +126,9 @@
 		2E4BEE1D29F5973B005CD69D /* SupportRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportRenter.swift; sourceTree = "<group>"; };
 		2E4BEE1F29F5A4C0005CD69D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsView.swift; sourceTree = "<group>"; };
+		2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RounderShadowModifier.swift; sourceTree = "<group>"; };
+		2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		2E6578DC29F5C77E00E53F07 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		2E781FC429EBAD0700F3C5A9 /* ReZemeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReZemeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReZemeUIApp.swift; sourceTree = "<group>"; };
@@ -195,6 +203,8 @@
 		2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileSheetView.swift; sourceTree = "<group>"; };
 		2EF7742229EDC86300AA7D5C /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTypeAlert.swift; sourceTree = "<group>"; };
+		2EFAB1ED29F84E0900375EE9 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
+		2EFAB1EF29F84FE800375EE9 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		9D2694BD29EDD28500AA6272 /* SimpleTextCheckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextCheckView.swift; sourceTree = "<group>"; };
 		9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCheckVM.swift; sourceTree = "<group>"; };
 		9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
@@ -258,6 +268,15 @@
 			path = MyDocuments;
 			sourceTree = "<group>";
 		};
+		2E63256A29F7EEBE004D5AE1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2E63256B29F7EF12004D5AE1 /* EditProfileView.swift */,
+				2E63256D29F7EF2C004D5AE1 /* EditProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		2E781FBB29EBAD0700F3C5A9 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +309,8 @@
 				2EE41D6B29F0B69E00E4B878 /* Auth */,
 				2E84CDFE29F12CF70029FDBD /* Setting */,
 				2E4BEE1C29F59725005CD69D /* Support */,
+				2E63256A29F7EEBE004D5AE1 /* Profile */,
+				2EFAB1EC29F84D4E00375EE9 /* EmptyViews */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
@@ -346,7 +367,6 @@
 				2E78200629EBB0D800F3C5A9 /* CustomCornerRadius.swift */,
 				2E78201629EBB2A300F3C5A9 /* AsyncImage.swift */,
 				2E78201129EBB14800F3C5A9 /* Constants */,
-				2E78200829EBB13200F3C5A9 /* Navigation */,
 				2E78200129EBB07100F3C5A9 /* UIComponents */,
 				2E78201829EBB2C600F3C5A9 /* ImageManager */,
 				2E781FF029EBAF1F00F3C5A9 /* Fonts */,
@@ -453,6 +473,8 @@
 				2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */,
 				2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */,
 				2E4BEE1F29F5A4C0005CD69D /* LineView.swift */,
+				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
+				2E78200829EBB13200F3C5A9 /* Navigation */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -736,6 +758,7 @@
 				2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */,
 				2EEED74829EC1D49005AD516 /* ChatItem.swift in Sources */,
 				9DB1A85429F693220045D9BD /* MockData.swift in Sources */,
+				2E63256C29F7EF12004D5AE1 /* EditProfileView.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
 				9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */,
@@ -756,6 +779,7 @@
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */,
+				2EFAB1EE29F84E0900375EE9 /* ApplicationsEmptyView.swift in Sources */,
 				2E1DB6A129F7002E00A03848 /* AuthViewModel.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
 				2E78201529EBB14800F3C5A9 /* Enums.swift in Sources */,
@@ -795,6 +819,8 @@
 				2EEED74929EC1D49005AD516 /* OfferChatModel.swift in Sources */,
 				2EEED74E29EC1DC3005AD516 /* Formatting.swift in Sources */,
 				2E78201E29EBB2C600F3C5A9 /* ImageCache.swift in Sources */,
+				2EFAB1F029F84FE800375EE9 /* SavedListingsEmptyView.swift in Sources */,
+				2E63256E29F7EF2C004D5AE1 /* EditProfileViewModel.swift in Sources */,
 				2EEED74529EC1D49005AD516 /* ChatTextFiledStyle.swift in Sources */,
 				2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */,
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,
@@ -804,6 +830,7 @@
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
+				2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */,
 				9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,

@@ -15,6 +15,7 @@ struct NavigationCustomModifier: ViewModifier {
     private let type: AccountType
     private let withBeckBtn: Bool
     private let skipBtnAction: (()-> Void)?
+    private let rightButton: AnyView?
     
     //MARK: - Init
     
@@ -22,12 +23,14 @@ struct NavigationCustomModifier: ViewModifier {
         title: String,
         type: AccountType = .RENTER,
         withBeckBtn: Bool = true,
-        skipBtnAction: (() -> Void)? = nil
+        skipBtnAction: (() -> Void)? = nil,
+        rightButton: AnyView? = nil
     ) {
         self.title = title
         self.type = type
         self.withBeckBtn = withBeckBtn
         self.skipBtnAction = skipBtnAction
+        self.rightButton = rightButton
     }
     
     func body(content: Content) -> some View {
@@ -35,7 +38,9 @@ struct NavigationCustomModifier: ViewModifier {
             title: title,
             type: type,
             withBeckBtn: withBeckBtn,
-            skipBtnAction: skipBtnAction) {
+            skipBtnAction: skipBtnAction,
+            rightButton: rightButton
+        ) {
                 content
             }
     }
@@ -52,14 +57,16 @@ extension View {
     func navigationRenter(
         title: String,
         withBeckBtn: Bool = true,
-        skipBtnAction: (() -> Void)? = nil
+        skipBtnAction: (() -> Void)? = nil,
+        rightButton: AnyView? = nil
     ) -> some View {
         modifier(
             NavigationCustomModifier(
                 title: title,
                 type: .RENTER,
                 withBeckBtn: withBeckBtn,
-                skipBtnAction: skipBtnAction
+                skipBtnAction: skipBtnAction,
+                rightButton: rightButton
             )
         )
     }
@@ -70,14 +77,16 @@ extension View {
     func navigationAgent(
         title: String,
         withBeckBtn: Bool = true,
-        skipBtnAction: (() -> Void)? = nil
+        skipBtnAction: (() -> Void)? = nil,
+        rightButton: AnyView? = nil
     ) -> some View {
         modifier(
             NavigationCustomModifier(
                 title: title,
                 type: .AGENT,
                 withBeckBtn: withBeckBtn,
-                skipBtnAction: skipBtnAction
+                skipBtnAction: skipBtnAction,
+                rightButton: rightButton
             )
         )
     }
@@ -95,7 +104,14 @@ struct NavigationCustomModifier_Previews: PreviewProvider {
                 .foregroundColor(.white)
                 .font(.system(size: 30))
         }
-        .navigationRenter(title: "Renter")
+        .navigationRenter(
+            title: "Renter",
+            rightButton: AnyView(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(.white)
+                    .frame(width: 50, height: 50)
+            )
+        )
         
         ZStack{
             Color.red

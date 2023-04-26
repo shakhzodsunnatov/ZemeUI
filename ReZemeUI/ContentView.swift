@@ -144,6 +144,32 @@ struct ContentView: View {
                
                 
             }
+            
+            Group {
+                NavigationLink(destination: {
+                    ApplicationsEmptyView()
+                }) {
+                    Text("Application Empty View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    SavedListingsEmptyView()
+                }) {
+                    Text("Saved Listings Empty View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+            }
         }
         .padding()
         .navigationBarHidden(true)

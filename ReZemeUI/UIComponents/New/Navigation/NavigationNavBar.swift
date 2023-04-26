@@ -15,6 +15,7 @@ struct NavigationNavBar<Content: View>: View {
     private let type: AccountType
     private let withBeckBtn: Bool
     private let skipBtnAction: (()-> Void)?
+    private let rightButton: AnyView?
     
     private let content: Content
     @Environment(\.presentationMode) var presentationMode
@@ -26,6 +27,7 @@ struct NavigationNavBar<Content: View>: View {
         type: AccountType = .RENTER,
         withBeckBtn: Bool = true,
         skipBtnAction: (() -> Void)? = nil,
+        rightButton: AnyView? = nil,
         @ViewBuilder _ content: ()->Content
     ) {
         self.title = title
@@ -33,6 +35,7 @@ struct NavigationNavBar<Content: View>: View {
         self.withBeckBtn = withBeckBtn
         self.content = content()
         self.skipBtnAction = skipBtnAction
+        self.rightButton = rightButton
     }
     
     //MARK: - body
@@ -62,7 +65,14 @@ struct NavigationNavBar<Content: View>: View {
                     Text(title)
                         .foregroundColor(.white)
                         .semibold22
-                        
+                    
+                    
+                    if let rightButton {
+                        HStack {
+                            Spacer()
+                            rightButton
+                        }
+                    }
                     
                 }
                 .padding(.top, geo.safeAreaInsets.top)
@@ -119,7 +129,14 @@ struct NavigationNavBar_Previews: PreviewProvider {
                 .foregroundColor(.white)
                 .font(.system(size: 30))
         }
-        .navigationRenter(title: "Renter")
+        .navigationRenter(
+            title: "Renter",
+            rightButton: AnyView(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(.green)
+                    .frame(width: 50, height: 50)
+            )
+        )
         
         ZStack{
             Color.blue.opacity(0.2)
