@@ -18,6 +18,7 @@ struct TextFieldWithIcon: View {
     @State var placeHolder: String = ""
     @Binding var text: String
     var textFiledStyle: TextFieldStyleNew
+    var accType: AccountType = .RENTER
     
     @Binding var emailError: Bool 
     @State var showPassword = false
@@ -33,7 +34,7 @@ struct TextFieldWithIcon: View {
                         Image(image)
                             .resizable()
                             .renderingMode(.template)
-                            .foregroundColor(.darkBlue)
+                            .foregroundColor(accType.color)
                             .scaledToFit()
                             .frame(width: 18, height: 18)
                         
