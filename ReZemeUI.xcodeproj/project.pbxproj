@@ -58,6 +58,8 @@
 		2E84CE0529F548470029FDBD /* SettingsRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0429F548470029FDBD /* SettingsRenter.swift */; };
 		2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */; };
 		2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */; };
+		2EB502FC29F8A641006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */; };
+		2EB502FD29F8A641006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -90,8 +92,6 @@
 		2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */; };
 		2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742229EDC86300AA7D5C /* FileModel.swift */; };
 		2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */; };
-		2EFAB1EE29F84E0900375EE9 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFAB1ED29F84E0900375EE9 /* ApplicationsEmptyView.swift */; };
-		2EFAB1F029F84FE800375EE9 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFAB1EF29F84FE800375EE9 /* SavedListingsEmptyView.swift */; };
 		9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694BD29EDD28500AA6272 /* SimpleTextCheckView.swift */; };
 		9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */; };
 		9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */; };
@@ -171,6 +171,8 @@
 		2E84CE0429F548470029FDBD /* SettingsRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRenter.swift; sourceTree = "<group>"; };
 		2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingCell.swift; sourceTree = "<group>"; };
 		2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMaker.swift; sourceTree = "<group>"; };
+		2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
+		2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -203,8 +205,6 @@
 		2EF7742029EDC79700AA7D5C /* UploadFileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileSheetView.swift; sourceTree = "<group>"; };
 		2EF7742229EDC86300AA7D5C /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		2EF7742629EDD24A00AA7D5C /* MeetingTypeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTypeAlert.swift; sourceTree = "<group>"; };
-		2EFAB1ED29F84E0900375EE9 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
-		2EFAB1EF29F84FE800375EE9 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		9D2694BD29EDD28500AA6272 /* SimpleTextCheckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextCheckView.swift; sourceTree = "<group>"; };
 		9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCheckVM.swift; sourceTree = "<group>"; };
 		9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
@@ -310,8 +310,8 @@
 				2E84CDFE29F12CF70029FDBD /* Setting */,
 				2E4BEE1C29F59725005CD69D /* Support */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
-				2EFAB1EC29F84D4E00375EE9 /* EmptyViews */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
+				2EB502F929F8A641006FAFE1 /* EmptyViews */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -477,6 +477,16 @@
 				2E78200829EBB13200F3C5A9 /* Navigation */,
 			);
 			path = New;
+			sourceTree = "<group>";
+		};
+		2EB502F929F8A641006FAFE1 /* EmptyViews */ = {
+			isa = PBXGroup;
+			children = (
+				2EB502FA29F8A641006FAFE1 /* SavedListingsEmptyView.swift */,
+				2EB502FB29F8A641006FAFE1 /* ApplicationsEmptyView.swift */,
+			);
+			name = EmptyViews;
+			path = "../../ReZemeUI 2/ReZemeUI/EmptyViews";
 			sourceTree = "<group>";
 		};
 		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
@@ -747,6 +757,7 @@
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
 				2EEED75029EC1E15005AD516 /* KeyboardHeightHelper.swift in Sources */,
 				2EEED74C29EC1D62005AD516 /* MockDataRenter.swift in Sources */,
+				2EB502FC29F8A641006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
 				9DB1A84E29F6926D0045D9BD /* PropertyModel.swift in Sources */,
 				2EEED74629EC1D49005AD516 /* ClientChat.swift in Sources */,
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
@@ -771,6 +782,7 @@
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
+				2EB502FD29F8A641006FAFE1 /* ApplicationsEmptyView.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */,
@@ -779,7 +791,6 @@
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */,
-				2EFAB1EE29F84E0900375EE9 /* ApplicationsEmptyView.swift in Sources */,
 				2E1DB6A129F7002E00A03848 /* AuthViewModel.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
 				2E78201529EBB14800F3C5A9 /* Enums.swift in Sources */,
@@ -819,7 +830,6 @@
 				2EEED74929EC1D49005AD516 /* OfferChatModel.swift in Sources */,
 				2EEED74E29EC1DC3005AD516 /* Formatting.swift in Sources */,
 				2E78201E29EBB2C600F3C5A9 /* ImageCache.swift in Sources */,
-				2EFAB1F029F84FE800375EE9 /* SavedListingsEmptyView.swift in Sources */,
 				2E63256E29F7EF2C004D5AE1 /* EditProfileViewModel.swift in Sources */,
 				2EEED74529EC1D49005AD516 /* ChatTextFiledStyle.swift in Sources */,
 				2EF7742129EDC79700AA7D5C /* UploadFileSheetView.swift in Sources */,

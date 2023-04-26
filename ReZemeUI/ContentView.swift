@@ -117,17 +117,17 @@ struct ContentView: View {
                         )
                 }
                 
-//                NavigationLink(destination: {
-//                    AgentApplicationsView()
-//                }) {
-//                    Text("Agent Applications")
-//                        .foregroundColor(.white)
-//                        .padding(15)
-//                        .background(
-//                            RoundedRectangle(cornerRadius: 8)
-//                                .fill(Color.lightBlue)
-//                        )
-//                }
+                NavigationLink(destination: {
+                    AgentApplicationsView()
+                }) {
+                    Text("Agent Applications")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
                 
                 NavigationLink(destination: {
                     AgentSpecificApplicationView()
