@@ -299,7 +299,6 @@ extension ApplicationChecklist {
         }
     }
     
-    
 }
 
 struct ApplicationChecklist_Previews: PreviewProvider {

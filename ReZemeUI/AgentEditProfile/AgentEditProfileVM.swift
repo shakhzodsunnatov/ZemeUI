@@ -25,7 +25,7 @@ class AgentEditProfileVM: ObservableObject {
     @Published var company = false
     
     @Published var isShowPhotoLibrary = false
-    @Published var image = UIImage(named: "person")!
+    @Published var image = UIImage(named: "person")
     
     @Published var isLoading = false
     @Published var errorTxt = ""
