@@ -107,7 +107,7 @@ extension HomeView {
         .cornerRadius(8)
         .padding(.horizontal,20)
         .padding(.top,10)
-        .shadowCustom()
+        .roundedShadowNew()
         
         
     }
@@ -143,7 +143,7 @@ extension HomeView {
         .cornerRadius(8)
         .padding(.horizontal,20)
         .padding(.top,10)
-        .shadowCustom()
+        .roundedShadowNew()
         
         
     }

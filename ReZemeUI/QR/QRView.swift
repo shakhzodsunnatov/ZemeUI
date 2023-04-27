@@ -54,7 +54,7 @@ struct QRView: View {
             }
             .cornerRadius(8)
             .padding(20)
-            .shadowCustom()
+            .roundedShadowNew()
         }
     }
 }

@@ -61,7 +61,7 @@ struct CreditCheckView: View {
                             if vm.calenarMode {
                                 RoundedRectangle(cornerRadius: 8)
                                     .fill(Color.white)
-                                    .shadowCustom()
+                                    .roundedShadowNew()
                                     .onTapGesture {
                                         withAnimation(.easeInOut) {
                                             vm.calenarMode.toggle()

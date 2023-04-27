@@ -61,7 +61,7 @@ struct TextFieldWithIcon: View {
                             .padding(20)
                             .background(Color.white)
                             .cornerRadius(8)
-                            .shadowCustom()
+                            .roundedShadowNew()
                     }
                 }
             }
@@ -84,7 +84,7 @@ struct TextFieldWithIcon: View {
                         .padding(20)
                         .background(Color.white)
                         .cornerRadius(8)
-                        .shadowCustom()
+                        .roundedShadowNew()
                 }
             }
         case .textView:
@@ -106,7 +106,7 @@ struct TextFieldWithIcon: View {
                         .padding(20)
                         .background(Color.white)
                         .cornerRadius(8)
-                        .shadowCustom()
+                        .roundedShadowNew()
                 }
             }
         }
@@ -160,12 +160,12 @@ struct TextEditorWithPlaceholder: View {
 
 
 extension View {
-    func shadowCustom() -> some View {
-        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.3),radius: 25,x: 4, y: 4)
-    }
+//    func shadowCustom() -> some View {
+//        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.3),radius: 25,x: 4, y: 4)
+//    }
     
-    func shadowCustomNew() -> some View {
-        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.22),radius: 15,x: 4, y: 4)
-    }
+//    func shadowCustomNew() -> some View {
+//        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.22),radius: 15,x: 4, y: 4)
+//    }
 }
 

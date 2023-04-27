@@ -82,7 +82,7 @@ struct AddingInviteEmailCard: View {
                     .padding(20)
                     .background(Color.white)
                     .cornerRadius(8)
-                    .shadowCustom()
+                    .roundedShadowNew()
                     
                 }
                 

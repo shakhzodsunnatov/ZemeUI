@@ -43,7 +43,7 @@ struct MeetingChat: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color.white)
-                            .shadowCustom()
+                            .roundedShadowNew()
                             .onTapGesture {
                                 withAnimation(.easeInOut) {
                                     mode.toggle()

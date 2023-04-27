@@ -162,7 +162,7 @@ extension PlaidVerifiedView {
                     .background(
                         Color.white
                             .cornerRadius(8)
-                            .shadowCustom()
+                            .roundedShadowNew()
                     )
                     .padding(20)
                     .onChange(of: newdocument) { newValue in
@@ -326,7 +326,7 @@ extension PlaidVerifiedView {
         .background(Color.white)
         .padding(.horizontal,16)
         .cornerRadius(10)
-        .shadowCustom()
+        .roundedShadowNew()
         .padding(.top,10)
     }
     
@@ -378,7 +378,7 @@ extension PlaidVerifiedView {
         .background(Color.white)
         .padding(.horizontal,16)
         .cornerRadius(10)
-        .shadowCustom()
+        .roundedShadowNew()
         .padding(.top,10)
     }
     
