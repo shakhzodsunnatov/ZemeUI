@@ -226,6 +226,19 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+                NavigationLink(destination: {
+                    AgentOverStatView()
+                }) {
+                    Text("Agent Overall Statistics")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
             }
         }
         .padding()
