@@ -11,6 +11,8 @@ struct NavigationNavBar<Content: View>: View {
     
     //MARK: - PROPERTIES
     
+    @GestureState private var swipeTranslation: CGFloat = 0
+    
     private let title: String
     private let type: AccountType
     private let withBeckBtn: Bool
@@ -83,8 +85,20 @@ struct NavigationNavBar<Content: View>: View {
                         .resizable()
                 )
                 
+                
                 content
                     .padding(.top,-1.8)
+//                    .gesture( MARK: Swipe go back
+//                        DragGesture()
+//                            .updating($swipeTranslation) { value, state, _ in
+//                                state = value.translation.width
+//                            }
+//                            .onEnded { value in
+//                                if value.translation.width > 100 {
+//                                    presentationMode.wrappedValue.dismiss()
+//                                }
+//                            }
+//                    )
                 
             }
             .edgesIgnoringSafeArea(.top)
