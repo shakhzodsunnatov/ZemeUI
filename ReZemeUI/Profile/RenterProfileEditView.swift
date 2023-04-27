@@ -69,51 +69,51 @@ struct RenterProfileEditView: View {
         ScrollView {
             VStack(spacing: 20) {
                 
-//                textFields()
-//                    .padding(.top, 22)
-//
-//                ExpandableProfileCell("What’s most Important to you in a neighborhood?") {
-//
-//                    VStack(alignment: .leading, spacing: 2) {
-//                        Text("Select in order of importance")
-//                            .regular16
-//
-//                        gridNeighborhoodGrid(importance: mockdata)
-//                    }
-//
-//                }
-//
-//                ExpandableProfileCell("Work Commute Info") {
-//
-//                    VStack(spacing: 0) {
-//
-//                        TextFieldWithIcon(
-//                            image: "mapPin_red",
-//                            topTitle: "Where do you work?",
-//                            placeHolder: "Location" ,
-//                            text: $viewModel.workPlace,
-//                            textFiledStyle: .simple,
-//                            accType: .AGENT,
-//                            emailError: .constant(false)
-//                        )
-//                        .padding(.top, 17)
-//
-//                        iconAndTitleHeader(image: "clock", title: "What is the time you take to get to work?")
-//                            .padding(.top,24)
-//
-//                        timePicker(time: $timeCount, type: $timeType)
-//                            .padding(.top, 9)
-//
-//                        iconAndTitleHeader(image: "briefcase", title: "How do you get to work?")
-//                            .padding(.top, 24)
-//
-//                        ExpandableSimpleCell(options: transportOptions) { transportIndex in
-//                            debugPrint("Transport: \(transportOptions[transportIndex])")
-//                        }
-//                        .padding(.top, 9)
-//                    }
-//
-//                }
+                textFields()
+                    .padding(.top, 22)
+
+                ExpandableProfileCell("What’s most Important to you in a neighborhood?") {
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Select in order of importance")
+                            .regular16
+
+                        gridNeighborhoodGrid(importance: mockdata)
+                    }
+
+                }
+
+                ExpandableProfileCell("Work Commute Info") {
+
+                    VStack(spacing: 0) {
+
+                        TextFieldWithIcon(
+                            image: "mapPin_red",
+                            topTitle: "Where do you work?",
+                            placeHolder: "Location" ,
+                            text: $viewModel.workPlace,
+                            textFiledStyle: .simple,
+                            accType: .AGENT,
+                            emailError: .constant(false)
+                        )
+                        .padding(.top, 17)
+
+                        iconAndTitleHeader(image: "clock", title: "What is the time you take to get to work?")
+                            .padding(.top,24)
+
+                        timePicker(time: $timeCount, type: $timeType)
+                            .padding(.top, 9)
+
+                        iconAndTitleHeader(image: "briefcase", title: "How do you get to work?")
+                            .padding(.top, 24)
+
+                        ExpandableSimpleCell(options: transportOptions) { transportIndex in
+                            debugPrint("Transport: \(transportOptions[transportIndex])")
+                        }
+                        .padding(.top, 9)
+                    }
+
+                }
                 
                 ExpandableProfileCell("What’s most Important in your home?") {
                     VStack(alignment: .leading, spacing: 0) {
@@ -129,47 +129,47 @@ struct RenterProfileEditView: View {
                     .padding(.top, 5)
                 }
                 
-//                ExpandableProfileCell("Income and Credit Score") {
-//                    VStack(spacing: 24) {
-//
-//                        paymentGridViews(
-//                            title: "What’s your approximate yearly household income range?",
-//                            values: incomeRanges,
-//                            selectedStr: incomeRangesSelectedStr
-//                        ) { index in
-//                            let selectedValue = incomeRanges[index]
-//
-//                            if incomeRangesSelectedStr.contains(selectedValue) {
-//                                incomeRangesSelectedStr.removeAll(where: { $0 == selectedValue })
-//                            } else {
-//                                incomeRangesSelectedStr.append(selectedValue)
-//                            }
-//                        }
-//
-//                        paymentGridViews(
-//                            title: "What’s your approximate credit score?",
-//                            values: creditScore,
-//                            selectedStr: creditScoreSelectedStr
-//                        ) { index in
-//                            let selectedValue = creditScore[index]
-//
-//                            if creditScoreSelectedStr.contains(selectedValue) {
-//                                creditScoreSelectedStr.removeAll(where: { $0 == selectedValue })
-//                            } else {
-//                                creditScoreSelectedStr.append(selectedValue)
-//                            }
-//                        }
-//
-//                    }
-//                    .padding(.top, 11)
-//                }
+                ExpandableProfileCell("Income and Credit Score") {
+                    VStack(spacing: 24) {
+
+                        paymentGridViews(
+                            title: "What’s your approximate yearly household income range?",
+                            values: incomeRanges,
+                            selectedStr: incomeRangesSelectedStr
+                        ) { index in
+                            let selectedValue = incomeRanges[index]
+
+                            if incomeRangesSelectedStr.contains(selectedValue) {
+                                incomeRangesSelectedStr.removeAll(where: { $0 == selectedValue })
+                            } else {
+                                incomeRangesSelectedStr.append(selectedValue)
+                            }
+                        }
+
+                        paymentGridViews(
+                            title: "What’s your approximate credit score?",
+                            values: creditScore,
+                            selectedStr: creditScoreSelectedStr
+                        ) { index in
+                            let selectedValue = creditScore[index]
+
+                            if creditScoreSelectedStr.contains(selectedValue) {
+                                creditScoreSelectedStr.removeAll(where: { $0 == selectedValue })
+                            } else {
+                                creditScoreSelectedStr.append(selectedValue)
+                            }
+                        }
+
+                    }
+                    .padding(.top, 11)
+                }
                 
                 
-//                ActionButton("Save", action: {
-//
-//                })
-//                .padding(.horizontal,65)
-//                .padding(.top,20)
+                ActionButton("Save", action: {
+
+                })
+                .padding(.horizontal,65)
+                .padding(.top,20)
             }
         }
         .navigationRenter(

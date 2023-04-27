@@ -203,6 +203,17 @@ struct ContentView: View {
                         )
                 }
                 
+                NavigationLink(destination: {
+                    RenterProfileEditView()
+                }) {
+                    Text("Renter Profile Edit View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
                 
                 NavigationLink(destination: {
                     RenterPropertyDetailView()
