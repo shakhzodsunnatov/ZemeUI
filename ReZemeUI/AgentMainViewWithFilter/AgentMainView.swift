@@ -168,7 +168,7 @@ extension AgentMainView {
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white)
-                .shadowCustom()
+                .roundedShadowNew()
         )
         .padding(.horizontal,20)
         .padding(.bottom,120)

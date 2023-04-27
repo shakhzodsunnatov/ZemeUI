@@ -143,7 +143,7 @@ extension AgentSpecificApplicationView {
         }
         .background(Color.white)
         .cornerRadius(8)
-        .shadowCustom()
+        .roundedShadowNew()
         .padding(20)
     }
     

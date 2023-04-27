@@ -28,7 +28,7 @@ struct CongratsView: View {
                         .padding(16)
                         .background(Color.white)
                         .cornerRadius(8)
-                        .shadowCustom()
+                        .roundedShadowNew()
                         .padding(20)
                         
                     }

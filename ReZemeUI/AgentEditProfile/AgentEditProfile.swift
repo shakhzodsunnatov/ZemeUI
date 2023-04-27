@@ -65,7 +65,7 @@ struct AgentEditProfile: View {
                                 trailing: 20
                             )
                         )
-                        .shadowCustom()
+                        .roundedShadowNew()
                     }
                     
                     linkButton(title: "Continue") {
