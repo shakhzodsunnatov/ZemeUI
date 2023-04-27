@@ -127,6 +127,7 @@
 		9DB1A85F29F699640045D9BD /* ItemShortInfoView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A85E29F699640045D9BD /* ItemShortInfoView copy.swift */; };
 		9DB1A86229F6A1670045D9BD /* AgentSpecificApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A86129F6A1670045D9BD /* AgentSpecificApplicationView.swift */; };
 		9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB1A86429F6F6320045D9BD /* HomeChart.swift */; };
+		9DFFF4F229FA86BE000B05C2 /* AgentOverStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFFF4F129FA86BE000B05C2 /* AgentOverStatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +252,7 @@
 		9DB1A85E29F699640045D9BD /* ItemShortInfoView copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemShortInfoView copy.swift"; sourceTree = "<group>"; };
 		9DB1A86129F6A1670045D9BD /* AgentSpecificApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentSpecificApplicationView.swift; sourceTree = "<group>"; };
 		9DB1A86429F6F6320045D9BD /* HomeChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeChart.swift; sourceTree = "<group>"; };
+		9DFFF4F129FA86BE000B05C2 /* AgentOverStatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentOverStatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -694,6 +696,7 @@
 		9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				9D2B359E29FA863E00B8BD8E /* New Group */,
 				9D141DDD29F9567E00CA6E23 /* AgentProStatisticView.swift */,
 				9D141DDF29F9618F00CA6E23 /* LineChart.swift */,
 			);
@@ -703,9 +706,17 @@
 		9D141DE229F99B0100CA6E23 /* AgentNotification */ = {
 			isa = PBXGroup;
 			children = (
+				9DFFF4F429FA8704000B05C2 /* AgentOverallStat */,
 				9D141DE329F99B2000CA6E23 /* AgentNotificationView.swift */,
 			);
 			path = AgentNotification;
+			sourceTree = "<group>";
+		};
+		9D2B359E29FA863E00B8BD8E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		9D9225D529F844FD00DF5B77 /* AgentEditProfile */ = {
@@ -773,6 +784,14 @@
 				9DB1A86429F6F6320045D9BD /* HomeChart.swift */,
 			);
 			path = AgentSpecificApplication;
+			sourceTree = "<group>";
+		};
+		9DFFF4F429FA8704000B05C2 /* AgentOverallStat */ = {
+			isa = PBXGroup;
+			children = (
+				9DFFF4F129FA86BE000B05C2 /* AgentOverStatView.swift */,
+			);
+			path = AgentOverallStat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -937,6 +956,7 @@
 				9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */,
 				2E78201F29EBB2C600F3C5A9 /* ImageLoader.swift in Sources */,
 				9D141DDB29F952B700CA6E23 /* AgentPinCodeView.swift in Sources */,
+				9DFFF4F229FA86BE000B05C2 /* AgentOverStatView.swift in Sources */,
 				2E781FE129EBADC700F3C5A9 /* AddingInviteEmailCard.swift in Sources */,
 				2EEED74429EC1D49005AD516 /* AlarmChat.swift in Sources */,
 				9D141DD929F94F6100CA6E23 /* AgentPhoneNumberView.swift in Sources */,

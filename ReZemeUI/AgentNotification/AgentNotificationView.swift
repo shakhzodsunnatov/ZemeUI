@@ -40,14 +40,14 @@ extension AgentNotificationView {
             HStack {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.darkBlue.opacity(0.1))
-                    .frame(width: 66,height: 55)
+                    .frame(width: 66,height: 66)
                     .overlay(
                     Image("agent-notification")
                         .resizable()
                         .renderingMode(.template)
                         .foregroundColor(.darkBlue)
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 25, height: 25)
                     )
                 
                 VStack(alignment: .leading, spacing: 0) {
