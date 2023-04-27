@@ -154,5 +154,4 @@ extension AgentPinCodeView {
                 .frame(width: 15)
         }
     }
-    
 }
