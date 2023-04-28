@@ -21,6 +21,9 @@
 		2E63256C29F7EF12004D5AE1 /* RenterProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */; };
 		2E63256E29F7EF2C004D5AE1 /* RenterProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */; };
 		2E6578DD29F5C77E00E53F07 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2E6578DC29F5C77E00E53F07 /* MyParticle.sks */; };
+		2E731CCA29FBDD1D000EE348 /* TimePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */; };
+		2E731CCC29FBE9B1000EE348 /* RenterFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E731CCB29FBE9B1000EE348 /* RenterFilterView.swift */; };
+		2E731CCF29FBEF84000EE348 /* RenterFilterView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E731CCE29FBEF84000EE348 /* RenterFilterView_UI.swift */; };
 		2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */; };
 		2E781FCA29EBAD0700F3C5A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E781FC929EBAD0700F3C5A9 /* ContentView.swift */; };
 		2E781FCC29EBAD0900F3C5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */; };
@@ -64,6 +67,8 @@
 		2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */; };
 		2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */; };
 		2EC1DD9B29FA712B006DA0BC /* RenterMainExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */; };
+		2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */; };
+		2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */; };
 		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
 		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
@@ -144,6 +149,9 @@
 		2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileEditView.swift; sourceTree = "<group>"; };
 		2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileViewModel.swift; sourceTree = "<group>"; };
 		2E6578DC29F5C77E00E53F07 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerUI.swift; sourceTree = "<group>"; };
+		2E731CCB29FBE9B1000EE348 /* RenterFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterFilterView.swift; sourceTree = "<group>"; };
+		2E731CCE29FBEF84000EE348 /* RenterFilterView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterFilterView_UI.swift; sourceTree = "<group>"; };
 		2E781FC429EBAD0700F3C5A9 /* ReZemeUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReZemeUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReZemeUIApp.swift; sourceTree = "<group>"; };
 		2E781FC929EBAD0700F3C5A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +196,8 @@
 		2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
 		2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMainExView.swift; sourceTree = "<group>"; };
+		2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithImageTitleTip.swift; sourceTree = "<group>"; };
 		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
 		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
@@ -323,6 +333,16 @@
 				2E303C3729F949B500C93E20 /* Model */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		2E731CCD29FBEF47000EE348 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				2E731CCB29FBE9B1000EE348 /* RenterFilterView.swift */,
+				2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */,
+				2EC1DD9E29FA9333006DA0BC /* UIComponents */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		2E781FBB29EBAD0700F3C5A9 = {
@@ -527,6 +547,7 @@
 				2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */,
 				2E4BEE1F29F5A4C0005CD69D /* LineView.swift */,
 				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
+				2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */,
 				2E78200829EBB13200F3C5A9 /* Navigation */,
 				2E303C3C29F96FCF00C93E20 /* Helpers */,
 			);
@@ -546,8 +567,18 @@
 			isa = PBXGroup;
 			children = (
 				2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */,
+				2E731CCD29FBEF47000EE348 /* Filter */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		2EC1DD9E29FA9333006DA0BC /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */,
+				2E731CCE29FBEF84000EE348 /* RenterFilterView_UI.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */ = {
@@ -891,6 +922,7 @@
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
+				2E731CCA29FBDD1D000EE348 /* TimePickerUI.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */,
 				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
@@ -899,6 +931,7 @@
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */,
 				9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */,
+				2E731CCC29FBE9B1000EE348 /* RenterFilterView.swift in Sources */,
 				2E1DB6A129F7002E00A03848 /* AuthViewModel.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
 				9D141DE029F9618F00CA6E23 /* LineChart.swift in Sources */,
@@ -909,6 +942,7 @@
 				2EEED74229EC1D49005AD516 /* OfferChat.swift in Sources */,
 				2E78201029EBB13200F3C5A9 /* NavigationLazy.swift in Sources */,
 				2E303C4129F998BD00C93E20 /* RenterProfileHelperSubviews.swift in Sources */,
+				2E731CCF29FBEF84000EE348 /* RenterFilterView_UI.swift in Sources */,
 				2E4BEE2029F5A4C0005CD69D /* LineView.swift in Sources */,
 				9DB1A85B29F698EF0045D9BD /* ApplicationsListView.swift in Sources */,
 				2EEB21E929EF6FF2005D13A7 /* AgentChatTypesProtocol.swift in Sources */,
@@ -951,11 +985,13 @@
 				9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */,
 				9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */,
 				9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */,
+				2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */,
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
 				2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */,
 				9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */,
+				2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,
 				9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */,
