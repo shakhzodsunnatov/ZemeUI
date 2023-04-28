@@ -18,7 +18,6 @@ struct RenterProfileEditView: View {
     @State var timeType: TimeFormatType = .hr
     let timeTypes = TimeFormatType.allCases
     @State var transportOptions = ["Subway", "Car", "Train"]
-    @State private var selectedTimeTypeIndex = 2
     
     private let mockdata = neighMockData
     
@@ -101,7 +100,7 @@ struct RenterProfileEditView: View {
                         iconAndTitleHeader(image: "clock", title: "What is the time you take to get to work?")
                             .padding(.top,24)
 
-                        timePicker(time: $timeCount, type: $timeType)
+                        timePicker(time: $timeCount)
                             .padding(.top, 9)
 
                         iconAndTitleHeader(image: "briefcase", title: "How do you get to work?")
@@ -332,69 +331,10 @@ extension RenterProfileEditView {
         }
     }
     
-    private func timePicker(time: Binding<Int>, type: Binding<TimeFormatType>) -> some View {
-        HStack(spacing: 0) {
-            
-            HStack {
-                
-                Image(systemName: "minus")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.darkBlue)
-                    .padding(13)
-                    .frame(width: 40, height: 40)
-                    .roundedShadow(backgroundColor: Color.darkBlue.opacity(0.25))
-                    .makeButton {
-                        if time.wrappedValue > 1 {
-                            time.wrappedValue -= 1
-                        }
-                    }
-                
-                Spacer()
-                
-                Text(String(format: "%02d", time.wrappedValue))
-                    .semibold18
-                
-                Spacer()
-                
-                Image(systemName: "plus")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.darkBlue)
-                    .padding(13)
-                    .frame(width: 40, height: 40)
-                    .roundedShadow(backgroundColor: Color.darkBlue.opacity(0.25))
-                    .makeButton {
-                        if time.wrappedValue < 60 {
-                            time.wrappedValue += 1
-                        }
-                    }
-            }
-            
-            HStack(spacing: 6) {
-                
-                Picker(
-                    selection: $selectedTimeTypeIndex,
-                    label:
-                        Text("Time Type")
-                        .foregroundColor(.black)
-                        .medium16
-                ) {
-                    ForEach((0..<timeTypes.count), id:\.self) { index in
-                        Text(self.timeTypes[index].rawValue)
-                            .medium16
-                            .foregroundColor(.black)
-                            .tag(index)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .accentColor(.black)
-                
-            }
-            .frame(width: 80)
+    private func timePicker(time: Binding<Int>) -> some View {
+        TimePickerUI(time: $timeCount) { type in
+            timeType = type
         }
-        .padding(EdgeInsets(top: 8, leading: 7, bottom: 10, trailing: 7))
-        .roundedShadow()
     }
     
     private func importantHomeGrid(array models: Binding<[CheckableModel]>) -> some View {

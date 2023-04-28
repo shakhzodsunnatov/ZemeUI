@@ -18,3 +18,12 @@ var dateFormatter: DateFormatter = {
     dateFormatter.dateFormat = "MMM d"
     return dateFormatter
 }()
+
+typealias EmptyClosure = ()->Void
+
+extension String {
+    var digits: Int {
+        return Int(components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()) ?? 0
+    }
+}
