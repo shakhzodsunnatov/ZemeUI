@@ -242,7 +242,19 @@ struct ContentView: View {
                 NavigationLink(destination: {
                     SavedListingsView()
                 }) {
-                    Text("Renter Filter View")
+                    Text("Saved Listings View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    RenterDocumentsView()
+                }) {
+                    Text("Renter Documents View")
                         .foregroundColor(.white)
                         .padding(15)
                         .background(
