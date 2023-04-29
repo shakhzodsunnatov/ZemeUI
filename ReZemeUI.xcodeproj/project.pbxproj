@@ -72,6 +72,8 @@
 		2ECE121929FD600C00B60263 /* SavedListingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121829FD600C00B60263 /* SavedListingsView.swift */; };
 		2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121B29FD606200B60263 /* SavedItemView.swift */; };
 		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
+		2ECE122129FD67B700B60263 /* RenterDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */; };
+		2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122229FD68D000B60263 /* DocumentItemCell.swift */; };
 		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
 		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
@@ -204,6 +206,8 @@
 		2ECE121829FD600C00B60263 /* SavedListingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsView.swift; sourceTree = "<group>"; };
 		2ECE121B29FD606200B60263 /* SavedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemView.swift; sourceTree = "<group>"; };
 		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
+		2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDocumentsView.swift; sourceTree = "<group>"; };
+		2ECE122229FD68D000B60263 /* DocumentItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemCell.swift; sourceTree = "<group>"; };
 		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
 		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
 				2EC1DD9929FA7108006DA0BC /* Filter */,
 				2ECE121729FD5FC600B60263 /* SavedListings */,
+				2ECE121F29FD67A100B60263 /* RenterDocuments */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -555,6 +560,7 @@
 				2E4BEE1F29F5A4C0005CD69D /* LineView.swift */,
 				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
 				2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */,
+				2ECE122229FD68D000B60263 /* DocumentItemCell.swift */,
 				2E78200829EBB13200F3C5A9 /* Navigation */,
 				2E303C3C29F96FCF00C93E20 /* Helpers */,
 			);
@@ -604,6 +610,14 @@
 				2ECE121D29FD609400B60263 /* SavedButton.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		2ECE121F29FD67A100B60263 /* RenterDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */,
+			);
+			path = RenterDocuments;
 			sourceTree = "<group>";
 		};
 		2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */ = {
@@ -914,6 +928,7 @@
 				9D141DE429F99B2000CA6E23 /* AgentNotificationView.swift in Sources */,
 				2E78201429EBB14800F3C5A9 /* Constants.swift in Sources */,
 				2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */,
+				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
 				2EEED75029EC1E15005AD516 /* KeyboardHeightHelper.swift in Sources */,
@@ -926,6 +941,7 @@
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
+				2ECE122129FD67B700B60263 /* RenterDocumentsView.swift in Sources */,
 				9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */,
 				2E781FFE29EBB03A00F3C5A9 /* Shadow+.swift in Sources */,
 				2EE41D7129F0C86E00E4B878 /* PinViewModel.swift in Sources */,
