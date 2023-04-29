@@ -26,7 +26,7 @@ struct AgentOverStatView: View {
               UIPageControl.appearance().pageIndicatorTintColor = UIColor(named: "gradientPurpleLow")!.withAlphaComponent(0.1)
            }
     
-    @State var select: Bool = false
+    @State var selectIndex: Int = 0
     @State var buttonID: Int = 1
     
     var body: some View {
@@ -96,31 +96,31 @@ extension AgentOverStatView {
         HStack(alignment: .center) {
             Button {
                 withAnimation {
-                    select.toggle()
+                    self.selectIndex = 0
                 }
             } label: {
                 Text("Currently Listed")
                     .semibold14
-                    .foregroundColor(select ? .white : Color(hexString: "545454"))
+                    .foregroundColor((self.selectIndex == 0) ? .white : Color(hexString: "545454"))
                     .frame(maxWidth: .infinity)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
                     .background(
-                        select ? Color.purpleLow : .white
+                        self.selectIndex == 0 ? Color.purpleLow : .white
                     )
                     .cornerRadius(8)
             }
 
             Button {
                 withAnimation {
-                    select.toggle()
+                    self.selectIndex = 1
                 }
             } label: {
                 Text("Total Historically")
                     .semibold14
-                    .foregroundColor(!select ? .white : Color(hexString: "545454"))
+                    .foregroundColor((self.selectIndex == 1) ? .white : Color(hexString: "545454"))
                     .frame(maxWidth: .infinity,maxHeight: 30)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
-                    .background(!select ? Color.purpleLow : Color.white)
+                    .background((self.selectIndex == 1)  ? Color.purpleLow : Color.white)
                     .cornerRadius(8)
             }
         }
