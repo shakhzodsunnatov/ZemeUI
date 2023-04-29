@@ -365,7 +365,7 @@ struct CustomNavBar_Previews: PreviewProvider {
                 Color.green
                 Text("Hello")
             }
-        }, type: .agent)
+        }, type: .buyer)
         
         CustomNavBar(content: {
             ZStack {

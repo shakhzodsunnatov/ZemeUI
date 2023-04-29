@@ -69,6 +69,9 @@
 		2EC1DD9B29FA712B006DA0BC /* RenterMainExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */; };
 		2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */; };
 		2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */; };
+		2ECE121929FD600C00B60263 /* SavedListingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121829FD600C00B60263 /* SavedListingsView.swift */; };
+		2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121B29FD606200B60263 /* SavedItemView.swift */; };
+		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
 		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
 		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
@@ -198,6 +201,9 @@
 		2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMainExView.swift; sourceTree = "<group>"; };
 		2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithImageTitleTip.swift; sourceTree = "<group>"; };
+		2ECE121829FD600C00B60263 /* SavedListingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsView.swift; sourceTree = "<group>"; };
+		2ECE121B29FD606200B60263 /* SavedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemView.swift; sourceTree = "<group>"; };
+		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
 		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
 		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
@@ -385,6 +391,7 @@
 				2EB5030529F8A888006FAFE1 /* EmptyViews */,
 				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
 				2EC1DD9929FA7108006DA0BC /* Filter */,
+				2ECE121729FD5FC600B60263 /* SavedListings */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -577,6 +584,24 @@
 			children = (
 				2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */,
 				2E731CCE29FBEF84000EE348 /* RenterFilterView_UI.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		2ECE121729FD5FC600B60263 /* SavedListings */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE121829FD600C00B60263 /* SavedListingsView.swift */,
+				2ECE121A29FD604100B60263 /* UIComponents */,
+			);
+			path = SavedListings;
+			sourceTree = "<group>";
+		};
+		2ECE121A29FD604100B60263 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE121B29FD606200B60263 /* SavedItemView.swift */,
+				2ECE121D29FD609400B60263 /* SavedButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -925,6 +950,7 @@
 				2E731CCA29FBDD1D000EE348 /* TimePickerUI.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
 				2E84CE0729F549AF0029FDBD /* ExpandingCell.swift in Sources */,
+				2ECE121929FD600C00B60263 /* SavedListingsView.swift in Sources */,
 				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
@@ -984,6 +1010,7 @@
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,
 				9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */,
 				9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */,
+				2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */,
 				9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */,
 				2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */,
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
@@ -991,6 +1018,7 @@
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
 				2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */,
 				9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */,
+				2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */,
 				2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,

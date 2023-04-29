@@ -238,6 +238,18 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+                
+                NavigationLink(destination: {
+                    SavedListingsView()
+                }) {
+                    Text("Renter Filter View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
         .padding()
