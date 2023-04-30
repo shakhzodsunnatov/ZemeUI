@@ -20,7 +20,7 @@ struct TextFieldWithIcon: View {
     var textFiledStyle: TextFieldStyleNew
     var accType: AccountType = .RENTER
     
-    @Binding var emailError: Bool 
+    @Binding var emailError: Bool
     @State var showPassword = false
     
     var requretdText: String? = nil
@@ -66,7 +66,7 @@ struct TextFieldWithIcon: View {
                 }
             }
         case .secure:
-            #warning("We have to creat secure textfield view")
+#warning("We have to creat secure textfield view")
             VStack(spacing: 11) {
                 VStack {
                     HStack(spacing: 10) {
@@ -133,39 +133,30 @@ struct TextFieldWithIcon: View {
 
 
 struct TextEditorWithPlaceholder: View {
-        @Binding var text: String
-        @Binding var placeHolder: String
-        var body: some View {
-            ZStack(alignment: .leading) {
-                if text.isEmpty {
-                   VStack {
-                        Text(placeHolder)
-                           .foregroundColor(.gray)
-                            .padding(.top, 10)
-                            .padding(.leading, 6)
-//                            .opacity(0.1)
-                        Spacer()
-                    }
-                }
-                
+    
+    @Binding var text: String
+    @Binding var placeHolder: String
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            if text.isEmpty {
                 VStack {
-                    TextEditor(text: $text)
-                        .frame(minHeight: 150, maxHeight: 300)
-                        .opacity(text.isEmpty ? 0.7 : 1)
+                    Text(placeHolder)
+                        .foregroundColor(.gray)
+                        .padding(.top, 10)
+                        .padding(.leading, 6)
                     Spacer()
                 }
             }
+            
+            VStack {
+                TextEditor(text: $text)
+                    .frame(minHeight: 150, maxHeight: 300)
+                    .opacity(text.isEmpty ? 0.7 : 1)
+                Spacer()
+            }
         }
     }
-
-
-extension View {
-//    func shadowCustom() -> some View {
-//        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.3),radius: 25,x: 4, y: 4)
-//    }
-    
-//    func shadowCustomNew() -> some View {
-//        return self.shadow(color: Color(hexString: "B6B6D2").opacity(0.22),radius: 15,x: 4, y: 4)
-//    }
 }
+
 

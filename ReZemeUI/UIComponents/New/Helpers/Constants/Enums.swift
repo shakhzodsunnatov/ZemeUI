@@ -43,3 +43,12 @@ enum AsyncImageType {
 enum TimeFormatType: String, CaseIterable {
     case sec, min, hr
 }
+
+enum TimeType: String, CaseIterable {
+    case AM,PM
+}
+
+enum PriorityType: String, CaseIterable {
+    case high = "High priority"
+    case low = "Low priority"
+}

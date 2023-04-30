@@ -263,6 +263,18 @@ struct ContentView: View {
                         )
                 }
             }
+            
+            NavigationLink(destination: {
+                MyServiceDetailRenter()
+            }) {
+                Text("My Service Detail Renter")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
         }
         .padding()
         .navigationBarHidden(true)

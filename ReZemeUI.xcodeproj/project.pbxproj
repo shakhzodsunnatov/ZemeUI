@@ -74,6 +74,8 @@
 		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
 		2ECE122129FD67B700B60263 /* RenterDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */; };
 		2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122229FD68D000B60263 /* DocumentItemCell.swift */; };
+		2ECE122629FD6DA000B60263 /* MyServiceDetailRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */; };
+		2ECE122A29FE574700B60263 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122929FE574700B60263 /* DropDownMenu.swift */; };
 		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
 		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
@@ -208,6 +210,8 @@
 		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
 		2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDocumentsView.swift; sourceTree = "<group>"; };
 		2ECE122229FD68D000B60263 /* DocumentItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemCell.swift; sourceTree = "<group>"; };
+		2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServiceDetailRenter.swift; sourceTree = "<group>"; };
+		2ECE122929FE574700B60263 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
 		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				2EC1DD9929FA7108006DA0BC /* Filter */,
 				2ECE121729FD5FC600B60263 /* SavedListings */,
 				2ECE121F29FD67A100B60263 /* RenterDocuments */,
+				2ECE122429FD6D7600B60263 /* MyServiceDetail */,
 				2E84CDFF29F12D160029FDBD /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -561,6 +566,7 @@
 				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
 				2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */,
 				2ECE122229FD68D000B60263 /* DocumentItemCell.swift */,
+				2ECE122929FE574700B60263 /* DropDownMenu.swift */,
 				2E78200829EBB13200F3C5A9 /* Navigation */,
 				2E303C3C29F96FCF00C93E20 /* Helpers */,
 			);
@@ -618,6 +624,14 @@
 				2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */,
 			);
 			path = RenterDocuments;
+			sourceTree = "<group>";
+		};
+		2ECE122429FD6D7600B60263 /* MyServiceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */,
+			);
+			path = MyServiceDetail;
 			sourceTree = "<group>";
 		};
 		2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */ = {
@@ -975,6 +989,7 @@
 				9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */,
 				2E731CCC29FBE9B1000EE348 /* RenterFilterView.swift in Sources */,
 				2E1DB6A129F7002E00A03848 /* AuthViewModel.swift in Sources */,
+				2ECE122629FD6DA000B60263 /* MyServiceDetailRenter.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
 				9D141DE029F9618F00CA6E23 /* LineChart.swift in Sources */,
 				2E78201529EBB14800F3C5A9 /* Enums.swift in Sources */,
@@ -1029,6 +1044,7 @@
 				2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */,
 				9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */,
 				2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */,
+				2ECE122A29FE574700B60263 /* DropDownMenu.swift in Sources */,
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
