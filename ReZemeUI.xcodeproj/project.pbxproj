@@ -120,6 +120,7 @@
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472729FEDD48004E5AD5 /* PayForLease.swift */; };
+		9D80472B29FEEF63004E5AD5 /* TransactionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472A29FEEF63004E5AD5 /* TransactionDetails.swift */; };
 		9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */; };
 		9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */; };
 		9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */; };
@@ -256,6 +257,7 @@
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D80472729FEDD48004E5AD5 /* PayForLease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayForLease.swift; sourceTree = "<group>"; };
+		9D80472A29FEEF63004E5AD5 /* TransactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetails.swift; sourceTree = "<group>"; };
 		9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfile.swift; sourceTree = "<group>"; };
 		9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfileVM.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				9DB1A85729F698AF0045D9BD /* AgentApplications */,
 				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
 				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
+				9D80472929FEEF4D004E5AD5 /* Transaction Details */,
 				9D80472629FEDD25004E5AD5 /* PayForLease */,
 				2EEED73429EC1D49005AD516 /* RenterMessage */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
@@ -792,6 +795,14 @@
 			path = PayForLease;
 			sourceTree = "<group>";
 		};
+		9D80472929FEEF4D004E5AD5 /* Transaction Details */ = {
+			isa = PBXGroup;
+			children = (
+				9D80472A29FEEF63004E5AD5 /* TransactionDetails.swift */,
+			);
+			path = "Transaction Details";
+			sourceTree = "<group>";
+		};
 		9D9225D529F844FD00DF5B77 /* AgentEditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -952,6 +963,7 @@
 				2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */,
 				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
+				9D80472B29FEEF63004E5AD5 /* TransactionDetails.swift in Sources */,
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
 				2EEED75029EC1E15005AD516 /* KeyboardHeightHelper.swift in Sources */,
 				2EEED74C29EC1D62005AD516 /* MockDataRenter.swift in Sources */,

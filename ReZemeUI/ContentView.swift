@@ -277,6 +277,32 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+
+                NavigationLink(destination: {
+                    PayForLease()
+                }) {
+                    Text("Pay For Lease")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+               NavigationLink(destination: {
+                   TransactionDetails()
+                }) {
+                    Text("Transaction Details")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+               
             }
         }
         .padding()
