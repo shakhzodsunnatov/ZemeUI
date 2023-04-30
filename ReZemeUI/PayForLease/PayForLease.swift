@@ -72,7 +72,7 @@ struct PayForLease: View {
                 .padding(.top ,20)
                 .padding(.horizontal,20)
                 
-                makeCell(image: "person", title: "Set Up AutoPay")
+                makeCell(image: "card-tick", title: "Set Up AutoPay")
                     .padding(.horizontal,20)
                 
                 Text("Add Payment Method")
