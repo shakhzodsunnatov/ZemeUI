@@ -119,6 +119,7 @@
 		9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694C329EDEBF600AA6272 /* HomeView.swift */; };
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
+		9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472729FEDD48004E5AD5 /* PayForLease.swift */; };
 		9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */; };
 		9D9225D729F8451300DF5B77 /* AgentEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */; };
 		9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */; };
@@ -254,6 +255,7 @@
 		9D2694C329EDEBF600AA6272 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		9D80472729FEDD48004E5AD5 /* PayForLease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayForLease.swift; sourceTree = "<group>"; };
 		9D85A07229ED78A5004FEAF3 /* ParticleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleScene.swift; sourceTree = "<group>"; };
 		9D9225D629F8451300DF5B77 /* AgentEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfile.swift; sourceTree = "<group>"; };
 		9D9225D829F845BD00DF5B77 /* AgentEditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentEditProfileVM.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				9DB1A85729F698AF0045D9BD /* AgentApplications */,
 				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
 				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
+				9D80472629FEDD25004E5AD5 /* PayForLease */,
 				2EEED73429EC1D49005AD516 /* RenterMessage */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
 				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
@@ -781,6 +784,14 @@
 			path = AgentNotification;
 			sourceTree = "<group>";
 		};
+		9D80472629FEDD25004E5AD5 /* PayForLease */ = {
+			isa = PBXGroup;
+			children = (
+				9D80472729FEDD48004E5AD5 /* PayForLease.swift */,
+			);
+			path = PayForLease;
+			sourceTree = "<group>";
+		};
 		9D9225D529F844FD00DF5B77 /* AgentEditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,6 +962,7 @@
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
+				9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */,
 				2E78202129EBB2C600F3C5A9 /* EnvironmentValues+ImageCache.swift in Sources */,
 				2ECE122129FD67B700B60263 /* RenterDocumentsView.swift in Sources */,
 				9D9225D929F845BD00DF5B77 /* AgentEditProfileVM.swift in Sources */,
