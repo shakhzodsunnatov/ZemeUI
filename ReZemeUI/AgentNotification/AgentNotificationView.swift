@@ -17,7 +17,7 @@ struct AgentNotificationView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 0) {
                         ForEach(0..<3, id: \.self) { _ in
-                            notificationCell()
+                            NotificationCell()
                         }
                     }
                     .padding(.top,20)
@@ -33,21 +33,78 @@ struct AgentNotificationView: View {
     }
 }
 
-extension AgentNotificationView {
+struct AgentNotificationView_Previews: PreviewProvider {
+    static var previews: some View {
+        AgentNotificationView()
+    }
+}
+
+struct NotificationCellsecond: View {
     
-    func notificationCell() -> some View {
+    @State var isactive: Bool = false
+    var title: String
+    var image: String
+    
+    var body: some View {
+        Button {
+            
+        } label: {
+            HStack(spacing:0) {
+                
+                Image(image)
+                    .resizable()
+                    .renderingMode(.template)
+                    .scaledToFit()
+                    .foregroundColor(Color.darkBlue)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.darkBlue.opacity(0))
+                    )
+                    .frame(width: 52, height: 52)
+                
+                Text(title)
+                    .medium14
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.purpleLow)
+                    .frame(width: 19, height: 12)
+                    .background(
+                        Circle()
+                            .stroke(Color.purpleLow,lineWidth: 1)
+                            .frame(width: 30,height: 30)
+                        
+                    )
+            }
+            .frame(minHeight: 52)
+        }
+    }
+}
+
+
+struct NotificationCell: View {
+    
+    @State var isactive: Bool = false
+    
+    var body: some View {
         VStack {
             HStack {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.darkBlue.opacity(0.1))
                     .frame(width: 66,height: 55)
                     .overlay(
-                    Image("agent-notification")
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundColor(.darkBlue)
-                        .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        Image("agent-notification")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.darkBlue)
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
                     )
                 
                 VStack(alignment: .leading, spacing: 0) {
@@ -77,30 +134,30 @@ extension AgentNotificationView {
                         Spacer()
                         
                         Button {
-                            self.isActive.toggle()
+                            withAnimation {
+                                self.isactive.toggle()
+                            }
                         } label: {
                             Image(systemName: "chevron.right")
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.purpleLow)
                                 .frame(width: 19, height: 12)
-                                .rotationEffect(.degrees(isActive ? 90:0))
+                                .rotationEffect(.degrees(isactive ? 90:0))
                                 .background(
-                                Circle()
-                                    .fill(Color.purpleLow.opacity(0.1))
-                                    .frame(width: 30,height: 30)
+                                    Circle()
+                                        .fill(Color.purpleLow.opacity(0.1))
+                                        .frame(width: 30,height: 30)
                                     
                                 )
                         }
-
-                        
                     }
                     .padding(.bottom,0)
                 }
             }
             .padding(.trailing,10)
-            if isActive {
-                dropcell(title: "Contract Signed", image: "")
+            if isactive {
+                NotificationCellsecond(title: "Contract Signed", image: "")
                     .padding(.top,12)
                     .padding(.horizontal,13)
             }
@@ -110,56 +167,5 @@ extension AgentNotificationView {
         .roundedShadow()
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-    }
-    
-    func dropcell(title: String, image: String)-> some View {
-        Button {
-            
-        } label: {
-            HStack(spacing:0) {
-                Image(image)
-                    .resizable()
-                    .renderingMode(.template)
-                    .scaledToFit()
-                    .foregroundColor(Color.darkBlue)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.darkBlue.opacity(0))
-                    )
-                    .frame(width: 52, height: 52)
-                
-                
-                Text(title)
-                    .medium14
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.leading)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.purpleLow)
-                    .frame(width: 19, height: 12)
-                    .background(
-                    Circle()
-                        .stroke(Color.purpleLow,lineWidth: 1)
-//                        .fill(Color.purpleLow.opacity(0.1))
-                    
-                        .frame(width: 30,height: 30)
-                        
-                    )
-            }
-            .frame(minHeight: 52)
-        }
-
-        
-    }
-}
-
-struct AgentNotificationView_Previews: PreviewProvider {
-    static var previews: some View {
-        AgentNotificationView()
     }
 }

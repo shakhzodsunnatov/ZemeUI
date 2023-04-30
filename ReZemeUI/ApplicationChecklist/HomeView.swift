@@ -26,8 +26,9 @@ struct HomeView: View {
                     .semibold18
                     .multilineTextAlignment(.leading)
                     .padding(.leading,20)
-                ForEach(0...3, id: \.self) { i in
-                    agentsCell()
+                
+                ForEach(0...1, id: \.self) { i in
+                    propertyCell()
                         .onTapGesture {
                             popView.toggle()
                         }
@@ -63,8 +64,16 @@ extension HomeView {
             VStack(spacing: 3) {
                 HStack {
                     VStack(alignment: .leading,spacing: 0) {
-                        Text("Robert Johnson")
-                            .medium16
+                        
+                        HStack(spacing: 6) {
+                            Image("person")
+                                .resizable()
+                                .frame(width: 27, height: 27)
+                            
+                            Text("Robert Johnson")
+                                .medium16
+                        }
+                        
                         
                         HStack {
                             Image("home")
@@ -103,11 +112,9 @@ extension HomeView {
             
         }
         .padding(10)
-        .background(Color.white)
-        .cornerRadius(8)
-        .padding(.horizontal,20)
-        .padding(.top,10)
         .roundedShadowNew()
+        .padding(.horizontal,20)
+        .padding(.vertical,5)
         
         
     }

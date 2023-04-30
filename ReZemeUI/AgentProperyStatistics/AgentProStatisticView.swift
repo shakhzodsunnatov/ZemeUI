@@ -211,7 +211,7 @@ extension AgentProStatisticView {
 
                     }
                     .frame(width: 110, height: 70)
-//                    .roundedShadowNew()
+                    .roundedShadowNew()
                     
                     .padding([.trailing,.leading],5)
                     .padding(.bottom,10)
