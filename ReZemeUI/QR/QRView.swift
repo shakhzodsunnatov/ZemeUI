@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreImage.CIFilterBuiltins
 
-
 struct QRView: View {
     
     let context = CIContext()

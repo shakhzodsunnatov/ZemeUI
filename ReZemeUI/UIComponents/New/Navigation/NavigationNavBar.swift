@@ -87,7 +87,7 @@ struct NavigationNavBar<Content: View>: View {
                 
                 
                 content
-                    .padding(.top,-1.8)
+//                    .padding(.top,-1.8)
 //                    .gesture( MARK: Swipe go back
 //                        DragGesture()
 //                            .updating($swipeTranslation) { value, state, _ in

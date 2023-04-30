@@ -239,6 +239,44 @@ struct ContentView: View {
                         )
                 }
                 
+                NavigationLink(destination: {
+                    SavedListingsView()
+                }) {
+                    Text("Saved Listings View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+
+                NavigationLink(destination: {
+                    RenterDocumentsView()
+                }) {
+                    Text("Renter Documents View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+            }
+            
+            Group {
+                NavigationLink(destination: {
+                    RenterMainExView()
+                }) {
+                    Text("Renter Filter View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
         .padding()

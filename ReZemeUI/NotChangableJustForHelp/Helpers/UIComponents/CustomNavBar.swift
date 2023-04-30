@@ -93,15 +93,12 @@ struct CustomNavBar<Content: View>: View {
                 .background(
                     Image(self.type == .buyer ? "top-background" : "top-background-secondary")
                         .resizable()
-                    
                 )
                 
                 ZStack {
                     Color.clear
                     content
                 }
-                .offset(y:-2)
-                .padding(.top,3)
             }
             .edgesIgnoringSafeArea(.top)
             .onTapGesture {
@@ -365,17 +362,17 @@ struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomNavBar(content: {
             ZStack {
-                Color.white
+                Color.green
                 Text("Hello")
             }
-        })
+        }, type: .buyer)
         
         CustomNavBar(content: {
             ZStack {
                 Color.white
                 Text("Hello")
             }
-        }, title:"232",style: .newTitleAndIcon)
+        }, title:"232",style: .newTitleAndIcon, type: .agent)
         
     }
 }

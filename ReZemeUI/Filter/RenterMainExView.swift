@@ -10,33 +10,32 @@ import SwiftUI
 struct RenterMainExView: View {
     
     //MARK: - PROPERTIES
-    @State var showFilter = true
+    @StateObject var filterViewModel = FilterViewModel()
+    
+    @State var filterShow = true
     
     var body: some View {
         CustomNavBar(
             content: {
-                ZStack {
-                    
+                
+                VStack {
                     Text("Some Main View")
                         .semibold22
                     
-                    VStack(spacing: 0) {
-                        
-                        
-                        
-                    }
-                    .roundedShadowNew()
-                    
                 }
+                
+                .renterFilterView(
+                    isPresent: $filterShow,
+                    viewModel: _filterViewModel)
+                
             },
             title: "",
             style: .filteredinput,
             type: .buyer) {
                 withAnimation(.easeInOut) {
-                    showFilter.toggle()
+                    filterShow.toggle()
                 }
             }
-            .edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)
     }
 }
@@ -47,3 +46,4 @@ struct RenterMainExView_Previews: PreviewProvider {
         RenterMainExView()
     }
 }
+
