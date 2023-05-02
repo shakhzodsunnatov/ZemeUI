@@ -1,15 +1,15 @@
 //
-//  AgentEditProfile.swift
+//  OwnerEditProfile.swift
 //  ReZemeUI
 //
-//  Created by Davron_Usmanov on 25.04.2023.
+//  Created by Davron_Usmanov on 02.05.2023.
 //
 
 import SwiftUI
 
-struct AgentEditProfile: View {
+struct OwnerEditProfileView: View {
     
-    @ObservedObject var viewModel = AgentEditProfileVM()
+    @ObservedObject var viewModel = OwnerEditProfileVM()
     @Environment(\.presentationMode) var presentationMode
     //    var push: Binding<Bool> { $viewModel.openNextView }
     @State var push = false
@@ -64,7 +64,6 @@ struct AgentEditProfile: View {
                     }
                     .padding(.vertical, 45)
                     .padding(.horizontal,76)
-//                    .opacity(self.viewModel.model.agreement ? 1 : 0.5)
                     
                 }
                 .sheet(isPresented: $viewModel.isShowPhotoLibrary) {
@@ -77,14 +76,14 @@ struct AgentEditProfile: View {
             },
             title: "Edit Profile",
             style: .newTitleAndIcon,
-            type: .agent
+            type: .owner
         )
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarHidden(true)
     }
 }
 
-extension AgentEditProfile {
+extension OwnerEditProfileView {
     
     private var title: some View {
         HStack {
@@ -151,9 +150,8 @@ extension AgentEditProfile {
     }
 }
 
-struct AgentEditProfile_Previews: PreviewProvider {
+struct OwnerEditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        AgentEditProfile()
+        OwnerEditProfileView()
     }
 }
-

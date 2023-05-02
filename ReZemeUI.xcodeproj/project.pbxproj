@@ -118,6 +118,12 @@
 		9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */; };
 		9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */; };
 		9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2694C329EDEBF600AA6272 /* HomeView.swift */; };
+		9D64026B2A01132800C15A37 /* OwnerNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64026A2A01132800C15A37 /* OwnerNotificationView.swift */; };
+		9D64026F2A01168000C15A37 /* OwnerEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64026E2A01168000C15A37 /* OwnerEditProfile.swift */; };
+		9D6402712A0118AD00C15A37 /* OwnerEditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402702A0118AD00C15A37 /* OwnerEditProfileVM.swift */; };
+		9D6402742A01190700C15A37 /* OwnerPropertyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */; };
+		9D6402772A01197F00C15A37 /* OwnerApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */; };
+		9D64027A2A011A9D00C15A37 /* OwnerSpecificApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */; };
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472729FEDD48004E5AD5 /* PayForLease.swift */; };
@@ -256,6 +262,12 @@
 		9D2694BF29EDD67400AA6272 /* CreditCheckVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCheckVM.swift; sourceTree = "<group>"; };
 		9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		9D2694C329EDEBF600AA6272 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9D64026A2A01132800C15A37 /* OwnerNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerNotificationView.swift; sourceTree = "<group>"; };
+		9D64026E2A01168000C15A37 /* OwnerEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerEditProfile.swift; sourceTree = "<group>"; };
+		9D6402702A0118AD00C15A37 /* OwnerEditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerEditProfileVM.swift; sourceTree = "<group>"; };
+		9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPropertyStatisticsView.swift; sourceTree = "<group>"; };
+		9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerApplicationsView.swift; sourceTree = "<group>"; };
+		9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSpecificApplicationView.swift; sourceTree = "<group>"; };
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D80472729FEDD48004E5AD5 /* PayForLease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayForLease.swift; sourceTree = "<group>"; };
@@ -382,6 +394,7 @@
 		2E781FC629EBAD0700F3C5A9 /* ReZemeUI */ = {
 			isa = PBXGroup;
 			children = (
+				9D6402692A01130C00C15A37 /* Owner */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E99B4C029FFF2EE00113C34 /* MERGED */,
@@ -798,6 +811,59 @@
 			path = AgentNotification;
 			sourceTree = "<group>";
 		};
+		9D6402692A01130C00C15A37 /* Owner */ = {
+			isa = PBXGroup;
+			children = (
+				9D6402782A011A0200C15A37 /* OwnerSpecificApplicationView */,
+				9D6402752A01195A00C15A37 /* OwnerApplications */,
+				9D6402722A0118DD00C15A37 /* OwnerProperty Statistics */,
+				9D64026D2A01166400C15A37 /* Owner Edit Profile */,
+				9D64026C2A01165100C15A37 /* OwnerNotifiaction */,
+			);
+			path = Owner;
+			sourceTree = "<group>";
+		};
+		9D64026C2A01165100C15A37 /* OwnerNotifiaction */ = {
+			isa = PBXGroup;
+			children = (
+				9D64026A2A01132800C15A37 /* OwnerNotificationView.swift */,
+			);
+			path = OwnerNotifiaction;
+			sourceTree = "<group>";
+		};
+		9D64026D2A01166400C15A37 /* Owner Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9D64026E2A01168000C15A37 /* OwnerEditProfile.swift */,
+				9D6402702A0118AD00C15A37 /* OwnerEditProfileVM.swift */,
+			);
+			path = "Owner Edit Profile";
+			sourceTree = "<group>";
+		};
+		9D6402722A0118DD00C15A37 /* OwnerProperty Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */,
+			);
+			path = "OwnerProperty Statistics";
+			sourceTree = "<group>";
+		};
+		9D6402752A01195A00C15A37 /* OwnerApplications */ = {
+			isa = PBXGroup;
+			children = (
+				9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */,
+			);
+			path = OwnerApplications;
+			sourceTree = "<group>";
+		};
+		9D6402782A011A0200C15A37 /* OwnerSpecificApplicationView */ = {
+			isa = PBXGroup;
+			children = (
+				9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */,
+			);
+			path = OwnerSpecificApplicationView;
+			sourceTree = "<group>";
+		};
 		9D80472629FEDD25004E5AD5 /* PayForLease */ = {
 			isa = PBXGroup;
 			children = (
@@ -975,6 +1041,7 @@
 				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
 				9D80472B29FEEF63004E5AD5 /* TransactionDetails.swift in Sources */,
+				9D6402742A01190700C15A37 /* OwnerPropertyStatisticsView.swift in Sources */,
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
 				2EEED75029EC1E15005AD516 /* KeyboardHeightHelper.swift in Sources */,
 				2EEED74C29EC1D62005AD516 /* MockDataRenter.swift in Sources */,
@@ -995,6 +1062,7 @@
 				2E63256C29F7EF12004D5AE1 /* RenterProfileEditView.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
+				9D6402772A01197F00C15A37 /* OwnerApplicationsView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
 				9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */,
 				2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */,
@@ -1053,6 +1121,7 @@
 				2E1DB69F29F6FE2A00A03848 /* PhotoCaptureView.swift in Sources */,
 				2EEB21ED29EF7410005D13A7 /* AgentAlarmChat.swift in Sources */,
 				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
+				9D64026F2A01168000C15A37 /* OwnerEditProfile.swift in Sources */,
 				2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */,
 				2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */,
 				2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */,
@@ -1073,6 +1142,7 @@
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,
 				9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */,
 				9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */,
+				9D64027A2A011A9D00C15A37 /* OwnerSpecificApplicationView.swift in Sources */,
 				2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */,
 				9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */,
 				2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */,
@@ -1084,7 +1154,9 @@
 				9DB1A86529F6F6320045D9BD /* HomeChart.swift in Sources */,
 				2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */,
 				2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */,
+				9D64026B2A01132800C15A37 /* OwnerNotificationView.swift in Sources */,
 				2E781FEA29EBAE4A00F3C5A9 /* Fonts.swift in Sources */,
+				9D6402712A0118AD00C15A37 /* OwnerEditProfileVM.swift in Sources */,
 				2E781FC829EBAD0700F3C5A9 /* ReZemeUIApp.swift in Sources */,
 				9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */,
 				2E78200D29EBB13200F3C5A9 /* NavigationNavBar.swift in Sources */,
@@ -1221,7 +1293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1236,7 +1308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1254,7 +1326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ZXW2899XB;
+				DEVELOPMENT_TEAM = 39482WDT6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1269,7 +1341,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
