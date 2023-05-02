@@ -100,6 +100,7 @@ struct MyServiceDetailRenter: View {
                     .padding(.horizontal, 20)
             }
         }
+        .navigationRenter(title: "New Service Request")
         .onChange(of: time) { newValue in
             time = format(with: "XX:XX", phone: newValue)
         }
