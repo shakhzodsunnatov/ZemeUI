@@ -395,6 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				9D6402692A01130C00C15A37 /* Owner */,
+				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
+				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
@@ -577,7 +579,6 @@
 				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
 				2E84CDFE29F12CF70029FDBD /* Setting */,
 				2E4BEE1C29F59725005CD69D /* Support */,
-				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
 				2ECE121729FD5FC600B60263 /* SavedListings */,
 				2ECE121F29FD67A100B60263 /* RenterDocuments */,
@@ -816,7 +817,6 @@
 				9D6402722A0118DD00C15A37 /* OwnerProperty Statistics */,
 				9D64026D2A01166400C15A37 /* Owner Edit Profile */,
 				9D64026C2A01165100C15A37 /* OwnerNotifiaction */,
-				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 			);
 			path = Owner;
 			sourceTree = "<group>";
