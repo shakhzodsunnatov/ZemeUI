@@ -396,16 +396,16 @@
 		2E781FC629EBAD0700F3C5A9 /* ReZemeUI */ = {
 			isa = PBXGroup;
 			children = (
+				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				9D6402692A01130C00C15A37 /* Owner */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
-				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
-				9D64027B2A01237C00C15A37 /* UIComponents */,
-				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
-				2E99B4C029FFF2EE00113C34 /* MERGED */,
 				2E99B5AE2A01142800113C34 /* MyServesRequest */,
+				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
+				2E99B4C029FFF2EE00113C34 /* MERGED */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
 				2E781FCD29EBAD0900F3C5A9 /* Preview Content */,
 			);
@@ -558,7 +558,6 @@
 				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
 				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
 				2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */,
-				2E303C3D29F980FA00C93E20 /* CheckableImageWithTitle.swift */,
 				2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */,
 				2E4BEE1F29F5A4C0005CD69D /* LineView.swift */,
 				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
@@ -877,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				9D64027C2A0123B400C15A37 /* Helpers */,
+				2E303C3D29F980FA00C93E20 /* CheckableImageWithTitle.swift */,
 				9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */,
 				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 			);
