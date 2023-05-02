@@ -16,7 +16,7 @@ struct ReZemeUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                MyServiceRequestView()
             }
             .onAppear {
                 ZemeFonts.registerFonts()
