@@ -74,8 +74,9 @@
 		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
 		2ECE122129FD67B700B60263 /* RenterDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */; };
 		2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122229FD68D000B60263 /* DocumentItemCell.swift */; };
+		2ECE122629FD6DA000B60263 /* MyServiceDetailRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */; };
+		2ECE122A29FE574700B60263 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE122929FE574700B60263 /* DropDownMenu.swift */; };
 		2ED7EEBD29F9A46300EBE31C /* RenterPropertyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */; };
-		2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */; };
 		2EDDF8A529EE2DFC00A07574 /* MeetingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */; };
 		2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */; };
 		2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */; };
@@ -211,8 +212,9 @@
 		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
 		2ECE122029FD67B700B60263 /* RenterDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDocumentsView.swift; sourceTree = "<group>"; };
 		2ECE122229FD68D000B60263 /* DocumentItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemCell.swift; sourceTree = "<group>"; };
+		2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServiceDetailRenter.swift; sourceTree = "<group>"; };
+		2ECE122929FE574700B60263 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterPropertyDetailView.swift; sourceTree = "<group>"; };
-		2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterDetailRemove.swift; sourceTree = "<group>"; };
 		2EDDF8A429EE2DFC00A07574 /* MeetingAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAlertView.swift; sourceTree = "<group>"; };
 		2EDDF8A729EE2ED700A07574 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		2EDDF8A929EE438D00A07574 /* RenterChatTypesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterChatTypesProtocol.swift; sourceTree = "<group>"; };
@@ -382,31 +384,7 @@
 			children = (
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
-				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
-				9DB1A84529F659490045D9BD /* QR */,
-				9DB1A85729F698AF0045D9BD /* AgentApplications */,
-				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
-				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
-				9D80472929FEEF4D004E5AD5 /* Transaction Details */,
-				9D80472629FEDD25004E5AD5 /* PayForLease */,
-				2EEED73429EC1D49005AD516 /* RenterMessage */,
-				2EEB218429EF6503005D13A7 /* AgentMessage */,
-				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
-				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
-				9D141DD729F94F3900CA6E23 /* Agent Auth */,
-				9D141DE229F99B0100CA6E23 /* AgentNotification */,
-				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
-				2EE41D6B29F0B69E00E4B878 /* Auth */,
-				2E84CDFE29F12CF70029FDBD /* Setting */,
-				2E4BEE1C29F59725005CD69D /* Support */,
-				2E63256A29F7EEBE004D5AE1 /* Profile */,
-				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
-				2EB5030529F8A888006FAFE1 /* EmptyViews */,
-				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
-				2EC1DD9929FA7108006DA0BC /* Filter */,
-				2ECE121729FD5FC600B60263 /* SavedListings */,
-				2ECE121F29FD67A100B60263 /* RenterDocuments */,
-				2E84CDFF29F12D160029FDBD /* UIComponents */,
+				2E99B4C029FFF2EE00113C34 /* MERGED */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
 				2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */,
@@ -570,10 +548,44 @@
 				2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */,
 				2E731CC929FBDD1D000EE348 /* TimePickerUI.swift */,
 				2ECE122229FD68D000B60263 /* DocumentItemCell.swift */,
+				2ECE122929FE574700B60263 /* DropDownMenu.swift */,
 				2E78200829EBB13200F3C5A9 /* Navigation */,
 				2E303C3C29F96FCF00C93E20 /* Helpers */,
 			);
 			path = New;
+			sourceTree = "<group>";
+		};
+		2E99B4C029FFF2EE00113C34 /* MERGED */ = {
+			isa = PBXGroup;
+			children = (
+				2EB5030529F8A888006FAFE1 /* EmptyViews */,
+				2EE41D6B29F0B69E00E4B878 /* Auth */,
+				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
+				2EEED73429EC1D49005AD516 /* RenterMessage */,
+				2EEB218429EF6503005D13A7 /* AgentMessage */,
+				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
+				2E84CDFE29F12CF70029FDBD /* Setting */,
+				2E4BEE1C29F59725005CD69D /* Support */,
+				2E63256A29F7EEBE004D5AE1 /* Profile */,
+				2E4BEE2129F5A8DB005CD69D /* MyDocuments */,
+				2ECE121729FD5FC600B60263 /* SavedListings */,
+				2ECE121F29FD67A100B60263 /* RenterDocuments */,
+				2ECE122429FD6D7600B60263 /* MyServiceDetail */,
+				2E84CDFF29F12D160029FDBD /* UIComponents */,
+				2EC1DD9929FA7108006DA0BC /* Filter */,
+				9DB1A84529F659490045D9BD /* QR */,
+				9DB1A85729F698AF0045D9BD /* AgentApplications */,
+				9DB1A86029F6A10B0045D9BD /* AgentSpecificApplication */,
+				9DB1A84829F66A150045D9BD /* AgentMainViewWithFilter */,
+				9D80472929FEEF4D004E5AD5 /* Transaction Details */,
+				9D80472629FEDD25004E5AD5 /* PayForLease */,
+				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
+				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
+				9D141DD729F94F3900CA6E23 /* Agent Auth */,
+				9D141DE229F99B0100CA6E23 /* AgentNotification */,
+				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
+			);
+			path = MERGED;
 			sourceTree = "<group>";
 		};
 		2EB5030529F8A888006FAFE1 /* EmptyViews */ = {
@@ -629,21 +641,20 @@
 			path = RenterDocuments;
 			sourceTree = "<group>";
 		};
+		2ECE122429FD6D7600B60263 /* MyServiceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2ECE122529FD6DA000B60263 /* MyServiceDetailRenter.swift */,
+			);
+			path = MyServiceDetail;
+			sourceTree = "<group>";
+		};
 		2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */ = {
 			isa = PBXGroup;
 			children = (
-				2ED7EEBE29F9A49A00EBE31C /* NeedToRemoveBeforeMerge */,
 				2ED7EEBC29F9A46300EBE31C /* RenterPropertyDetailView.swift */,
 			);
 			path = RenterPropertyDetail;
-			sourceTree = "<group>";
-		};
-		2ED7EEBE29F9A49A00EBE31C /* NeedToRemoveBeforeMerge */ = {
-			isa = PBXGroup;
-			children = (
-				2ED7EEBF29F9A4B200EBE31C /* RenterDetailRemove.swift */,
-			);
-			path = NeedToRemoveBeforeMerge;
 			sourceTree = "<group>";
 		};
 		2EDDF8A629EE2EC000A07574 /* NotChangableJustForHelp */ = {
@@ -970,7 +981,6 @@
 				9DB1A84E29F6926D0045D9BD /* PropertyModel.swift in Sources */,
 				2EEED74629EC1D49005AD516 /* ClientChat.swift in Sources */,
 				2E303C3929F949CF00C93E20 /* NeighborhoodModel.swift in Sources */,
-				2ED7EEC029F9A4B200EBE31C /* RenterDetailRemove.swift in Sources */,
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
@@ -1010,6 +1020,7 @@
 				9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */,
 				2E731CCC29FBE9B1000EE348 /* RenterFilterView.swift in Sources */,
 				2E1DB6A129F7002E00A03848 /* AuthViewModel.swift in Sources */,
+				2ECE122629FD6DA000B60263 /* MyServiceDetailRenter.swift in Sources */,
 				2E78200729EBB0D800F3C5A9 /* CustomCornerRadius.swift in Sources */,
 				9D141DE029F9618F00CA6E23 /* LineChart.swift in Sources */,
 				2E78201529EBB14800F3C5A9 /* Enums.swift in Sources */,
@@ -1065,6 +1076,7 @@
 				2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */,
 				9D2694C229EDEB6000AA6272 /* CustomNavBar.swift in Sources */,
 				2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */,
+				2ECE122A29FE574700B60263 /* DropDownMenu.swift in Sources */,
 				2E781FE229EBADC700F3C5A9 /* ContenViewModel.swift in Sources */,
 				2EEED74329EC1D49005AD516 /* MeetingChat.swift in Sources */,
 				2EDDF8A829EE2ED700A07574 /* VisualEffectView.swift in Sources */,
@@ -1209,7 +1221,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1224,7 +1236,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1242,7 +1254,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1257,7 +1269,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
