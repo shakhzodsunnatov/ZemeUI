@@ -11,7 +11,7 @@ struct OwnerEditProfileView: View {
     
     @ObservedObject var viewModel = OwnerEditProfileVM()
     @Environment(\.presentationMode) var presentationMode
-    //    var push: Binding<Bool> { $viewModel.openNextView }
+    
     @State var push = false
     @State var buttonEnable: Bool = false
     
