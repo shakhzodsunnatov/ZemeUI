@@ -13,7 +13,16 @@ enum HeaderStyle {
 }
 
 enum HeaderType {
-    case buyer, agent
+    case buyer, agent, owner
+    
+    var bgImageStr: String {
+        switch self {
+        case .buyer: return "top-background"
+        case .agent: return "top-background-secondary"
+        case .owner: return "top-background-owner"
+            
+        }
+    }
 }
 
 enum UserType { //TODO: - remove and change with Account type enum
@@ -23,11 +32,13 @@ enum UserType { //TODO: - remove and change with Account type enum
 enum AccountType: String {
     case RENTER
     case AGENT
+    case OWNER
     
     var color: Color {
         switch self {
         case .RENTER: return Color.darkBlue
         case .AGENT: return Color.secondaryPurple
+        case .OWNER: return Color.secondaryPurple
         }
     }
 }

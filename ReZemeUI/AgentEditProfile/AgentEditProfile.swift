@@ -19,54 +19,39 @@ struct AgentEditProfile: View {
         CustomNavBar(
             content: {
                 ScrollView(.vertical,showsIndicators: false) {
-                    VStack(alignment: .center, spacing: 20) {
+                    
+                    VStack(alignment: .leading, spacing: 20) {
                         
-                        ZStack {
+                        photoSelectButton
+                            .padding(.top,12)
+                        
+                        Group {
                             
-                            Color.white
+                            TextFieldWithIcon(image: "profile", topTitle: "Full Name", text: $viewModel.model.lastname, textFiledStyle: .simple, emailError:$viewModel.fullname)
                             
-                            VStack(alignment: .leading, spacing: 20) {
-                                
-                                photoSelectButton
-                                    .padding(.top,12)
-                                
-                                Group {
-                                    
-                                    TextFieldWithIcon(image: "profile", topTitle: "Full Name", text: $viewModel.model.lastname, textFiledStyle: .simple, emailError:$viewModel.fullname)
-                                    
-                                    TextFieldWithIcon(image: "mail-agent", topTitle: "Email", text: $viewModel.model.email, textFiledStyle: .simple, emailError:$viewModel.email)
-                                    
-                                    TextFieldWithIcon(image: "briefcase", topTitle: "Company Name", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.company)
-                                    
-                                    TextFieldWithIcon(image: "call", topTitle: "Phone Number", text: $viewModel.model.phone, textFiledStyle: .simple, emailError:$viewModel.phone)
-                                        .keyboardType(.numberPad)
-                                    
-                                    TextFieldWithIcon(image: "edit", topTitle: "Bio",placeHolder: "Add a bio...", text: $viewModel.model.bio, textFiledStyle: .textView, emailError:.constant(false))
-                                    
-                                    
-                                    TextFieldWithIcon(image: "lock-agent", topTitle: "Password", text: $viewModel.model.password, textFiledStyle: .simple, emailError:$viewModel.password)
-                                    
-                                    
-                                    TextFieldWithIcon(image: "pin", topTitle: "Location", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.location)
-                                   
-                                }
-                                .onChange(of: viewModel.model.phone) { newValue in
-                                    self.viewModel.model.phone = format(with: "(XXX) XXX-XXXX", phone: newValue)
-                                }
-                            }
-                            .padding(20)
+                            TextFieldWithIcon(image: "mail-agent", topTitle: "Email", text: $viewModel.model.email, textFiledStyle: .simple, emailError:$viewModel.email)
+                            
+                            TextFieldWithIcon(image: "briefcase", topTitle: "Company Name", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.company)
+                            
+                            TextFieldWithIcon(image: "call", topTitle: "Phone Number", text: $viewModel.model.phone, textFiledStyle: .simple, emailError:$viewModel.phone)
+                                .keyboardType(.numberPad)
+                            
+                            TextFieldWithIcon(image: "edit", topTitle: "Bio",placeHolder: "Add a bio...", text: $viewModel.model.bio, textFiledStyle: .textView, emailError:.constant(false))
+                            
+                            
+                            TextFieldWithIcon(image: "lock-agent", topTitle: "Password", text: $viewModel.model.password, textFiledStyle: .simple, emailError:$viewModel.password)
+                            
+                            
+                            TextFieldWithIcon(image: "pin", topTitle: "Location", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.location)
+                           
                         }
-                        .cornerRadius(8)
-                        .padding(
-                            EdgeInsets(
-                                top: 28,
-                                leading: 20,
-                                bottom: 20,
-                                trailing: 20
-                            )
-                        )
-                        .roundedShadowNew()
+                        .onChange(of: viewModel.model.phone) { newValue in
+                            self.viewModel.model.phone = format(with: "(XXX) XXX-XXXX", phone: newValue)
+                        }
                     }
+                    .padding(EdgeInsets( top: 16,leading: 20, bottom: 20, trailing: 20))
+                    .roundedShadowNew()
+                    .padding(20)
                     
                     linkButton(title: "Continue") {
                         withAnimation {

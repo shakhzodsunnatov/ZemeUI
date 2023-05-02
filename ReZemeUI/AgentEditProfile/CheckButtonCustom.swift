@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CheckButtonCustom: View {
     
     @State var isSelected: Bool = false
