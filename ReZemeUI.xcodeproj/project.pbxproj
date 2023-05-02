@@ -396,6 +396,7 @@
 			children = (
 				9D6402692A01130C00C15A37 /* Owner */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E99B4C029FFF2EE00113C34 /* MERGED */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
@@ -484,7 +485,6 @@
 		2E78200129EBB07100F3C5A9 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */,
 				9D7C89E729ECDD2B00DA223D /* Haptic.swift */,
 				9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */,
 				2E78200429EBB0AB00F3C5A9 /* CustomAlert.swift */,
@@ -507,7 +507,6 @@
 			isa = PBXGroup;
 			children = (
 				2E78201229EBB14800F3C5A9 /* Constants.swift */,
-				2E78201329EBB14800F3C5A9 /* Enums.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -552,7 +551,6 @@
 			isa = PBXGroup;
 			children = (
 				2E781FEC29EBAF0000F3C5A9 /* Colors.xcassets */,
-				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
 				2E84CE0229F12E330029FDBD /* ActionButton.swift */,
 				2E84CE0629F549AF0029FDBD /* ExpandingCell.swift */,
 				2E303C3D29F980FA00C93E20 /* CheckableImageWithTitle.swift */,
@@ -571,9 +569,9 @@
 		2E99B4C029FFF2EE00113C34 /* MERGED */ = {
 			isa = PBXGroup;
 			children = (
+				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				2EB5030529F8A888006FAFE1 /* EmptyViews */,
 				2EE41D6B29F0B69E00E4B878 /* Auth */,
-				2E781FD629EBADC700F3C5A9 /* ApplicationChecklist */,
 				2EEED73429EC1D49005AD516 /* RenterMessage */,
 				2EEB218429EF6503005D13A7 /* AgentMessage */,
 				2ED7EEBB29F9A44F00EBE31C /* RenterPropertyDetail */,
@@ -593,7 +591,6 @@
 				9D80472929FEEF4D004E5AD5 /* Transaction Details */,
 				9D80472629FEDD25004E5AD5 /* PayForLease */,
 				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
-				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				9D141DD729F94F3900CA6E23 /* Agent Auth */,
 				9D141DE229F99B0100CA6E23 /* AgentNotification */,
 				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
@@ -819,6 +816,7 @@
 				9D6402722A0118DD00C15A37 /* OwnerProperty Statistics */,
 				9D64026D2A01166400C15A37 /* Owner Edit Profile */,
 				9D64026C2A01165100C15A37 /* OwnerNotifiaction */,
+				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 			);
 			path = Owner;
 			sourceTree = "<group>";
@@ -862,6 +860,24 @@
 				9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */,
 			);
 			path = OwnerSpecificApplicationView;
+			sourceTree = "<group>";
+		};
+		9D64027B2A01237C00C15A37 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9D64027C2A0123B400C15A37 /* Helpers */,
+				9D2694C129EDEB6000AA6272 /* CustomNavBar.swift */,
+				2E781FCB29EBAD0900F3C5A9 /* Assets.xcassets */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		9D64027C2A0123B400C15A37 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E78201329EBB14800F3C5A9 /* Enums.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9D80472629FEDD25004E5AD5 /* PayForLease */ = {

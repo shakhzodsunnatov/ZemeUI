@@ -50,64 +50,50 @@ struct CustomNavBar<Content: View>: View {
             
             VStack(spacing: 0) {
                 
-                if #available(iOS 15.0, *) {
-                    HStack {
+                HStack {
+                    
+                    switch style {
                         
-                        switch style {
-                            
-                        case .title:
-                            
-                            titleNavbar()
-                            
-                        case .filteredtitle:
-                            
-                            filteredTitle()
-                            
-                        case .filteredinput:
-                            
-                            filteredStackedInput()
-                            
-                        case .filteredstackedinput:
-                            
-                            filteredInput()
-                            
-                        case .customimagetitle:
-                            
-                            customImageTitle()
-                            
-                        case .newAgentMainFilter:
-                            
-                            agentMainTitle()
-                            
-                        case .newTitleAndIcon:
-                            
-                            agentTitleAndIcon()
-                            
-                        case .newSearchWithTitle:
-                            filterWithTitle()
-                        }
+                    case .title:
                         
+                        titleNavbar()
+                        
+                    case .filteredtitle:
+                        
+                        filteredTitle()
+                        
+                    case .filteredinput:
+                        
+                        filteredStackedInput()
+                        
+                    case .filteredstackedinput:
+                        
+                        filteredInput()
+                        
+                    case .customimagetitle:
+                        
+                        customImageTitle()
+                        
+                    case .newAgentMainFilter:
+                        
+                        agentMainTitle()
+                        
+                    case .newTitleAndIcon:
+                        
+                        agentTitleAndIcon()
+                        
+                    case .newSearchWithTitle:
+                        filterWithTitle()
                     }
-                    .padding(.top, geo.safeAreaInsets.top)
-                    .padding(.bottom, 20)
-                    .frame(width: SCREEN_WIDTH)
-                    .background  {
-                        switch type {
-                        case .buyer:
-                            Image("top-background")
-                                .resizable()
-                        case .agent:
-                            Image("top-background-secondary")
-                                .resizable()
-                        case .owner:
-                            Image("top-background-owner")
-                                .resizable()
-                            
-                        }
-                    }
-                } else {
-                    // Fallback on earlier versions
+                    
                 }
+                .padding(.top, geo.safeAreaInsets.top)
+                .padding(.bottom, 20)
+                .frame(width: SCREEN_WIDTH)
+                .background(
+                    Image(type.bgImageStr)
+                        .resizable()
+                )
                 
                 ZStack {
                     Color.clear
