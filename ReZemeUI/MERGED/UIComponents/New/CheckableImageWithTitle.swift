@@ -85,6 +85,7 @@ extension CheckableImageWithTitle {
         switch type {
         case .AGENT: return Color.darkBlue
         case .RENTER: return Color.secondaryPurple
+        case .OWNER: return Color.secondaryPurple
         }
     }
     

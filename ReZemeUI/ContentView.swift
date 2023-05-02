@@ -316,6 +316,68 @@ struct ContentView: View {
                             .fill(Color.lightBlue)
                     )
             }
+            
+            NavigationLink(destination: {
+                OwnerNotificationView()
+            }) {
+                Text("Owner Notification View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
+            NavigationLink(destination: {
+                OwnerEditProfileView()
+            }) {
+                Text("Owner Edit Profile View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
+            NavigationLink(destination: {
+                OwnerPropertyStatisticsView()
+            }) {
+                Text("Owner Property Statistics View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
+            NavigationLink(destination: {
+                OwnerApplicationsView()
+            }) {
+                Text("Owner Applications View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
+            NavigationLink(destination: {
+                OwnerSpecificApplicationView()
+            }) {
+                Text("Owner Specific Application View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
+            
         }
         .padding()
         .navigationBarHidden(true)
