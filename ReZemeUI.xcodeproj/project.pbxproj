@@ -18,6 +18,7 @@
 		2E4BEE2029F5A4C0005CD69D /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE1F29F5A4C0005CD69D /* LineView.swift */; };
 		2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */; };
 		2E512D822A0166260042DA40 /* ProgressUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E512D812A0166260042DA40 /* ProgressUI.swift */; };
+		2E512D842A016DA70042DA40 /* NewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E512D832A016DA70042DA40 /* NewContentView.swift */; };
 		2E63256929F7EC8F004D5AE1 /* RounderShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */; };
 		2E63256C29F7EF12004D5AE1 /* RenterProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */; };
 		2E63256E29F7EF2C004D5AE1 /* RenterProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */; };
@@ -164,6 +165,7 @@
 		2E4BEE1F29F5A4C0005CD69D /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		2E4BEE2229F5A8FA005CD69D /* MyDocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDocumentsView.swift; sourceTree = "<group>"; };
 		2E512D812A0166260042DA40 /* ProgressUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressUI.swift; sourceTree = "<group>"; };
+		2E512D832A016DA70042DA40 /* NewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContentView.swift; sourceTree = "<group>"; };
 		2E63256829F7EC8F004D5AE1 /* RounderShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RounderShadowModifier.swift; sourceTree = "<group>"; };
 		2E63256B29F7EF12004D5AE1 /* RenterProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileEditView.swift; sourceTree = "<group>"; };
 		2E63256D29F7EF2C004D5AE1 /* RenterProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterProfileViewModel.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			children = (
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
+				2E512D832A016DA70042DA40 /* NewContentView.swift */,
 				9D6402692A01130C00C15A37 /* Owner */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
@@ -1070,6 +1073,7 @@
 				9DB1A84729F659680045D9BD /* QRView.swift in Sources */,
 				9D141DE429F99B2000CA6E23 /* AgentNotificationView.swift in Sources */,
 				2E78201429EBB14800F3C5A9 /* Constants.swift in Sources */,
+				2E512D842A016DA70042DA40 /* NewContentView.swift in Sources */,
 				2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */,
 				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
@@ -1329,7 +1333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1344,7 +1348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1362,7 +1366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReZemeUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 39482WDT6F;
+				DEVELOPMENT_TEAM = 2ZXW2899XB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera";
@@ -1377,7 +1381,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zemeliving.ZemeChatDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
