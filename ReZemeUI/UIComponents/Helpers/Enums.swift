@@ -46,7 +46,7 @@ enum AccountType: String {
         switch self {
         case .RENTER: return "top-background"
         case .AGENT: return "top-background-secondary"
-        case .OWNER: return "top-background-owner"
+        case .OWNER: return "top-background-secondary"
             
         }
     }

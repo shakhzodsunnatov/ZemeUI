@@ -83,6 +83,9 @@ struct NavigationNavBar<Content: View>: View {
                 .background(
                     Image(type.bgImageStr)
                         .resizable()
+                        .overlay(
+                            Color.white.opacity( type == .OWNER ? 0.4 : 0)
+                        )
                 )
                 
                 
