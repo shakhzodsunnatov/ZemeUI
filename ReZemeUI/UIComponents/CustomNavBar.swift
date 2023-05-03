@@ -91,9 +91,12 @@ struct CustomNavBar<Content: View>: View {
                 .padding(.bottom, 20)
                 .frame(width: SCREEN_WIDTH)
                 .background(
+                    
                     Image(type.bgImageStr)
                         .resizable()
-                       
+                        .overlay(
+                            Color.white.opacity( type == .owner ? 0.4 : 0)
+                        )
                 )
                 
                 ZStack {

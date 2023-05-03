@@ -12,6 +12,7 @@ struct ReZemeUIApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @State var isRenter = false
     
     var body: some Scene {
         WindowGroup {
@@ -21,7 +22,6 @@ struct ReZemeUIApp: App {
             .onAppear {
                 ZemeFonts.registerFonts()
             }
-            
         }
     }
 }
@@ -32,3 +32,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return .portrait
     }
 }
+
