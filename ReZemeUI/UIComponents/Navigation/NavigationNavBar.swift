@@ -81,8 +81,11 @@ struct NavigationNavBar<Content: View>: View {
                 .padding(.bottom, 23)
                 .padding(.horizontal, 20)
                 .background(
-                    Image(type == .RENTER ? "top-background" : "top-background-secondary")
+                    Image(type.bgImageStr)
                         .resizable()
+                        .overlay(
+                            Color.white.opacity( type == .OWNER ? 0.4 : 0)
+                        )
                 )
                 
                 

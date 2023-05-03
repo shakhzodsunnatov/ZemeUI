@@ -19,7 +19,7 @@ enum HeaderType {
         switch self {
         case .buyer: return "top-background"
         case .agent: return "top-background-secondary"
-        case .owner: return "top-background-owner"
+        case .owner: return "top-background-secondary"
             
         }
     }
@@ -39,6 +39,15 @@ enum AccountType: String {
         case .RENTER: return Color.darkBlue
         case .AGENT: return Color.secondaryPurple
         case .OWNER: return Color.secondaryPurple
+        }
+    }
+    
+    var bgImageStr: String {
+        switch self {
+        case .RENTER: return "top-background"
+        case .AGENT: return "top-background-secondary"
+        case .OWNER: return "top-background-secondary"
+            
         }
     }
 }

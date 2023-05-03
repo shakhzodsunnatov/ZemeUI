@@ -90,6 +90,23 @@ extension View {
             )
         )
     }
+    
+    func navigationOwner(
+        title: String,
+        withBeckBtn: Bool = true,
+        skipBtnAction: (() -> Void)? = nil,
+        rightButton: AnyView? = nil
+    ) -> some View {
+        modifier(
+            NavigationCustomModifier(
+                title: title,
+                type: .OWNER,
+                withBeckBtn: withBeckBtn,
+                skipBtnAction: skipBtnAction,
+                rightButton: rightButton
+            )
+        )
+    }
 }
 
 

@@ -93,6 +93,9 @@ struct CustomNavBar<Content: View>: View {
                 .background(
                     Image(type.bgImageStr)
                         .resizable()
+                        .overlay(
+                            Color.white.opacity( type == .owner ? 0.4 : 0)
+                        )
                 )
                 
                 ZStack {
