@@ -93,6 +93,7 @@ struct CustomNavBar<Content: View>: View {
                 .background(
                     Image(type.bgImageStr)
                         .resizable()
+                       
                 )
                 
                 ZStack {

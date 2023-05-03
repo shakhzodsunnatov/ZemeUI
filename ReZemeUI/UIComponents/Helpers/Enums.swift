@@ -41,6 +41,15 @@ enum AccountType: String {
         case .OWNER: return Color.secondaryPurple
         }
     }
+    
+    var bgImageStr: String {
+        switch self {
+        case .RENTER: return "top-background"
+        case .AGENT: return "top-background-secondary"
+        case .OWNER: return "top-background-owner"
+            
+        }
+    }
 }
 
 enum Method: String {

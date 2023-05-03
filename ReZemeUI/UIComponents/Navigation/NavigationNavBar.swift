@@ -81,7 +81,7 @@ struct NavigationNavBar<Content: View>: View {
                 .padding(.bottom, 23)
                 .padding(.horizontal, 20)
                 .background(
-                    Image(type == .RENTER ? "top-background" : "top-background-secondary")
+                    Image(type.bgImageStr)
                         .resizable()
                 )
                 

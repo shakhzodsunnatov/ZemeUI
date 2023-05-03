@@ -190,7 +190,7 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
-               
+                
                 NavigationLink(destination: {
                     AgentNotificationView()
                 }) {
@@ -250,7 +250,7 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
-
+                
                 NavigationLink(destination: {
                     RenterDocumentsView()
                 }) {
@@ -277,7 +277,7 @@ struct ContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
-
+                
                 NavigationLink(destination: {
                     PayForLease()
                 }) {
@@ -290,8 +290,8 @@ struct ContentView: View {
                         )
                 }
                 
-               NavigationLink(destination: {
-                   TransactionDetails()
+                NavigationLink(destination: {
+                    TransactionDetails()
                 }) {
                     Text("Transaction Details")
                         .foregroundColor(.white)
@@ -302,82 +302,169 @@ struct ContentView: View {
                         )
                 }
                 
+                
+            }
+            
+            Group {
+                NavigationLink(destination: {
+                    MyServiceDetailRenter()
+                }) {
+                    Text("My Service Detail Renter")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerNotificationView()
+                }) {
+                    Text("Owner Notification View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerEditProfileView()
+                }) {
+                    Text("Owner Edit Profile View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerPropertyStatisticsView()
+                }) {
+                    Text("Owner Property Statistics View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerApplicationsView()
+                }) {
+                    Text("Owner Applications View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerSpecificApplicationView()
+                }) {
+                    Text("Owner Specific Application View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerRegistarionVC()
+                }) {
+                    Text("Owner Registarion")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerAddMaintenaceContact()
+                }) {
+                    Text("Owner Add Maintenace Contact")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    ManageMaintenanceListVC()
+                }) {
+                    Text("Owner Manage Maintenance List")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerDocumentsView()
+                }) {
+                    Text("Owner Documents")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+            }
+            
+            Group {
+                NavigationLink(destination: {
+                    OwnerTransactionDetailView()
+                }) {
+                    Text("Owner Transaction Detail")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerCreateInvoiceView()
+                }) {
+                    Text("Owner Create Invoice")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+               
+                NavigationLink(destination: {
+                    OwnerServiceRequestDetailView()
+                }) {
+                    Text("Owner Service Request Detail")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
                
             }
-            
-            NavigationLink(destination: {
-                MyServiceDetailRenter()
-            }) {
-                Text("My Service Detail Renter")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            NavigationLink(destination: {
-                OwnerNotificationView()
-            }) {
-                Text("Owner Notification View")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            NavigationLink(destination: {
-                OwnerEditProfileView()
-            }) {
-                Text("Owner Edit Profile View")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            NavigationLink(destination: {
-                OwnerPropertyStatisticsView()
-            }) {
-                Text("Owner Property Statistics View")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            NavigationLink(destination: {
-                OwnerApplicationsView()
-            }) {
-                Text("Owner Applications View")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            NavigationLink(destination: {
-                OwnerSpecificApplicationView()
-            }) {
-                Text("Owner Specific Application View")
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.lightBlue)
-                    )
-            }
-            
-            
         }
         .padding()
         .navigationBarHidden(true)
