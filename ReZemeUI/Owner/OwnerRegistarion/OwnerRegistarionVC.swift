@@ -44,48 +44,39 @@ struct OwnerRegistarionVC: View {
                     .padding(.top, 40)
                     .padding(.bottom,20)
                     
-                    
-                    ZStack {
-                        Color.white
+
+                    VStack(alignment: .leading, spacing: 22) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            title
+                            dividerLine
+                        }
                         
-                        VStack(alignment: .leading, spacing: 22) {
-                            VStack(alignment: .leading, spacing: 5) {
-                                title
-                                dividerLine
+                        photoSelectButton
+                        Group {
+                            HStack(spacing: 10) {
+                                TextFieldWithIcon(image: "profile", topTitle: "First Name", text: $viewModel.model.name, textFiledStyle: .simple, emailError:$viewModel.firstname)
+                                
+                                TextFieldWithIcon(image: "profile", topTitle: "Middle Name", text: $viewModel.model.middleName, textFiledStyle: .simple, emailError:$viewModel.middlename)
                             }
                             
-                            photoSelectButton
-                            Group {
-                                HStack(spacing: 10) {
-                                    TextFieldWithIcon(image: "profile", topTitle: "First Name", text: $viewModel.model.name, textFiledStyle: .simple, emailError:$viewModel.firstname)
-                                    
-                                    TextFieldWithIcon(image: "profile", topTitle: "Middle Name", text: $viewModel.model.middleName, textFiledStyle: .simple, emailError:$viewModel.middlename)
-                                }
-                                
-                                TextFieldWithIcon(image: "profile", topTitle: "Last Name", text: $viewModel.model.lastname, textFiledStyle: .simple, emailError:$viewModel.lastname)
-                                
-                                TextFieldWithIcon(image: "briefcase", topTitle: "Company Name", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.company)
-                                
-                                TextFieldWithIcon(image: "call", topTitle: "Phone Number", text: $viewModel.model.phone, textFiledStyle: .simple, emailError:$viewModel.phone)
+                            TextFieldWithIcon(image: "profile", topTitle: "Last Name", text: $viewModel.model.lastname, textFiledStyle: .simple, emailError:$viewModel.lastname)
+                            
+                            TextFieldWithIcon(image: "briefcase", topTitle: "Company Name", text: $viewModel.model.company, textFiledStyle: .simple, emailError:$viewModel.company)
+                            
+                            TextFieldWithIcon(image: "call", topTitle: "Phone Number", text: $viewModel.model.phone, textFiledStyle: .simple, emailError:$viewModel.phone)
 
-//                                TextFieldWithIcon(image: "mail-agent", topTitle: "Email", text: $viewModel.model.email, textFiledStyle: .simple, emailError:$viewModel.email)
-
-//                                TextFieldWithIcon(image: "lock-agent", topTitle: "Password", text: $viewModel.model.password, textFiledStyle: .simple, emailError:$viewModel.password)
-
-//                                TextFieldWithIcon(image: "lock-agent", topTitle: "Confirm Password", text: $viewModel.confirmPasswordText, textFiledStyle: .simple, emailError:$viewModel.confirmpassword)
-                                
-                                TextFieldWithIcon(image: "edit", topTitle: "Bio",placeHolder: "Add a bio...", text: $viewModel.model.bio, textFiledStyle: .textView, emailError:$viewModel.confirmpassword)
-                                
-                                CheckButtonCustom(title: "By checking this box, you agree to the terms of service") { bool in
-                                    viewModel.model.agreement = bool
-                                }
-                            }
-                            .onChange(of: viewModel.model.phone) { newValue in
-                                self.viewModel.model.phone = format(with: "(XXX) XXX-XXXX", phone: newValue)
+                            
+                            TextFieldWithIcon(image: "edit", topTitle: "Bio",placeHolder: "Add a bio...", text: $viewModel.model.bio, textFiledStyle: .textView, emailError:$viewModel.confirmpassword)
+                            
+                            CheckButtonCustom(title: "By checking this box, you agree to the terms of service") { bool in
+                                viewModel.model.agreement = bool
                             }
                         }
-                        .padding(20)
+                        .onChange(of: viewModel.model.phone) { newValue in
+                            self.viewModel.model.phone = format(with: "(XXX) XXX-XXXX", phone: newValue)
+                        }
                     }
+                    .padding(20)
                     .roundedShadowNew()
                     .padding([.horizontal,.top],20)
                 }
