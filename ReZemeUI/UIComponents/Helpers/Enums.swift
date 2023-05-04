@@ -72,3 +72,35 @@ enum PriorityType: String, CaseIterable {
     case high = "High priority"
     case low = "Low priority"
 }
+
+enum PayStateType: CaseIterable {
+    case onTime, late, tooLate, pending, upcoming
+    
+    var description: String {
+        switch self {
+        case .onTime: return "On-Time"
+        case .late: return "Late"
+        case .tooLate: return "Late"
+        case .pending: return "Pending"
+        case .upcoming: return "Upcoming"
+        }
+    }
+    
+    var iconName: String {
+        switch self {
+        case .onTime: return "tick-circle_green"
+        case .late: return "danger"
+        case .tooLate: return "danger_red"
+        case .pending: return "refresh_blue"
+        case .upcoming: return "tick-circle"
+        }
+    }
+}
+
+
+struct PaymentModel {
+    let name: String
+    let price: String
+    let state: PayStateType
+    let date: Date
+}
