@@ -14,6 +14,8 @@ struct ToggleUI: View {
     
     @State var selectIndex = 0
     
+    @State private var isAppeared = false
+    
     
     var body: some View {
         GeometryReader { geo in
@@ -45,7 +47,7 @@ struct ToggleUI: View {
                     }
                 }
             }
-            .animation(.spring())
+            .animation(isAppeared ? .spring() : nil)
         }
         .padding(.horizontal,6)
         .padding(.vertical, 5)
@@ -54,6 +56,9 @@ struct ToggleUI: View {
             RoundedRectangle(cornerRadius: 8)
                 .strokeBorder(Color.textGray.opacity(0.3))
         )
+        .onAppear {
+            isAppeared = true
+        }
     }
 }
 
