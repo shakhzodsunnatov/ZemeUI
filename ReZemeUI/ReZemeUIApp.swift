@@ -17,12 +17,11 @@ struct ReZemeUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-//                if isRenter {
-//                    ContentView()
-//                } else {
-//                    NewContentView()
-//                }
-                MyHomeView()
+                if isRenter {
+                    ContentView()
+                } else {
+                    NewContentView()
+                }
             }
             .onTapGesture(count: 5) {
                 isRenter.toggle()

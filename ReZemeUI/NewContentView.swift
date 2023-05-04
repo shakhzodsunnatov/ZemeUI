@@ -21,6 +21,16 @@ struct NewContentView: View {
                     )
             }
             
+            NavigationLink(destination: { MyHomeView() }) {
+                Text("My Home View")
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.lightBlue)
+                    )
+            }
+            
             NavigationLink(destination: {
                 OwnerNotificationView()
             }) {
