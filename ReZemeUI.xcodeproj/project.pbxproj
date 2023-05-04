@@ -425,11 +425,11 @@
 			isa = PBXGroup;
 			children = (
 				2E512D832A016DA70042DA40 /* NewContentView.swift */,
+				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
+				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				9D6402692A01130C00C15A37 /* Owner */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
-				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
-				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2E99B5AE2A01142800113C34 /* MyServesRequest */,
 				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,

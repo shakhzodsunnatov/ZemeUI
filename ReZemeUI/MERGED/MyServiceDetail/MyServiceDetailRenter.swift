@@ -13,13 +13,21 @@ struct MyServiceDetailRenter: View {
     @State var descriptionTF = ""
     @State var images: [UIImage] = []
     @State var date = Date()
-    @State var time = "7:00"
+    @State var time = Date()
+    @State var hideTimePicker = true
     @State var canAccess = false
     @State var showCalendar = false
     @State var selectedTimeTypeIndex: Int = 2
     @State var isYES = true
     private let timeTypes = TimeType.allCases
     private let priorities = PriorityType.allCases
+    @State var showPhotoLibrary = false
+    @State var selectedImage: UIImage? = nil
+    private let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -48,8 +56,10 @@ struct MyServiceDetailRenter: View {
                     headerTitleImage(image: "gallery", title: "Add Photo")
                         .padding(.top, 22)
                     
-                    uploadPhotoView(photos: $images) {  }
-                        .padding(.top, 9)
+                    uploadPhotoView(photos: $images) {
+                        showPhotoLibrary = true
+                    }
+                    .padding(.top, 9)
                     
                     headerTitleImage(image: "timer-pause", title: "Select Urgency")
                         .padding(.top, 22)
@@ -101,8 +111,18 @@ struct MyServiceDetailRenter: View {
             }
         }
         .navigationRenter(title: "New Service Request")
-        .onChange(of: time) { newValue in
-            time = format(with: "XX:XX", phone: newValue)
+        
+        .sheet(isPresented: $showPhotoLibrary) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$selectedImage)
+        }
+        .onChange(of: selectedImage) { newValue in
+            if let selectedImage, !images.contains(selectedImage) {
+                images.append(selectedImage)
+            }
+        }
+        .onTapGesture {
+            dismissKeyboard()
+//            hideTimePicker = true
         }
     }
 }
@@ -236,37 +256,47 @@ extension MyServiceDetailRenter {
         .roundedShadow()
     }
     
-    private func preferredTime(time: Binding<String>) -> some View {
-        HStack {
-            TextField("7:00", text: time)
-                .autocorrectionDisabled()
-                .keyboardType(.numberPad)
-                .medium16
-                .foregroundColor(.black)
-            
-            Spacer()
-            
-            HStack(spacing: 6) {
-                
-                Picker(
-                    selection: $selectedTimeTypeIndex,
-                    label:
-                        Text("Time Type")
-                        .foregroundColor(.black)
-                        .medium16
-                ) {
-                    ForEach((0..<timeTypes.count), id:\.self) { index in
-                        Text(self.timeTypes[index].rawValue)
-                            .medium16
-                            .foregroundColor(.black)
-                            .tag(index)
+    private func preferredTime(time: Binding<Date>) -> some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text("\(time.wrappedValue, formatter: timeFormatter)")
+                    .medium16
+                    .foregroundColor(.black)
+                    .makeButton {
+                        hideTimePicker.toggle()
                     }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .accentColor(.black)
                 
+                Spacer()
+                
+                HStack(spacing: 6) {
+                    
+                    Picker(
+                        selection: $selectedTimeTypeIndex,
+                        label:
+                            Text("Time Type")
+                            .foregroundColor(.black)
+                            .medium16
+                    ) {
+                        ForEach((0..<timeTypes.count), id:\.self) { index in
+                            Text(self.timeTypes[index].rawValue)
+                                .medium16
+                                .foregroundColor(.black)
+                                .tag(index)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .accentColor(.black)
+                    
+                }
+                .frame(width: 80)
             }
-            .frame(width: 80)
+            
+            if !hideTimePicker {
+                DatePicker("Select Time", selection: time, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(.compact)
+            }
+            
+            
         }
         .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 14))
         .roundedShadowNew()

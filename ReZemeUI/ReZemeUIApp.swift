@@ -17,7 +17,14 @@ struct ReZemeUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MyServiceRequestView()
+                if isRenter {
+                    ContentView()
+                } else {
+                    NewContentView()
+                }
+            }
+            .onTapGesture(count: 5) {
+                isRenter.toggle()
             }
             .onAppear {
                 ZemeFonts.registerFonts()

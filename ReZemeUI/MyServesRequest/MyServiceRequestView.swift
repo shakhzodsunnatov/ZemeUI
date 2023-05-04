@@ -24,9 +24,13 @@ struct MyServiceRequestView: View {
                 .padding(.top, 9)
                 .padding(.horizontal,20)
             
-            ActionButton("Create Service Request")
-                .padding(.top, 15)
-                .padding(.horizontal, 20)
+            NavigationLink(destination: {
+                MyServiceDetailRenter()
+            }, label: {
+                ActionButton("Create Service Request", onlyLayer: false)
+            })
+            .padding(.top, 15)
+            .padding(.horizontal, 20)
             
             ToggleUI(titles: ["Open", "Completed"]) { index in}
                 .padding(.top, 15)
