@@ -74,6 +74,11 @@
 		2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */; };
 		2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */; };
 		2EC89CF82A03B9A700145F3A /* MyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89CF72A03B9A700145F3A /* MyHomeView.swift */; };
+		2EC89CFB2A03DF4400145F3A /* OwnerMessageRenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89CFA2A03DF4400145F3A /* OwnerMessageRenter.swift */; };
+		2EC89CFE2A03E0CF00145F3A /* OwnerRequestDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89CFD2A03E0CF00145F3A /* OwnerRequestDetail.swift */; };
+		2EC89D022A03E2FE00145F3A /* HomeApplicationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89D012A03E2FE00145F3A /* HomeApplicationItem.swift */; };
+		2EC89D042A03F34000145F3A /* DeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89D032A03F34000145F3A /* DeleteAlert.swift */; };
+		2EC89D072A03F79600145F3A /* TenantDetailsOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89D062A03F79600145F3A /* TenantDetailsOwner.swift */; };
 		2ECE121929FD600C00B60263 /* SavedListingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121829FD600C00B60263 /* SavedListingsView.swift */; };
 		2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121B29FD606200B60263 /* SavedItemView.swift */; };
 		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
@@ -234,6 +239,11 @@
 		2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithImageTitleTip.swift; sourceTree = "<group>"; };
 		2EC89CF72A03B9A700145F3A /* MyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeView.swift; sourceTree = "<group>"; };
+		2EC89CFA2A03DF4400145F3A /* OwnerMessageRenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMessageRenter.swift; sourceTree = "<group>"; };
+		2EC89CFD2A03E0CF00145F3A /* OwnerRequestDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRequestDetail.swift; sourceTree = "<group>"; };
+		2EC89D012A03E2FE00145F3A /* HomeApplicationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApplicationItem.swift; sourceTree = "<group>"; };
+		2EC89D032A03F34000145F3A /* DeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlert.swift; sourceTree = "<group>"; };
+		2EC89D062A03F79600145F3A /* TenantDetailsOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantDetailsOwner.swift; sourceTree = "<group>"; };
 		2ECE121829FD600C00B60263 /* SavedListingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsView.swift; sourceTree = "<group>"; };
 		2ECE121B29FD606200B60263 /* SavedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemView.swift; sourceTree = "<group>"; };
 		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
@@ -429,6 +439,9 @@
 				2E512D832A016DA70042DA40 /* NewContentView.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				2EC89D052A03F6C100145F3A /* TenantDetailsView */,
+				2EC89CFC2A03E0B500145F3A /* OwnerRequestDetail */,
+				2EC89CF92A03DF0700145F3A /* OwnerMessageRenter */,
 				2EC89CF62A03B8DE00145F3A /* MyHome */,
 				9D6402692A01130C00C15A37 /* Owner */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
@@ -671,8 +684,42 @@
 			isa = PBXGroup;
 			children = (
 				2EC89CF72A03B9A700145F3A /* MyHomeView.swift */,
+				2EC89D002A03E2D200145F3A /* Applications */,
 			);
 			path = MyHome;
+			sourceTree = "<group>";
+		};
+		2EC89CF92A03DF0700145F3A /* OwnerMessageRenter */ = {
+			isa = PBXGroup;
+			children = (
+				2EC89CFA2A03DF4400145F3A /* OwnerMessageRenter.swift */,
+			);
+			path = OwnerMessageRenter;
+			sourceTree = "<group>";
+		};
+		2EC89CFC2A03E0B500145F3A /* OwnerRequestDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2EC89CFD2A03E0CF00145F3A /* OwnerRequestDetail.swift */,
+			);
+			path = OwnerRequestDetail;
+			sourceTree = "<group>";
+		};
+		2EC89D002A03E2D200145F3A /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				2EC89D012A03E2FE00145F3A /* HomeApplicationItem.swift */,
+				2EC89D032A03F34000145F3A /* DeleteAlert.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		2EC89D052A03F6C100145F3A /* TenantDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				2EC89D062A03F79600145F3A /* TenantDetailsOwner.swift */,
+			);
+			path = TenantDetailsView;
 			sourceTree = "<group>";
 		};
 		2ECE121729FD5FC600B60263 /* SavedListings */ = {
@@ -1185,6 +1232,7 @@
 				2E78201429EBB14800F3C5A9 /* Constants.swift in Sources */,
 				2E512D842A016DA70042DA40 /* NewContentView.swift in Sources */,
 				2EEED74129EC1D49005AD516 /* MessageRenter.swift in Sources */,
+				2EC89D042A03F34000145F3A /* DeleteAlert.swift in Sources */,
 				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
 				9D80472B29FEEF63004E5AD5 /* TransactionDetails.swift in Sources */,
@@ -1235,6 +1283,7 @@
 				9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */,
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
+				2EC89D022A03E2FE00145F3A /* HomeApplicationItem.swift in Sources */,
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */,
 				9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */,
@@ -1266,6 +1315,7 @@
 				9DB1A85929F698CB0045D9BD /* AgentApplicationsView.swift in Sources */,
 				2E84CE0529F548470029FDBD /* SettingsRenter.swift in Sources */,
 				2EEED74729EC1D49005AD516 /* UserChat.swift in Sources */,
+				2EC89CFE2A03E0CF00145F3A /* OwnerRequestDetail.swift in Sources */,
 				2E78200029EBB05800F3C5A9 /* ColorGradient.swift in Sources */,
 				9DB0DB1029F091BD00EB9283 /* PlaidVerifiedView.swift in Sources */,
 				2EF7742329EDC86300AA7D5C /* FileModel.swift in Sources */,
@@ -1276,6 +1326,7 @@
 				2E1DB69F29F6FE2A00A03848 /* PhotoCaptureView.swift in Sources */,
 				2EEB21ED29EF7410005D13A7 /* AgentAlarmChat.swift in Sources */,
 				2EEB218E29EF6A05005D13A7 /* AgentChatItem.swift in Sources */,
+				2EC89D072A03F79600145F3A /* TenantDetailsOwner.swift in Sources */,
 				9D64026F2A01168000C15A37 /* OwnerEditProfile.swift in Sources */,
 				2E84CE0329F12E330029FDBD /* ActionButton.swift in Sources */,
 				2E4BEE2329F5A8FA005CD69D /* MyDocumentsView.swift in Sources */,
@@ -1320,6 +1371,7 @@
 				9D2694BE29EDD28500AA6272 /* SimpleTextCheckView.swift in Sources */,
 				2E78200D29EBB13200F3C5A9 /* NavigationNavBar.swift in Sources */,
 				2E78202229EBB2C600F3C5A9 /* AsyncImageTool.swift in Sources */,
+				2EC89CFB2A03DF4400145F3A /* OwnerMessageRenter.swift in Sources */,
 				2E512D822A0166260042DA40 /* ProgressUI.swift in Sources */,
 				9D9225DB29F846BA00DF5B77 /* CheckButtonCustom.swift in Sources */,
 				2E78200529EBB0AB00F3C5A9 /* CustomAlert.swift in Sources */,

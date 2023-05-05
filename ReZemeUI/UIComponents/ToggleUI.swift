@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ToggleUI: View {
     
+    @Binding var changeValue: Int
+    
     let titles: [String]
     let valueChanged: (Int)-> Void
     
@@ -16,6 +18,13 @@ struct ToggleUI: View {
     
     @State private var isAppeared = false
     
+    init(changeValue: Binding<Int>? = nil, titles: [String], valueChanged: @escaping (Int) -> Void, selectIndex: Int = 0, isAppeared: Bool = false) {
+        self._changeValue = changeValue ?? .constant(0)
+        self.titles = titles
+        self.valueChanged = valueChanged
+        self.selectIndex = selectIndex
+        self.isAppeared = isAppeared
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -34,7 +43,7 @@ struct ToggleUI: View {
                     ForEach((0..<titles.count), id: \.self) { index in
                         
                         Text(titles[index])
-                            .semibold14
+                            .regular14
                             .foregroundColor(selectIndex == index ?  .white : .textGray)
                             .frame(maxWidth: .infinity)
                             .makeButton {
@@ -59,11 +68,16 @@ struct ToggleUI: View {
         .onAppear {
             isAppeared = true
         }
+        .onChange(of: changeValue) { newValue in
+            if newValue != selectIndex {
+                selectIndex = newValue
+            }
+        }
     }
 }
 
 struct ToggleUI_Previews: PreviewProvider {
     static var previews: some View {
-        ToggleUI(titles: []) { _ in }
+        ToggleUI(titles: ["asdsa", "dqwsds"]) { _ in }
     }
 }
