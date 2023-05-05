@@ -178,6 +178,18 @@ struct NewContentView: View {
                         )
                 }
                 
+                NavigationLink(destination: {
+                    TenantDetailsOwner()
+                }) {
+                    Text("Tenant Details Owner")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
             }
         }
     }
