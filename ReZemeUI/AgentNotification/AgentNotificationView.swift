@@ -44,24 +44,26 @@ struct NotificationCellsecond: View {
     @State var isactive: Bool = false
     var title: String
     var image: String
+    var hideImage: Bool = false
     
     var body: some View {
         Button {
             
         } label: {
             HStack(spacing:0) {
-                
-                Image(image)
-                    .resizable()
-                    .renderingMode(.template)
-                    .scaledToFit()
-                    .foregroundColor(Color.darkBlue)
-                    .padding(15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.darkBlue.opacity(0))
-                    )
-                    .frame(width: 52, height: 52)
+                if !hideImage {
+                    Image(image)
+                        .resizable()
+                        .renderingMode(.template)
+                        .scaledToFit()
+                        .foregroundColor(Color.darkBlue)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.darkBlue.opacity(0))
+                        )
+                        .frame(width: 52, height: 52)
+                }
                 
                 Text(title)
                     .medium14
@@ -157,7 +159,7 @@ struct NotificationCell: View {
             }
             .padding(.trailing,10)
             if isactive {
-                NotificationCellsecond(title: "Contract Signed", image: "")
+                NotificationCellsecond(title: "Contract Signed", image: "",hideImage: true)
                     .padding(.top,12)
                     .padding(.horizontal,13)
             }

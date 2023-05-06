@@ -17,14 +17,14 @@ struct OwnerPropertyStatisticsView: View {
     ]
     
     let secondArray: [AgentProStatisticDM] = [
-        .init(icon: "eye", title: "100", subtitle: "Total Views"),
-        .init(icon: "eye", title: "10", subtitle: "Total Saves"),
-        .init(icon: "clock 1", title: "1 min", subtitle: "Total Shares")
+        .init(icon: "eye", title: "100", subtitle: "Same User Views"),
+        .init(icon: "eye", title: "10", subtitle: "Views Last 30 mins"),
+        .init(icon: "clock 1", title: "1 min", subtitle: "Avg. Time Spent")
     ]
     
     let thirdArray: [AgentProStatisticDM] = [
-        .init(icon: "wallet", title: "85K", subtitle: "Total Views"),
-        .init(icon: "card-tick", title: "700", subtitle: "Total Saves"),
+        .init(icon: "wallet", title: "85K", subtitle: "Avg. Income"),
+        .init(icon: "card-tick", title: "700", subtitle: "Avg. Credit Score"),
         .init(icon: "", title: "", subtitle: "")
     ]
     

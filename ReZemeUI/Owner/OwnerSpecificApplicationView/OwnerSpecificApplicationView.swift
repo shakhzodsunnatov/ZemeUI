@@ -266,11 +266,11 @@ extension OwnerSpecificApplicationView {
                         .foregroundColor(agent ? .darkBlue : .purpleLow )
                     
                     Text("In range")
-                        .regular14
+                        .semibold14
                         .foregroundColor(agent ? .darkBlue : .purpleLow )
                 }
                 .padding(6)
-                .background(agent ? Color.darkBlue.opacity(0.1) : Color.purpleLow.opacity(0.1))
+                .background(agent ? Color.darkBlue.opacity(0.2) : Color.purpleLow.opacity(0.1))
                 .cornerRadius(8)
             }
             
@@ -305,12 +305,12 @@ extension OwnerSpecificApplicationView {
                 }
                 
                 HStack(spacing: 30) {
-                    Text("720")
-                        .foregroundColor(.purpleLow)
+                    Text(agent ? "$155k" : "720")
+                        .foregroundColor(!agent ? Color.darkBlue : Color.purpleLow)
                         .medium12
                     
-                    Text("740")
-                        .foregroundColor(.darkBlue)
+                    Text(agent ? "$225k" : "740" )
+                        .foregroundColor(agent ? Color.darkBlue : Color.purpleLow)
                         .medium12
                 }
                 .offset(x: 80)
@@ -371,7 +371,7 @@ extension OwnerSpecificApplicationView {
                     .scaledToFit()
                     .foregroundColor(.purpleLow)
                     .frame(width: 19, height: 12)
-                    .rotationEffect(.degrees(isActive ? 90:0))
+                    .rotationEffect(.degrees(isActive ? -90 : 90))
                     .background(
                     Circle()
                         .fill(Color.purpleLow.opacity(0.1))
