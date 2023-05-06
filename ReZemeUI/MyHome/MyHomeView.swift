@@ -59,9 +59,6 @@ struct MyHomeView: View {
 
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .onChange(of: selectedIndex) { newValue in
-                selectedIndex = newValue
-            }
         }
         .onTapGesture {
             dismissKeyboard()

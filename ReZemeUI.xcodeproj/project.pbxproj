@@ -69,6 +69,10 @@
 		2E99B5B02A01144B00113C34 /* MyServiceRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99B5AF2A01144B00113C34 /* MyServiceRequestView.swift */; };
 		2E99B5B22A0159F300113C34 /* ToggleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99B5B12A0159F300113C34 /* ToggleUI.swift */; };
 		2EA365BF2A04EF1F000C9A63 /* SelectAgentOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */; };
+		2EA365C22A063D6E000C9A63 /* ChatOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365C12A063D6E000C9A63 /* ChatOwnerView.swift */; };
+		2EA365C42A063DF6000C9A63 /* ChatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365C32A063DF6000C9A63 /* ChatCard.swift */; };
+		2EA365C62A063E24000C9A63 /* ChatProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365C52A063E24000C9A63 /* ChatProgress.swift */; };
+		2EA365C82A064396000C9A63 /* TenantsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365C72A064396000C9A63 /* TenantsCard.swift */; };
 		2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */; };
 		2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */; };
 		2EC1DD9B29FA712B006DA0BC /* RenterMainExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */; };
@@ -235,6 +239,10 @@
 		2E99B5AF2A01144B00113C34 /* MyServiceRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServiceRequestView.swift; sourceTree = "<group>"; };
 		2E99B5B12A0159F300113C34 /* ToggleUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleUI.swift; sourceTree = "<group>"; };
 		2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgentOwner.swift; sourceTree = "<group>"; };
+		2EA365C12A063D6E000C9A63 /* ChatOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatOwnerView.swift; sourceTree = "<group>"; };
+		2EA365C32A063DF6000C9A63 /* ChatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCard.swift; sourceTree = "<group>"; };
+		2EA365C52A063E24000C9A63 /* ChatProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProgress.swift; sourceTree = "<group>"; };
+		2EA365C72A064396000C9A63 /* TenantsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantsCard.swift; sourceTree = "<group>"; };
 		2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
 		2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMainExView.swift; sourceTree = "<group>"; };
@@ -441,6 +449,7 @@
 				2E512D832A016DA70042DA40 /* NewContentView.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				2EA365C02A063D56000C9A63 /* ChatOwnerView */,
 				2EA365BD2A04EF08000C9A63 /* SelectAgentOwner */,
 				2EC89D052A03F6C100145F3A /* TenantDetailsView */,
 				2EC89CFC2A03E0B500145F3A /* OwnerRequestDetail */,
@@ -662,6 +671,17 @@
 				2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */,
 			);
 			path = SelectAgentOwner;
+			sourceTree = "<group>";
+		};
+		2EA365C02A063D56000C9A63 /* ChatOwnerView */ = {
+			isa = PBXGroup;
+			children = (
+				2EA365C12A063D6E000C9A63 /* ChatOwnerView.swift */,
+				2EA365C32A063DF6000C9A63 /* ChatCard.swift */,
+				2EA365C72A064396000C9A63 /* TenantsCard.swift */,
+				2EA365C52A063E24000C9A63 /* ChatProgress.swift */,
+			);
+			path = ChatOwnerView;
 			sourceTree = "<group>";
 		};
 		2EB5030529F8A888006FAFE1 /* EmptyViews */ = {
@@ -1279,9 +1299,11 @@
 				9DB1A86229F6A1670045D9BD /* AgentSpecificApplicationView.swift in Sources */,
 				2E303C3E29F980FA00C93E20 /* CheckableImageWithTitle.swift in Sources */,
 				9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */,
+				2EA365C22A063D6E000C9A63 /* ChatOwnerView.swift in Sources */,
 				9D02362A2A02946A00131CD0 /* OwnerCreateInvoiceView.swift in Sources */,
 				2EEB218629EF6553005D13A7 /* MessageAgent.swift in Sources */,
 				9DB1A85029F692AE0045D9BD /* ItemImageBottomTextView .swift in Sources */,
+				2EA365C82A064396000C9A63 /* TenantsCard.swift in Sources */,
 				9D0236192A02633800131CD0 /* OwnerRegistarionVM.swift in Sources */,
 				2E781FDE29EBADC700F3C5A9 /* CreditCheckView.swift in Sources */,
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
@@ -1296,6 +1318,7 @@
 				2E781FE029EBADC700F3C5A9 /* RequestedDocCard.swift in Sources */,
 				2EF7741F29EDB58200AA7D5C /* UploadFileView.swift in Sources */,
 				2EC89D022A03E2FE00145F3A /* HomeApplicationItem.swift in Sources */,
+				2EA365C62A063E24000C9A63 /* ChatProgress.swift in Sources */,
 				2E781FDF29EBADC700F3C5A9 /* CongratsView.swift in Sources */,
 				2EF7742729EDD24A00AA7D5C /* MeetingTypeAlert.swift in Sources */,
 				9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */,
@@ -1362,6 +1385,7 @@
 				2E99B5B22A0159F300113C34 /* ToggleUI.swift in Sources */,
 				2E3264EF29EDA165000E3435 /* SelectDocumentTypeView.swift in Sources */,
 				9D85A07329ED78A5004FEAF3 /* ParticleScene.swift in Sources */,
+				2EA365C42A063DF6000C9A63 /* ChatCard.swift in Sources */,
 				9D2694C029EDD67400AA6272 /* CreditCheckVM.swift in Sources */,
 				9D64027A2A011A9D00C15A37 /* OwnerSpecificApplicationView.swift in Sources */,
 				2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */,
