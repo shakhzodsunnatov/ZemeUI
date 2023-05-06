@@ -193,7 +193,7 @@ struct NewContentView: View {
                 NavigationLink(destination: {
                     SelectAgentOwner()
                 }) {
-                    Text("Select an Agent Owner View")
+                    Text("Select an Agent View Owner")
                         .foregroundColor(.white)
                         .padding(15)
                         .background(
@@ -202,6 +202,17 @@ struct NewContentView: View {
                         )
                 }
                 
+                NavigationLink(destination: {
+                    ChatOwnerView()
+                }) {
+                    Text("Chat View Owner")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
     }
