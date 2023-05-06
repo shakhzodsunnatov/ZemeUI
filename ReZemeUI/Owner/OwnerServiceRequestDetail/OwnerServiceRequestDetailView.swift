@@ -22,7 +22,7 @@ struct OwnerServiceRequestDetailView: View {
         ScrollView {
             VStack(alignment: .leading,spacing: 20) {
                 fistCell()
-                
+                    
                 centerCell()
                 Text("Assignee Information")
                     .semibold18
@@ -32,6 +32,7 @@ struct OwnerServiceRequestDetailView: View {
                 lastCell()
             }
             .padding(.horizontal,20)
+            .padding(.vertical,12)
         }
         .navigationOwner(title: "Service Request Details")
     }
