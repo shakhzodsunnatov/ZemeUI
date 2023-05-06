@@ -27,7 +27,7 @@ struct CustomNavBar<Content: View>: View {
     init(
         @ViewBuilder content: () -> Content,
         title: String = "Title",
-        style: HeaderStyle = .filteredinput,
+        style: HeaderStyle = .customimagetitle,
         type: HeaderType = .buyer,
         image: String = "",
         action: @escaping () -> Void = {},

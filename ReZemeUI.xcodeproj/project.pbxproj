@@ -68,6 +68,7 @@
 		2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */; };
 		2E99B5B02A01144B00113C34 /* MyServiceRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99B5AF2A01144B00113C34 /* MyServiceRequestView.swift */; };
 		2E99B5B22A0159F300113C34 /* ToggleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99B5B12A0159F300113C34 /* ToggleUI.swift */; };
+		2EA365BF2A04EF1F000C9A63 /* SelectAgentOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */; };
 		2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */; };
 		2EB5030929F8A888006FAFE1 /* ApplicationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */; };
 		2EC1DD9B29FA712B006DA0BC /* RenterMainExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */; };
@@ -233,6 +234,7 @@
 		2E84CE0A29F54DFB0029FDBD /* ButtonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMaker.swift; sourceTree = "<group>"; };
 		2E99B5AF2A01144B00113C34 /* MyServiceRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServiceRequestView.swift; sourceTree = "<group>"; };
 		2E99B5B12A0159F300113C34 /* ToggleUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleUI.swift; sourceTree = "<group>"; };
+		2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgentOwner.swift; sourceTree = "<group>"; };
 		2EB5030629F8A888006FAFE1 /* SavedListingsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListingsEmptyView.swift; sourceTree = "<group>"; };
 		2EB5030729F8A888006FAFE1 /* ApplicationsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsEmptyView.swift; sourceTree = "<group>"; };
 		2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMainExView.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				2E512D832A016DA70042DA40 /* NewContentView.swift */,
 				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				2EA365BD2A04EF08000C9A63 /* SelectAgentOwner */,
 				2EC89D052A03F6C100145F3A /* TenantDetailsView */,
 				2EC89CFC2A03E0B500145F3A /* OwnerRequestDetail */,
 				2EC89CF92A03DF0700145F3A /* OwnerMessageRenter */,
@@ -651,6 +654,14 @@
 				2E99B5AF2A01144B00113C34 /* MyServiceRequestView.swift */,
 			);
 			path = MyServesRequest;
+			sourceTree = "<group>";
+		};
+		2EA365BD2A04EF08000C9A63 /* SelectAgentOwner */ = {
+			isa = PBXGroup;
+			children = (
+				2EA365BE2A04EF1F000C9A63 /* SelectAgentOwner.swift */,
+			);
+			path = SelectAgentOwner;
 			sourceTree = "<group>";
 		};
 		2EB5030529F8A888006FAFE1 /* EmptyViews */ = {
@@ -1235,6 +1246,7 @@
 				2EC89D042A03F34000145F3A /* DeleteAlert.swift in Sources */,
 				2ECE122329FD68D000B60263 /* DocumentItemCell.swift in Sources */,
 				2E78201729EBB2A300F3C5A9 /* AsyncImage.swift in Sources */,
+				2EA365BF2A04EF1F000C9A63 /* SelectAgentOwner.swift in Sources */,
 				9D80472B29FEEF63004E5AD5 /* TransactionDetails.swift in Sources */,
 				9D6402742A01190700C15A37 /* OwnerPropertyStatisticsView.swift in Sources */,
 				2E32B9C529EC699000B96558 /* MessageRenterViewModel.swift in Sources */,
