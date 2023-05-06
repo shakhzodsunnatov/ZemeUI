@@ -73,6 +73,7 @@
 		2EC1DD9B29FA712B006DA0BC /* RenterMainExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */; };
 		2EC1DD9D29FA7DDA006DA0BC /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */; };
 		2EC1DDA029FA934A006DA0BC /* HeaderWithImageTitleTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */; };
+		2EC89CF82A03B9A700145F3A /* MyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC89CF72A03B9A700145F3A /* MyHomeView.swift */; };
 		2ECE121929FD600C00B60263 /* SavedListingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121829FD600C00B60263 /* SavedListingsView.swift */; };
 		2ECE121C29FD606200B60263 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121B29FD606200B60263 /* SavedItemView.swift */; };
 		2ECE121E29FD609400B60263 /* SavedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECE121D29FD609400B60263 /* SavedButton.swift */; };
@@ -232,6 +233,7 @@
 		2EC1DD9A29FA712B006DA0BC /* RenterMainExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenterMainExView.swift; sourceTree = "<group>"; };
 		2EC1DD9C29FA7DDA006DA0BC /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		2EC1DD9F29FA934A006DA0BC /* HeaderWithImageTitleTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithImageTitleTip.swift; sourceTree = "<group>"; };
+		2EC89CF72A03B9A700145F3A /* MyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeView.swift; sourceTree = "<group>"; };
 		2ECE121829FD600C00B60263 /* SavedListingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListingsView.swift; sourceTree = "<group>"; };
 		2ECE121B29FD606200B60263 /* SavedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemView.swift; sourceTree = "<group>"; };
 		2ECE121D29FD609400B60263 /* SavedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedButton.swift; sourceTree = "<group>"; };
@@ -425,11 +427,12 @@
 			isa = PBXGroup;
 			children = (
 				2E512D832A016DA70042DA40 /* NewContentView.swift */,
+				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
+				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
+				2EC89CF62A03B8DE00145F3A /* MyHome */,
 				9D6402692A01130C00C15A37 /* Owner */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
-				2E781FC929EBAD0700F3C5A9 /* ContentView.swift */,
-				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2E99B5AE2A01142800113C34 /* MyServesRequest */,
 				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
@@ -662,6 +665,14 @@
 				2E731CCE29FBEF84000EE348 /* RenterFilterView_UI.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		2EC89CF62A03B8DE00145F3A /* MyHome */ = {
+			isa = PBXGroup;
+			children = (
+				2EC89CF72A03B9A700145F3A /* MyHomeView.swift */,
+			);
+			path = MyHome;
 			sourceTree = "<group>";
 		};
 		2ECE121729FD5FC600B60263 /* SavedListings */ = {
@@ -1185,6 +1196,7 @@
 				2EEED74629EC1D49005AD516 /* ClientChat.swift in Sources */,
 				2E303C3929F949CF00C93E20 /* NeighborhoodModel.swift in Sources */,
 				2EEED74A29EC1D49005AD516 /* MessageType.swift in Sources */,
+				2EC89CF82A03B9A700145F3A /* MyHomeView.swift in Sources */,
 				9DB1A85229F692D90045D9BD /* TextWithStroke.swift in Sources */,
 				2E99B5B02A01144B00113C34 /* MyServiceRequestView.swift in Sources */,
 				2E78200329EBB08000F3C5A9 /* PrimaryTextField.swift in Sources */,
