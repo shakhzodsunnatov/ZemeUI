@@ -190,6 +190,18 @@ struct NewContentView: View {
                         )
                 }
                 
+                NavigationLink(destination: {
+                    SelectAgentOwner()
+                }) {
+                    Text("Select an Agent Owner View")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
             }
         }
     }
