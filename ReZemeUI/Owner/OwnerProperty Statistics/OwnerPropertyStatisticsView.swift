@@ -34,6 +34,11 @@ struct OwnerPropertyStatisticsView: View {
         GridItem(.flexible(), spacing: 10 , alignment: .leading)
     ]
     
+    var gridChart: [GridItem] = [
+        GridItem(.flexible(), spacing: 10 , alignment: .leading),
+        GridItem(.flexible(), spacing: 10 , alignment: .leading)
+    ]
+    
     var body: some View {
         CustomNavBar(
             content: {
@@ -127,37 +132,41 @@ extension OwnerPropertyStatisticsView {
     }
     
     func chartViews() -> some View {
+        
         HStack(spacing: 10) {
-            
-            VStack(alignment: .leading,spacing: 4) {
-                Text("Applications per day")
-                    .medium12
+            LazyVGrid(columns: gridChart, spacing: 14) {
+                VStack(alignment: .leading,spacing: 4) {
+                    Text("Applications per day")
+                        .medium12
+
+                    Text("Last 7 days")
+                        .regular11
+
+                    if #available(iOS 16.0, *) {
+                        CharViewNew()
+                    } else {
+
+                    }
+                }
+                .padding(10)
+                .roundedShadow()
                 
-                Text("Last 6 days")
-                    .regular11
-                
-                HomeChart(data: [55,98,52,88,87,65], purpleMode: false)
-                    .frame(height: 150)
-                    .padding(.top,5)
+                VStack(alignment: .leading,spacing: 4) {
+                    Text("Applications per day")
+                        .medium12
+
+                    Text("Last 7 days")
+                        .regular11
+
+                    if #available(iOS 16.0, *) {
+                        CharViewNew()
+                    } else {
+
+                    }
+                }
+                .padding(10)
+                .roundedShadow()
             }
-            .padding(10)
-            .padding(.bottom,20)
-            .roundedShadow()
-            
-            VStack(alignment: .leading,spacing: 4) {
-                Text("Applications per day")
-                    .medium12
-                
-                Text("Last 6 days")
-                    .regular11
-                
-                HomeChart(data: [55,98,52,88,87,65], purpleMode: false)
-                    .frame(height: 150)
-                    .padding(.top,5)
-            }
-            .padding(10)
-            .padding(.bottom,20)
-            .roundedShadow()
         }
         .padding(.horizontal,20)
     }

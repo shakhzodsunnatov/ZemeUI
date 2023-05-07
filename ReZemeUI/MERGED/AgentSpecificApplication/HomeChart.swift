@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 //import ZemeDesign
 
 public struct HomeChart: View {
@@ -62,7 +63,7 @@ public struct HomeChart: View {
                                     VerticalAxis()
                                      
                                 }
-                                // BarChart and Grid
+//                                 BarChart and Grid
                                 ChartGrid(lines: 6) { BarChart() }
                                 Spacer()
                             }
@@ -84,6 +85,77 @@ struct HomeChart_Previews: PreviewProvider {
         HomeChart()
     }
 }
+
+struct HomeChartNew_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeChartNew()
+    }
+}
+
+public struct HomeChartNew: View {
+    var data: [Double] = [10,20,30,40,50,60,70]
+    var months = ["Jan 18", "Jan 19", "Jan 20", "Jan 21", "Jan 22", "Jan 23", "Jan 24"]
+    var array = ["0","50","100","150"]
+    var increment: Int = 50
+    var purpleMode: Bool = true
+    
+    private func format(number: Int) -> String {
+        return "\(number/10)"
+    }
+    
+    private func VerticalAxis() -> some View {
+        HStack {
+            VStack {
+                ForEach(array.reversed(), id: \.self) { i in
+                    if !(array.last == i) {
+                        Spacer()
+                    }
+                    Text(i)
+                        .regular(size: 12)
+                        .foregroundColor(.black)
+                    
+                }
+            }
+            Rectangle()
+                .fill(Color.black.opacity(0.5))
+                .frame(width: 1)
+                
+        }
+    }
+    
+    public var body: some View {
+        
+        CardView(showShadow: false) {
+            VStack(spacing: 0) {
+                HStack {
+                    // Y-Axis
+                    VStack {
+
+                        VerticalAxis()
+
+                    }
+                    // BarChart and Grid
+                    ChartGrid(lines: 4) { BarChart() }
+                }
+                .padding(.vertical, 5)
+
+                HStack(alignment: .center,spacing: 0) {
+                    ForEach(0..<data.count, id:\.self) { i in
+//                        Spacer()
+                        Text("\(months[i])")
+                            .regular(size: 11)
+                            .foregroundColor(.black)
+                            .rotated(Angle(degrees: -45))
+//                        Spacer()
+                    }
+                }
+            }
+        }
+        .data(data)
+        .chartStyle(purpleMode ? Color.chart : Color.chartpurple)
+    }
+}
+
 
 /// View containing data and some kind of chart content
 public struct CardView<Content: View>: View, ChartBase {
@@ -561,3 +633,5 @@ public class ChartValue: ObservableObject {
     @Published var currentValue: Double = 0
     @Published var interactionInProgress: Bool = false
 }
+
+

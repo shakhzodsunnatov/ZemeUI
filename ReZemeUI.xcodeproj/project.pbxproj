@@ -141,6 +141,7 @@
 		9D6402742A01190700C15A37 /* OwnerPropertyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */; };
 		9D6402772A01197F00C15A37 /* OwnerApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */; };
 		9D64027A2A011A9D00C15A37 /* OwnerSpecificApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */; };
+		9D744B702A07D13D00859A05 /* CharViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D744B6F2A07D13D00859A05 /* CharViewNew.swift */; };
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472729FEDD48004E5AD5 /* PayForLease.swift */; };
@@ -302,6 +303,7 @@
 		9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPropertyStatisticsView.swift; sourceTree = "<group>"; };
 		9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerApplicationsView.swift; sourceTree = "<group>"; };
 		9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSpecificApplicationView.swift; sourceTree = "<group>"; };
+		9D744B6F2A07D13D00859A05 /* CharViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharViewNew.swift; sourceTree = "<group>"; };
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D80472729FEDD48004E5AD5 /* PayForLease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayForLease.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				2E781FC729EBAD0700F3C5A9 /* ReZemeUIApp.swift */,
 				2EC89CF62A03B8DE00145F3A /* MyHome */,
 				9D6402692A01130C00C15A37 /* Owner */,
+				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E99B5AE2A01142800113C34 /* MyServesRequest */,
@@ -629,7 +632,6 @@
 				9D80472629FEDD25004E5AD5 /* PayForLease */,
 				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
 				9D141DD729F94F3900CA6E23 /* Agent Auth */,
-				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
 			);
 			path = MERGED;
 			sourceTree = "<group>";
@@ -925,7 +927,8 @@
 				9D141DDD29F9567E00CA6E23 /* AgentProStatisticView.swift */,
 				9D141DDF29F9618F00CA6E23 /* LineChart.swift */,
 			);
-			path = AgentProperyStatistics;
+			name = AgentProperyStatistics;
+			path = MERGED/AgentProperyStatistics;
 			sourceTree = "<group>";
 		};
 		9D141DE229F99B0100CA6E23 /* AgentNotification */ = {
@@ -977,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */,
+				9D744B6F2A07D13D00859A05 /* CharViewNew.swift */,
 			);
 			path = "OwnerProperty Statistics";
 			sourceTree = "<group>";
@@ -1239,6 +1243,7 @@
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
+				9D744B702A07D13D00859A05 /* CharViewNew.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E731CCA29FBDD1D000EE348 /* TimePickerUI.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,
