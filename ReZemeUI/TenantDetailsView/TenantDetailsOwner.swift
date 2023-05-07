@@ -1,5 +1,5 @@
 //
-//  MyHomeView.swift
+//  TenantDetailsOwner.swift
 //  ReZemeUI
 //
 //  Created by Shakhzod on 04/05/23.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct MyHomeView: View {
-    
-    @State var selectedIndex = 0
+struct TenantDetailsOwner: View {
     
     private let icons: [String] = [
         "big-beds",
@@ -28,102 +26,62 @@ struct MyHomeView: View {
         "Apr",
         "May"
     ]
+    private let leaseTitles = [
+        "Lease Term",
+        "Lease Start",
+        "Lease End"
+    ]
+    private let leaseDates = [
+        "12 Months",
+        "14 Mar 2023",
+        "30 Mar 2023"
+    ]
     private let payStatus = PayStateType.allCases
     @State var showTips = 9999
     private let priceTitle = ["Paid","Overdue"]
     private let priceStr = ["$40,735.84","$119.96"]
-    @State var searchText = ""
-    private var originalPaymentHistory = paymentMockData
-    @State var listHistory: [PaymentModel] = paymentMockData
-    @State var mockProperties = Array(repeating: mockProperty, count: 4)
-    @State var deleteIndex = 0
-    @State var showDeleteAlert = false
+    @State var assignButtonActive = false
     
     
     var body: some View {
-        VStack(spacing: 0) {
-            
-            ToggleUI(changeValue: $selectedIndex, titles: ["Manage My Home", "Applications"]) { index in
-                selectedIndex = index
-            }
-            .padding(.top, 27)
-            .padding(.horizontal, 20)
-            
-            TabView(selection: $selectedIndex) {
-                
-                managerMyHomeView
-                    .tag(0)
-                
-                applicationMyHomeView
-                    .tag(1)
-
-            }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-        }
-        .onTapGesture {
-            dismissKeyboard()
-            showTips = 999
-        }
-        .navigationRenter(
-            title: "My Home",
-            rightButton: navBarButton {
-                //TODO: - Nav Bar Profile Button action
-            }
-        )
-        .edgesIgnoringSafeArea(.bottom)
-        
-        .deleteAlert(
-            isActive: $showDeleteAlert,
-            yesAction: {
-                mockProperties.remove(at: deleteIndex)
-                showDeleteAlert = false
-            },
-            noAction: {
-                showDeleteAlert = false
-            }
-        )
-    }
-}
-
-
-//MARK: - Manager My Home
-
-extension MyHomeView {
-    
-    private var managerMyHomeView: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
                 
+                profileUI()
+                    .padding([.horizontal, .top], 20)
+                
                 VStack(spacing: 0) {
-
+                    
                     imageUI(name: "Sven LIC", image: UIImage(named: "mockHomeImage")!)
-
+                    
                     ZStack(alignment: .top) {
                         VStack(spacing:0) {
                             subtitlesUI()
                                 .padding(.top, 11)
-
+                            
                             leaseTermsLabel()
                                 .padding(.top,15)
-
+                            
+                            leaseItems()
+                                .padding(.top, 15)
                         }
-
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
-
+                            
                             HStack(spacing: -10) {
-
+                                
                                 ForEach((0..<dates.count), id: \.self) { index in
-
-
+                                    
+                                    
                                     ZStack(alignment: .top) {
-
+                                        
                                         VStack(spacing: 4) {
-
+                                            
                                             HStack(alignment: .top, spacing: 4) {
                                                 Text(dates[index])
                                                     .medium12
                                                     .foregroundColor(.blue)
-
+                                                
                                                 Button {
                                                     self.showTips = index
                                                 } label: {
@@ -133,21 +91,21 @@ extension MyHomeView {
                                                         .foregroundColor(.secondaryPurple)
                                                         .frame(width: 11, height: 11)
                                                 }
-
+                                                
                                             }
-
+                                            
                                             Image(payStatus[index].iconName)
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 16, height: 16)
-
+                                            
                                             Text(payStatus[index].description)
                                                 .regular11
                                         }
                                         .padding(5)
                                         .roundedShadowNew()
                                         .padding(.top, 50)
-
+                                        
                                         Text("Within 1-10 days late")
                                             .regular11
                                             .fixedSize(horizontal: false, vertical: true)
@@ -163,104 +121,94 @@ extension MyHomeView {
                                             .opacity(showTips == index ? 1:0)
                                             .animation(.easeInOut)
                                     }
-
+                                    
                                 }
-
+                                
                             }
                             .padding(.vertical, 10)
-
+                            .padding(.bottom, 7)
+                            
                         }
-                        .padding(.top, 60)
+                        .padding(.top, 300)
                     }
-
+                    
                     priceUI()
-
-                    ActionButton("Make Payment")
-                        .padding(.top, 30)
-
-                    HStack(spacing: 4) {
-
-                        Button(action: {}) {
-                            Text("View  Documents")
-                                .foregroundColor(.white)
-                                .semibold14
-                                .frame(height: 60)
-                                .frame(maxWidth: .infinity)
-                                .background(
-                                    Capsule()
-                                        .fill(Color.blueGradient.toLinearGradient)
-                                )
-                        }
-
-                        Button(action: {}) {
-                            Text("Service Requests")
-                                .foregroundColor(Color.darkBlue)
-                                .semibold14
-                                .frame(height: 60)
-                                .frame(maxWidth: .infinity)
-                                .background(
-                                    Capsule()
-                                        .strokeBorder(Color.darkBlue)
-                                )
-                        }
-                    }
-                    .padding(.top, 16)
-
+                    
                 }
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 24, trailing: 10))
                 .roundedShadowNew()
                 .padding(.horizontal, 20)
-                .padding(.top, 17)
+                .padding(.top, 20)
                 
                 
-                searchTransactionsUI(searchText: $searchText)
-                    .padding(.top, 19)
+                transactionsHeader()
+                    .padding(.top, 22)
                     .padding(.horizontal, 20)
                 
-                paymentHistoryList(list: $listHistory)
-                    .padding(.top, 16)
+                paymentHistoryList()
+                    .padding(.top, 15)
             }
             
-            .onChange(of: searchText) { newValue in
-                if newValue.isEmpty {
-                    listHistory = originalPaymentHistory
-                } else {
-                    listHistory = originalPaymentHistory.filter({ $0.name.uppercased().contains(searchText.uppercased()) })
-                }
-            }
+        }
+        .navigationOwner(title: "Tenant Details")
+        .onTapGesture {
+            showTips = 999
         }
     }
-    
-    private var applicationMyHomeView: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: 20) {
-                
-                ForEach((0..<mockProperties.count), id: \.self) { index in
-                    
-                    HomeApplicationItem(
-                        property: mockProperties[index],
-                        removeAction: {
-                            deleteIndex = index
-                            showDeleteAlert = true
-                        },
-                        viewApplicationAction: {},
-                        messageAgentAction: {}
-                    )
-                    .frame(height: 419)
-                    
-                }
-                
-            }
-            .padding(.top, 17)
-            .padding(.bottom, 40)
-        }
-    }
-    
 }
 
+//MARK: - UI Components
 
-//MARK: - UI
-extension MyHomeView {
+extension TenantDetailsOwner {
+    
+    private func profileUI() -> some View {
+        HStack(spacing: 14) {
+            
+            Image(systemName: "person.fill")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.secondaryPurple)
+                .padding(12)
+                .frame(width: 54, height: 54)
+                .background(
+                    Circle()
+                        .fill(Color.secondaryPurple.opacity(0.2))
+                )
+            
+            VStack(alignment: .leading, spacing: 0) {
+                
+                Text("Elior Alayev")
+                    .semibold16
+                    .foregroundColor(.black)
+                
+                Text(verbatim: "alayev.elior@gmail.com")
+                    .regular11
+                    .foregroundColor(.textGray)
+                    .padding(.top, 2)
+                
+                Text("+1 917-770-7717")
+                    .regular11
+                    .foregroundColor(.blue)
+                    .padding(.top, 6)
+                
+            }
+            
+            Spacer()
+            
+            Image("chat_ic")
+                .resizable()
+                .scaledToFit()
+                .padding(11)
+                .frame(width: 42, height: 42)
+                .background(
+                    Circle()
+                        .fill(Color.blueGradient.toLinearGradient)
+                )
+                .makeButton {}
+        }
+        .padding(EdgeInsets(top: 16, leading: 20, bottom: 12, trailing: 23))
+        .roundedShadow()
+    }
     
     private func navBarButton(action: @escaping ()->Void) -> AnyView {
         AnyView(
@@ -314,7 +262,6 @@ extension MyHomeView {
                 }
             }
             
-            chatButton {}
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -347,15 +294,134 @@ extension MyHomeView {
     }
     
     private func leaseTermsLabel() -> some View {
-        Text("Lease Terms: 12 Months")
-            .foregroundColor(.secondaryPurple)
-            .medium12
-            .frame(height: 31)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.secondaryPurple.opacity(0.1))
-            )
+        VStack(spacing: 16) {
+            
+            HStack(spacing: 4) {
+                
+                Text("Request Money")
+                    .semibold16
+                    .foregroundColor(.white)
+                    .frame(height: 45)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Capsule()
+                            .fill(Color.secondaryPurple)
+                    )
+                    .makeButton {}
+                
+                Text("Refund Money")
+                    .semibold16
+                    .foregroundColor(.secondaryPurple)
+                    .frame(height: 45)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Capsule()
+                            .strokeBorder(Color.secondaryPurple)
+                    )
+                    .makeButton {}
+                
+            }
+            
+            HStack(spacing: 4) {
+                
+                Text("View  Documents")
+                    .semibold16
+                    .foregroundColor(.white)
+                    .frame(height: 45)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Capsule()
+                            .fill(Color.blueGradient.toLinearGradient)
+                    )
+                    .makeButton {}
+                
+                ZStack(alignment: .topTrailing) {
+                    Text("Service Requests")
+                        .semibold16
+                        .foregroundColor(.darkBlue)
+                        .frame(height: 45)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Capsule()
+                                .strokeBorder(Color.darkBlue)
+                        )
+                    
+                    Image(systemName: "3.circle.fill")
+                        .resizable()
+                        .foregroundColor(.secondaryPurple)
+                        .frame(width: 21, height: 21)
+                        .background(
+                            Circle()
+                                .fill(Color.white)
+                        )
+                        .offset(x:5, y:-5)
+                }
+                .makeButton {}
+                
+            }
+            
+            
+            if assignButtonActive {
+                
+                Button {
+                    assignButtonActive = false
+                } label: {
+                    HStack(spacing:9) {
+                        Image(systemName: "checkmark.circle")
+                            .resizable()
+                            .scaledToFill()
+                            .foregroundColor(.darkBlue)
+                            .frame(width: 26, height: 26)
+                        
+                        Text("Assigned to Melissa Smith")
+                            .semibold18
+                            .foregroundColor(.darkBlue)
+                    }
+                    .frame(height: 60)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Capsule()
+                            .fill(Color.darkBlue.opacity(0.2))
+                    )
+                }
+                .padding(.top, 2)
+                
+            } else {
+                ActionButton("Assign to Agent", action: {
+                    assignButtonActive = true
+                })
+                .padding(.top, 2)
+            }
+            
+            LineView()
+                .padding(.horizontal,20)
+                .padding(.top,5)
+        }
+    }
+    
+    private func leaseItems() -> some View {
+        HStack(spacing:20) {
+            
+            ForEach((0..<leaseTitles.count), id: \.self) { index in
+            
+                VStack(alignment: .trailing, spacing: 7) {
+                    
+                    HStack(spacing:7) {
+                        
+                        Image(index != 0 ? "calendar":"document-text")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                        
+                        Text(leaseTitles[index])
+                            .regular12
+                            .foregroundColor(.textGray)
+                    }
+                    
+                    Text(leaseDates[index])
+                        .medium12
+                }
+            }
+        }
     }
     
     private func priceUI() -> some View {
@@ -395,80 +461,61 @@ extension MyHomeView {
         .roundedShadow()
     }
     
-    private func searchTransactionsUI(searchText: Binding<String>) -> some View {
+    private func transactionsHeader() -> some View {
         HStack(spacing: 7) {
             
-            Image("search_")
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.black)
-                .frame(width: 18, height: 18)
-            
-            TextField("Search transactions...", text: searchText)
-                .autocorrectionDisabled()
-                .regular14
+            Text("Transactions")
+                .semibold18
             
             Spacer()
             
             Button(action: {}) {
-                Text("All")
-                    .regular14
-                    .foregroundColor(.black)
-                
-                Image(systemName: "chevron.down")
-                    .foregroundColor(.black)
+                Image(systemName: "plus.circle")
+                    .resizable()
+                    .scaledToFill()
+                    .foregroundColor(.darkBlue)
+                    .frame(width: 30, height: 30)
             }
             
         }
-        .padding(.horizontal,14)
-        .frame(height: 50)
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .strokeBorder(Color.textGray.opacity(0.2))
-        )
     }
     
-    private func paymentHistoryList(list: Binding<[PaymentModel]>) -> some View {
+    private func paymentHistoryList() -> some View {
         VStack(spacing: 20) {
-            ForEach((0..<list.wrappedValue.count), id: \.self) { index in
+            ForEach((0..<3), id: \.self) { index in
                 
-                paymentHistoryItem(model: list.wrappedValue[index])
+                paymentHistoryItem()
                     .padding(.horizontal, 20)
                 
             }
         }
     }
     
-    private func paymentHistoryItem(model: PaymentModel) -> some View {
+    private func paymentHistoryItem() -> some View {
         VStack(spacing: 5) {
             HStack {
                 
-                Text(model.name)
+                Text("Elior Alayev")
                     .medium16
                 
                 Spacer()
                 
-                Text("\(model.date, formatter: dateFormatterMockData)")
+                Text("15 Mar 2023")
                     .medium12
                     .foregroundColor(.textGray)
             }
             
             HStack(spacing:4) {
                 
-                Text(model.price)
-                    .semibold14
-                    .foregroundColor(.secondaryPurple)
+                Text("Rent")
+                    .medium12
                 
                 Spacer()
                 
-                Image(model.state.iconName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 16, height: 16)
+                Text("+$1,000.00")
+                    .semibold14
+                    .foregroundColor(.secondaryPurple)
                 
-                Text(model.state.description)
-                    .medium12
             }
         }
         .padding(.vertical, 14)
@@ -477,25 +524,8 @@ extension MyHomeView {
     }
 }
 
-struct MyHomeView_Previews: PreviewProvider {
+struct TenantDetailsOwner_Previews: PreviewProvider {
     static var previews: some View {
-        MyHomeView()
+        TenantDetailsOwner()
     }
 }
-
-
-
-let dateFormatterMockData: DateFormatter = {
-    var formate = DateFormatter()
-    formate.dateFormat = "dd MMM yyyy"
-    return formate
-}()
-
-
-let paymentMockData: [PaymentModel] = [
-    PaymentModel(name: "Rent January", price: "$530.00", state: .onTime, date: dateFormatterMockData.date(from: "01 May 2023")!),
-    PaymentModel(name: "Rent February", price: "$400.00", state: .late, date: dateFormatterMockData.date(from: "05 May 2023")!),
-    PaymentModel(name: "Rent March", price: "$700.00", state: .tooLate, date: dateFormatterMockData.date(from: "10 May 2023")!),
-    PaymentModel(name: "Invoice for General Expense", price: "$300.00", state: .onTime, date: dateFormatterMockData.date(from: "30 Apr 2023")!),
-    PaymentModel(name: "Rent April", price: "$400.00", state: .pending, date: dateFormatterMockData.date(from: "15 Apr 2023")!)
-]

@@ -180,7 +180,19 @@ struct NewContentView: View {
                 }
                 
                 NavigationLink(destination: {
-                    OwnerDashboardView()
+                    TenantDetailsOwner()
+                }) {
+                    Text("Tenant Details Owner")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
+                
+                NavigationLink(destination: {
+                    OwnerDashboardView()()
                 }) {
                     Text("Owner Dashboard")
                         .foregroundColor(.white)
@@ -190,8 +202,30 @@ struct NewContentView: View {
                                 .fill(Color.lightBlue)
                         )
                 }
+
+                NavigationLink(destination: {
+                    SelectAgentOwner()
+                }) {
+                    Text("Select an Agent View Owner")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
                 
-                
+                NavigationLink(destination: {
+                    ChatOwnerView()
+                }) {
+                    Text("Chat View Owner")
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.lightBlue)
+                        )
+                }
             }
         }
     }

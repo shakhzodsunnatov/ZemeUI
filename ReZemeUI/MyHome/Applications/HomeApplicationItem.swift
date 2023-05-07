@@ -1,16 +1,20 @@
 //
-//  ApplicationsListView.swift
-//  ReZeme
+//  HomeApplicationItem.swift
+//  ReZemeUI
 //
-//  Created by Davron_Usmanov on 14.04.2023.
+//  Created by Shakhzod on 04/05/23.
 //
 
 import SwiftUI
 
-struct ApplicationItemView: View {
+struct HomeApplicationItem: View {
     
     var property: Property
     let height: CGFloat = 172.0
+    
+    let removeAction: EmptyClosure
+    let viewApplicationAction: EmptyClosure
+    let messageAgentAction: EmptyClosure
     
     var body: some View {
         VStack {
@@ -26,20 +30,33 @@ struct ApplicationItemView: View {
                     
                     VStack {
                         HStack {
+                            
+                            TextWithStroke(text: "Easy Apply")
+                            
                             Spacer()
                             
-                            TextWithStroke(text: "Application # \(property.id ?? 1)")
+                            Image(systemName: "trash")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.white)
+                                .padding(8)
+                                .frame(width: 30, height: 30)
+                                .background(
+                                    Circle()
+                                        .fill(.red)
+                                )
+                                .makeButton(action: removeAction)
                             
                         }
-                        .padding(.leading, 13)
+                        .padding(.leading, 6)
                         .padding(.trailing, 9)
                         .padding(.top, 9)
                         
                         Spacer()
                         
                         ItemImageBottomTextView(
-                            firstText: "BLVD",
-                            secondText: ""
+                            firstText: "Application #1",
+                            secondText: "Likeability: 8/10"
                         )
                     }
                 }
@@ -48,9 +65,9 @@ struct ApplicationItemView: View {
                     .medium12
                     .foregroundColor(.black)
                 
-                ItemShortInfoView(
+                ItemShortInfoViewHome(
                     bedCount: "\(property.generalInformation?.bedrooms ?? 0)",
-                    bathCount: "\(property.generalInformation?.bathrooms ?? 0) bath",
+                    bathCount: "\(property.generalInformation?.bathrooms ?? 0)",
                     areaSqft: "\(property.generalInformation?.squareFootage ?? 0)"
                 )
                 
@@ -65,10 +82,11 @@ struct ApplicationItemView: View {
                 
                 HStack(spacing: 16) {
                     linkButton(title: "View Application") {
-                        
+                        viewApplicationAction()
                     }
+                    
                     linkButtonStroke(title: "Message Renter") {
-                        
+                        messageAgentAction()
                     }
                 }
             }
@@ -82,9 +100,9 @@ struct ApplicationItemView: View {
 }
 
 
-extension ApplicationItemView {
+extension HomeApplicationItem {
     
-
+    
     func smallImageWithText(img: String, text: String)-> some View {
         HStack {
             HStack(spacing: 5) {
@@ -98,23 +116,18 @@ extension ApplicationItemView {
             }
         }
     }
-
-//
+    
+    //
     
     func linkButton(title: String,action: @escaping () -> Void) -> some View {
         
         Button(action: action) {
             ZStack {
                 Color.blueGradient.toLinearGradient
-//                HStack {
-//                    Image("qr_code_white")
-//                        .resizable()
-//                        .frame(width: 13,height: 13)
-                    
-                    Text(title)
-                        .foregroundColor(.white)
-                        .medium12
-//                }
+                
+                Text(title)
+                    .foregroundColor(.white)
+                    .medium14
             }
             .frame(height: 40)
             .cornerRadius(20)
@@ -140,9 +153,43 @@ extension ApplicationItemView {
     }
 }
 
-struct ApplicationItemViews_Previews: PreviewProvider {
+extension HomeApplicationItem {
+    
+    struct ItemShortInfoViewHome: View {
+        var bedCount: String
+        var bathCount: String
+        var areaSqft: String
+        
+        var body: some View {
+            HStack {
+                itemView(imageName: "big-beds", text: "\(bedCount) Studio")
+                itemView(imageName: "big_baths", text: "\(bathCount) ba")
+                itemView(imageName: "map_ic", text: "\(areaSqft) sqft")
+            }
+        }
+        
+        func itemView(imageName: String, text: String) -> some View {
+            return HStack {
+                Image(imageName)
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.secondaryPurple)
+                    .frame(width: 24, height: 24)
+                
+                Text(text)
+                    .regular12
+                    .foregroundColor(.textGray)
+            }
+            .padding(.trailing)
+        }
+    }
+    
+}
+
+struct HomeApplicationItem_Previews: PreviewProvider {
     static var previews: some View {
-        ApplicationItemView(property: mockProperty)
+        HomeApplicationItem(property: mockProperty, removeAction: {}, viewApplicationAction: {}, messageAgentAction: {})
             .frame(height: 419)
     }
 }

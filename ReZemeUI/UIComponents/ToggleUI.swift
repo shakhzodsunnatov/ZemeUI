@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ToggleUI: View {
     
+    @Binding var changeValue: Int
+    
     let titles: [String]
     let valueChanged: (Int)-> Void
     
@@ -16,6 +18,13 @@ struct ToggleUI: View {
     
     @State private var isAppeared = false
     
+    init(changeValue: Binding<Int>? = nil, titles: [String], valueChanged: @escaping (Int) -> Void, selectIndex: Int = 0, isAppeared: Bool = false) {
+        self._changeValue = changeValue ?? .constant(0)
+        self.titles = titles
+        self.valueChanged = valueChanged
+        self.selectIndex = selectIndex
+        self.isAppeared = isAppeared
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -24,8 +33,8 @@ struct ToggleUI: View {
                 
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.blueGradient.toLinearGradient)
-                    .frame(width: geo.frame(in: .local).width/2)
-                    .offset(x: geo.frame(in: .local).width/2 * CGFloat(selectIndex))
+                    .frame(width: geo.frame(in: .local).width/CGFloat(titles.count))
+                    .offset(x: geo.frame(in: .local).width/CGFloat(titles.count) * CGFloat(selectIndex))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 
@@ -33,16 +42,29 @@ struct ToggleUI: View {
                     
                     ForEach((0..<titles.count), id: \.self) { index in
                         
-                        Text(titles[index])
-                            .semibold14
-                            .foregroundColor(selectIndex == index ?  .white : .textGray)
-                            .frame(maxWidth: .infinity)
-                            .makeButton {
-                                withAnimation {
-                                    selectIndex = index
-                                    valueChanged(index)
+                        if selectIndex == index {
+                            Text(titles[index])
+                                .semibold14
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .makeButton {
+                                    withAnimation {
+                                        selectIndex = index
+                                        valueChanged(index)
+                                    }
                                 }
-                            }
+                        } else {
+                            Text(titles[index])
+                                .regular14
+                                .foregroundColor(.textGray)
+                                .frame(maxWidth: .infinity)
+                                .makeButton {
+                                    withAnimation {
+                                        selectIndex = index
+                                        valueChanged(index)
+                                    }
+                                }
+                        }
                         
                     }
                 }
@@ -59,11 +81,16 @@ struct ToggleUI: View {
         .onAppear {
             isAppeared = true
         }
+        .onChange(of: changeValue) { newValue in
+            if newValue != selectIndex {
+                selectIndex = newValue
+            }
+        }
     }
 }
 
 struct ToggleUI_Previews: PreviewProvider {
     static var previews: some View {
-        ToggleUI(titles: []) { _ in }
+        ToggleUI(titles: ["Tenants", "Agents"]) { _ in }
     }
 }
