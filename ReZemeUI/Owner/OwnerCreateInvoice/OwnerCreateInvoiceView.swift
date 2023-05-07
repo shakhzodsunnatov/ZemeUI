@@ -52,11 +52,33 @@ struct OwnerCreateInvoiceView: View {
                         calendarField(date: $date)
                             .padding(.top, 11)
                         
-                        TextFieldWithIcon(image: "dollar-circle", topTitle: "Amount", text: $amount, textFiledStyle: .simple, emailError:.constant(false))
-                            .padding(.top,18)
+                        VStack {
+                            headerTitleImage(image: "dollar-circle", title: "Amount")
+                            
+                            HStack {
+                                TextField("Amount", text: $amount)
+                                    .keyboardType(.numberPad)
+                                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 0))
+                                    
+                                HStack {
+                                    LineView()
+                                        .rotated(Angle(degrees: 90))
+                                    
+                                    Text("Dollar")
+                                        .foregroundColor(Color.black)
+                                    
+                                    Image("arrow-down")
+                                }
+                                .padding(10)
+                                
+                                .makeButton {
+                                    
+                                }
+                            }
+                            .roundedShadowNew()
+                        }
+                        .padding(.top,10)
                         
-                       
-                       
                         CustomSwitch(title: "Mark as paid") { t in
                             print(t)
                         }

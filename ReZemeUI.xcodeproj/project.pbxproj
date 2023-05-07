@@ -135,6 +135,7 @@
 		9D02362D2A02A59C00131CD0 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02362C2A02A59C00131CD0 /* CustomSwitch.swift */; };
 		9D0236302A02ABB700131CD0 /* OwnerServiceRequestDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02362F2A02ABB700131CD0 /* OwnerServiceRequestDetailView.swift */; };
 		9D0236322A02B08F00131CD0 /* DropDownMenuSmoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0236312A02B08F00131CD0 /* DropDownMenuSmoller.swift */; };
+		9D09711E2A06C04A006BCEDF /* OwnerDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D09711D2A06C04A006BCEDF /* OwnerDashboardView.swift */; };
 		9D141DD929F94F6100CA6E23 /* AgentPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D141DD829F94F6100CA6E23 /* AgentPhoneNumberView.swift */; };
 		9D141DDB29F952B700CA6E23 /* AgentPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D141DDA29F952B700CA6E23 /* AgentPinCodeView.swift */; };
 		9D141DDE29F9567E00CA6E23 /* AgentProStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D141DDD29F9567E00CA6E23 /* AgentProStatisticView.swift */; };
@@ -150,6 +151,7 @@
 		9D6402742A01190700C15A37 /* OwnerPropertyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */; };
 		9D6402772A01197F00C15A37 /* OwnerApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */; };
 		9D64027A2A011A9D00C15A37 /* OwnerSpecificApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */; };
+		9D744B702A07D13D00859A05 /* CharViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D744B6F2A07D13D00859A05 /* CharViewNew.swift */; };
 		9D7C89E629ECDCEB00DA223D /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */; };
 		9D7C89E829ECDD2B00DA223D /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C89E729ECDD2B00DA223D /* Haptic.swift */; };
 		9D80472829FEDD48004E5AD5 /* PayForLease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80472729FEDD48004E5AD5 /* PayForLease.swift */; };
@@ -305,6 +307,7 @@
 		9D02362C2A02A59C00131CD0 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		9D02362F2A02ABB700131CD0 /* OwnerServiceRequestDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerServiceRequestDetailView.swift; sourceTree = "<group>"; };
 		9D0236312A02B08F00131CD0 /* DropDownMenuSmoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuSmoller.swift; sourceTree = "<group>"; };
+		9D09711D2A06C04A006BCEDF /* OwnerDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerDashboardView.swift; sourceTree = "<group>"; };
 		9D141DD829F94F6100CA6E23 /* AgentPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentPhoneNumberView.swift; sourceTree = "<group>"; };
 		9D141DDA29F952B700CA6E23 /* AgentPinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentPinCodeView.swift; sourceTree = "<group>"; };
 		9D141DDD29F9567E00CA6E23 /* AgentProStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentProStatisticView.swift; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPropertyStatisticsView.swift; sourceTree = "<group>"; };
 		9D6402762A01197F00C15A37 /* OwnerApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerApplicationsView.swift; sourceTree = "<group>"; };
 		9D6402792A011A9D00C15A37 /* OwnerSpecificApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerSpecificApplicationView.swift; sourceTree = "<group>"; };
+		9D744B6F2A07D13D00859A05 /* CharViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharViewNew.swift; sourceTree = "<group>"; };
 		9D7C89E529ECDCEB00DA223D /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		9D7C89E729ECDD2B00DA223D /* Haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		9D80472729FEDD48004E5AD5 /* PayForLease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayForLease.swift; sourceTree = "<group>"; };
@@ -456,9 +460,11 @@
 				2EC89CF92A03DF0700145F3A /* OwnerMessageRenter */,
 				2EC89CF62A03B8DE00145F3A /* MyHome */,
 				9D6402692A01130C00C15A37 /* Owner */,
+				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
 				9D9225D529F844FD00DF5B77 /* AgentEditProfile */,
 				2E63256A29F7EEBE004D5AE1 /* Profile */,
 				2E99B5AE2A01142800113C34 /* MyServesRequest */,
+				9D141DE229F99B0100CA6E23 /* AgentNotification */,
 				9D64027B2A01237C00C15A37 /* UIComponents */,
 				2E6578DC29F5C77E00E53F07 /* MyParticle.sks */,
 				2EEED74B29EC1D62005AD516 /* MockDataRenter.swift */,
@@ -651,8 +657,6 @@
 				9D80472629FEDD25004E5AD5 /* PayForLease */,
 				9DFFF4F529FA890F000B05C2 /* AgentOverallStatisticsView */,
 				9D141DD729F94F3900CA6E23 /* Agent Auth */,
-				9D141DE229F99B0100CA6E23 /* AgentNotification */,
-				9D141DDC29F9565400CA6E23 /* AgentProperyStatistics */,
 			);
 			path = MERGED;
 			sourceTree = "<group>";
@@ -978,6 +982,14 @@
 			path = OwnerServiceRequestDetail;
 			sourceTree = "<group>";
 		};
+		9D09711F2A06DE40006BCEDF /* Owner DashboardView */ = {
+			isa = PBXGroup;
+			children = (
+				9D09711D2A06C04A006BCEDF /* OwnerDashboardView.swift */,
+			);
+			path = "Owner DashboardView";
+			sourceTree = "<group>";
+		};
 		9D141DD729F94F3900CA6E23 /* Agent Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -993,7 +1005,8 @@
 				9D141DDD29F9567E00CA6E23 /* AgentProStatisticView.swift */,
 				9D141DDF29F9618F00CA6E23 /* LineChart.swift */,
 			);
-			path = AgentProperyStatistics;
+			name = AgentProperyStatistics;
+			path = MERGED/AgentProperyStatistics;
 			sourceTree = "<group>";
 		};
 		9D141DE229F99B0100CA6E23 /* AgentNotification */ = {
@@ -1018,6 +1031,7 @@
 				9D6402752A01195A00C15A37 /* OwnerApplications */,
 				9D6402722A0118DD00C15A37 /* OwnerProperty Statistics */,
 				9D64026D2A01166400C15A37 /* Owner Edit Profile */,
+				9D09711F2A06DE40006BCEDF /* Owner DashboardView */,
 				9D64026C2A01165100C15A37 /* OwnerNotifiaction */,
 			);
 			path = Owner;
@@ -1044,6 +1058,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6402732A01190700C15A37 /* OwnerPropertyStatisticsView.swift */,
+				9D744B6F2A07D13D00859A05 /* CharViewNew.swift */,
 			);
 			path = "OwnerProperty Statistics";
 			sourceTree = "<group>";
@@ -1294,6 +1309,7 @@
 				2EB5030829F8A888006FAFE1 /* SavedListingsEmptyView.swift in Sources */,
 				9D6402772A01197F00C15A37 /* OwnerApplicationsView.swift in Sources */,
 				2EEB218829EF65F5005D13A7 /* MessageAgentViewModel.swift in Sources */,
+				9D09711E2A06C04A006BCEDF /* OwnerDashboardView.swift in Sources */,
 				9DB1A85D29F699450045D9BD /* ApplicationProgress.swift in Sources */,
 				2EDDF8AA29EE438D00A07574 /* RenterChatTypesProtocol.swift in Sources */,
 				9DB1A86229F6A1670045D9BD /* AgentSpecificApplicationView.swift in Sources */,
@@ -1309,6 +1325,7 @@
 				2EE41D7529F0CB4700E4B878 /* PinCodeView.swift in Sources */,
 				2EEB218C29EF6871005D13A7 /* AgentOfferChat.swift in Sources */,
 				2E84CE0B29F54DFB0029FDBD /* ButtonMaker.swift in Sources */,
+				9D744B702A07D13D00859A05 /* CharViewNew.swift in Sources */,
 				9D2694C429EDEBF600AA6272 /* HomeView.swift in Sources */,
 				2E731CCA29FBDD1D000EE348 /* TimePickerUI.swift in Sources */,
 				2E781FE829EBAE1000F3C5A9 /* FontWithLineHeight.swift in Sources */,

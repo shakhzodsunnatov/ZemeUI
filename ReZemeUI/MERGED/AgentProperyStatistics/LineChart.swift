@@ -52,6 +52,31 @@ struct YellowGroupBoxStyle: GroupBoxStyle {
 
 
 struct LineAreaChartView: View {
+    
+    var data: [Double] = [10,20,30,40,50,60,70]
+    var months = ["Week 1", "Week 2", "Week 3", "Week 4"]
+    var array = ["$0","$500","$1.0K","$1.5K","$2.0K"]
+    
+    private func format(number: Int) -> String {
+        return "\(number/10)"
+    }
+    
+    private func VerticalAxis() -> some View {
+        HStack {
+            VStack {
+                ForEach(array.reversed(), id: \.self) { i in
+                    if !(array.last == i) {
+                        Spacer()
+                    }
+                    Text(i)
+                        .regular9
+                        .foregroundColor(.black)
+                    
+                }
+            }
+        }
+    }
+    
     var body: some View {
         
         let currentWeek: [StepCount] = [
@@ -76,46 +101,79 @@ struct LineAreaChartView: View {
         
         VStack() {
             if #available(iOS 16.0, *) {
-                GroupBox  {
-                    Chart {
-                        ForEach(currentWeek) {
-                            LineMark(
-                                x: .value("Week Day", $0.shortDay),
-                                y: .value("Step Count", $0.steps)
-                            )
-                            .interpolationMethod(.catmullRom)
-                            .foregroundStyle(Color.purpleLow)
-                            .lineStyle(StrokeStyle(lineWidth: 2))
-                            .symbol() {
-                                Circle()
-                                    .fill(Color.purpleLow)
-                                    .frame(width: 6)
-                            }
-                            .symbolSize(10)
-                            
-                            AreaMark(
-                                x: .value("Week Day", $0.shortDay),
-                                y: .value("Step Count", $0.steps)
-                            )
-                            .interpolationMethod(.cardinal)
-                            .foregroundStyle(curGradient)
-                            .foregroundStyle(by: .value("Week", "Current Week"))
+                
+                VStack(spacing: 0) {
+                    HStack {
+                        // Y-Axis
+                        VStack {
+                            VerticalAxis()
                         }
-                    }
-                    // Set the Y axis scale
-                    .chartYScale(domain: 0...2000,type: .linear)
-                    .chartLegend(.hidden)
-                    .chartPlotStyle { plotArea in
-                        plotArea
-                            .background(Color.white.opacity(0.8))
-                    }
-                    .chartYAxis() {
-                        AxisMarks(preset: AxisMarkPreset.aligned, position: .leading)
-                            
+                        ChartGrid(lines: 7) {
+                            GroupBox  {
+                                Chart {
+                                    ForEach(currentWeek) {
+                                        LineMark(
+                                            x: .value("Week Day", $0.shortDay),
+                                            y: .value("Step Count", $0.steps)
+                                        )
+                                        .interpolationMethod(.catmullRom)
+                                        .foregroundStyle(Color.purpleLow)
+                                        .lineStyle(StrokeStyle(lineWidth: 2))
+                                        .symbol() {
+                                            Circle()
+                                                .fill(Color.purpleLow)
+                                                .frame(width: 6)
+                                        }
+                                        .symbolSize(10)
+                                        
+                                        AreaMark(
+                                            x: .value("Week Day", $0.shortDay),
+                                            y: .value("Step Count", $0.steps)
+                                        )
+                                        .interpolationMethod(.cardinal)
+                                        .foregroundStyle(curGradient)
+                                        .foregroundStyle(by: .value("Week", "Current Week"))
+                                    }
+                                }
+                                // Set the Y axis scale
+                                .chartYScale(domain: 0...2000,type: .linear)
+                                .chartLegend(.hidden)
+                                .chartPlotStyle { plotArea in
+                                    plotArea
+                                        .background(Color.white.opacity(0.8))
+                                }
+                                .chartYAxis() {
+                                    AxisMarks(preset: AxisMarkPreset.aligned, position: .leading)
+                                        
+                                }
+                                .frame(height:140)
+                                .chartXAxis(.hidden)
+                                .chartYAxis(.hidden)
+                            }
+                            .groupBoxStyle(YellowGroupBoxStyle())
+                        }
+                        
                     }
                     .frame(height:140)
+                    Rectangle()
+                        .fill(Color.black.opacity(0.2))
+                        .frame(height: 1)
+                        .padding(.horizontal,50)
+                    HStack(spacing: 0) {
+                        
+                        ForEach(months, id:\.self) { i in
+                            Text("\(i)")
+                                .regular9
+                                .foregroundColor(.black)
+                            Spacer()
+        
+                        }
+                    }
+                    .padding(.leading,40)
+                    .padding(.top,10)
                 }
-                .groupBoxStyle(YellowGroupBoxStyle())
+                .padding(10)
+                
             }
         }
         .padding(.horizontal,10)
