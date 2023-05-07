@@ -98,7 +98,6 @@ struct ChatOwnerView: View {
             }
             
         }
-        .ignoresSafeArea()
     }
 }
 
