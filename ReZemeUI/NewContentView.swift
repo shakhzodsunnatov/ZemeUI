@@ -192,7 +192,7 @@ struct NewContentView: View {
                 }
                 
                 NavigationLink(destination: {
-                    OwnerDashboardView()()
+                    OwnerDashboardView()
                 }) {
                     Text("Owner Dashboard")
                         .foregroundColor(.white)
